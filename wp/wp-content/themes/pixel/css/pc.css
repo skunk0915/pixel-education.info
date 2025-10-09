@@ -1,0 +1,15 @@
+header {
+  background: #F7F4EF;
+  display: flex;
+  justify-content: space-between;
+}
+header .site_name_top {
+  margin: 0;
+  padding: 0;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  flex: 1;
+}/*# sourceMappingURL=pc.css.map */

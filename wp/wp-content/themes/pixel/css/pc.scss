@@ -1,0 +1,64 @@
+header {
+	background: #F7F4EF;
+	display: flex;
+	justify-content: space-between;
+
+	.site_name_top {
+		margin: 0;
+		padding: 0;
+	}
+
+	nav {
+		ul {
+			display: flex;
+			li {
+				flex: 1;
+				a {}
+			}
+		}
+	}
+}
+
+main {
+	&.front-page {
+		.mv {
+
+			.catch {}
+
+			.lead {}
+
+			nav {
+				ul {
+					li {
+						a {}
+					}
+				}
+			}
+		}
+		.mission{
+			.title{
+
+			}
+			.catch{
+
+			}
+			.body{
+				p{}
+			}
+		}
+	}
+}
+footer{
+	.logo{
+
+	}
+	nav{
+		ul{
+			li{
+				a{
+
+				}
+			}
+		}
+	}
+}
