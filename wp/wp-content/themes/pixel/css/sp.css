@@ -1,19 +1,124 @@
+html body {
+  color: #374151;
+  font-size: 16px;
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+html body a {
+  color: #374151;
+}
+html body ul {
+  list-style: none;
+}
+
 header {
   background: #F7F4EF;
-  display: block;
-  padding: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  margin: 0 auto;
 }
 header .site_name_top {
-  margin: 0 0 10px 0;
+  margin: 0;
   padding: 0;
-  text-align: center;
 }
 header nav ul {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  list-style: none;
 }
 header nav ul li {
   flex: 1;
-  text-align: center;
+  white-space: nowrap;
+  padding: 0 1em;
 }
+header nav ul li a {
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  color: #28993a;
+}
+
+.mv_top {
+  background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%), url("../img/mv.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2em;
+}
+.mv_top .inner .catch {
+  font-size: 4vw;
+  font-weight: bold;
+  margin: 0 0 0.5em;
+}
+.mv_top .inner .catch .keyword {
+  color: #28993a;
+}
+.mv_top .inner .lead {
+  font-weight: bold;
+  margin: 0 0 2em;
+  padding: 0 0 0 0.2em;
+}
+.mv_top .inner nav ul {
+  display: flex;
+  gap: 1em;
+}
+.mv_top .inner nav ul li a {
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  border-radius: 10px;
+  padding: 1em;
+  font-weight: bold;
+}
+.mv_top .inner nav ul li a.pt1 {
+  background: #28993a;
+  color: #fff;
+}
+.mv_top .inner nav ul li a.pt2 {
+  background: none;
+  color: #28993a;
+  border: 2px solid #28993a;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+main.front-page .mission {
+  padding: 5em 0;
+}
+main.front-page .mission .title {
+  text-align: center;
+  margin-bottom: 1em;
+}
+main.front-page .mission .catch {
+  font-size: 2.5em;
+  text-align: center;
+  margin: 0 0 1.5em;
+}
+main.front-page .mission .body p {
+  margin: 0 0 2em;
+}
+
+footer {
+  background: #F7F4EF;
+  margin-top: auto;
+}
+footer .inner {
+  padding: 2em 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+footer .inner .company_info address {
+  font-style: normal;
+}
+footer .inner nav ul li a {
+  text-decoration: none;
+}/*# sourceMappingURL=sp.css.map */

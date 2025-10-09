@@ -1,0 +1,1 @@
+2025-10-09 14:30 要求:768px境界でpc.css/sp.css切替設定 結果:sp.css作成、front-page.phpにメディアクエリ追加完了
