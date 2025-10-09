@@ -35,10 +35,22 @@ header {
 		padding: 0;
 	}
 
+	// ハンバーガーボタンはPC版では非表示
+	.hamburger {
+		display: none;
+	}
+
 	nav {
+		position: static;
+		width: auto;
+		height: auto;
+		background: none;
+		box-shadow: none;
+
 		ul {
 			display: flex;
 			list-style: none;
+			padding: 0;
 
 			li {
 				flex: 1;
@@ -47,6 +59,7 @@ header {
 
 				a {
 					text-decoration: none;
+					padding: 0;
 
 					&:hover {
 						color: $color_a;

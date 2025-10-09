@@ -14,5 +14,6 @@
 	<link rel="icon" href="<?php echo get_theme_file_uri(); ?>/img/favicon/favicon.svg" type="image/svg+xml">
 	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png"><!-- 180×180 -->
 	<link rel="<?php echo get_theme_file_uri(); ?>/img/favicon/manifest" href="<?php echo get_theme_file_uri(); ?>/manifest.webmanifest">
+	<script src="<?php echo get_theme_file_uri(); ?>/js/menu.js?v=1.0" defer></script>
 	<?php wp_head(); ?>
 </head>
