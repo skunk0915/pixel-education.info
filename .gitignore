@@ -1,0 +1,27 @@
+# WordPress core files - セキュリティ上除外
+/wp/*
+!/wp/wp-content/
+/wp/wp-content/*
+!/wp/wp-content/themes/
+/wp/wp-content/themes/*
+!/wp/wp-content/themes/pixel/
+
+# WordPress設定ファイル - 機密情報を含むため除外
+wp-config.php
+.htaccess
+
+# データベース情報
+*.sql
+*.sql.gz
+
+# 環境設定ファイル
+.env
+.env.*
+
+# IDE設定
+.vscode/
+.idea/
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
