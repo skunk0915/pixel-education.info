@@ -1,4 +1,7 @@
 html body {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-weight: 500;
+  font-style: normal;
   color: #374151;
   font-size: 16px;
   line-height: 1.8;
@@ -11,6 +14,9 @@ html body a {
 }
 html body ul {
   list-style: none;
+}
+html body:not(.home) h1 {
+  padding: 3em 1em;
 }
 
 header {
@@ -46,6 +52,9 @@ header nav ul li {
   white-space: nowrap;
   padding: 0 1em;
 }
+header nav ul li.sp {
+  display: none;
+}
 header nav ul li a {
   text-decoration: none;
   padding: 0;
@@ -63,9 +72,13 @@ header nav ul li a:hover {
   padding: 2em;
 }
 .mv_top .inner .catch {
-  font-size: 4vw;
+  font-size: 7vw;
+  line-height: 1.5;
   font-weight: bold;
   margin: 0 0 0.5em;
+}
+.mv_top .inner .catch .pc {
+  display: none;
 }
 .mv_top .inner .catch .keyword {
   color: #28993a;
@@ -100,9 +113,10 @@ header nav ul li a:hover {
 main {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 2em;
 }
 main.front-page .mission {
-  padding: 5em 0;
+  padding: 5em 1em;
 }
 main.front-page .mission .title {
   text-align: center;

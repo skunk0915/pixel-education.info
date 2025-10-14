@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<body>
+<body <?php body_class(); ?>>
 
 	<?php get_template_part('parts/gnav'); ?>
 	<section class="mv">

@@ -4,7 +4,7 @@
 
 			<div class="company_info">
 				<div class="catch">
-					​子どもたちの「生きる力」を育む
+					まなびを、もっと自由に。
 				</div>
 				<a href="" class="logo">
 					<img src="<?php echo get_theme_file_uri(); ?>/img/logo.png" alt="​株式会社 Pixel">

@@ -3,13 +3,17 @@ $main_width: 1200px;
 
 html {
 	body {
+		font-family: "Zen Kaku Gothic New", sans-serif;
+		font-weight: 500;
+		font-style: normal;
+
 		color: #374151;
 		font-size: 16px;
 		line-height: 1.8;
 
-		display: flex;// footerを下に固定のため
-		flex-direction: column;// footerを下に固定のため
-		min-height: 100vh;// footerを下に固定のため
+		display: flex; // footerを下に固定のため
+		flex-direction: column; // footerを下に固定のため
+		min-height: 100vh; // footerを下に固定のため
 
 		a {
 			color: #374151;
@@ -17,7 +21,16 @@ html {
 
 		ul {
 			list-style: none;
+			padding: 0 0 0 1em;
 		}
+		ol{
+			padding: 0 0 0 1em;
+		}
+
+		&:not(.home) h1 {
+			padding: 3em 1em;
+		}
+
 	}
 }
 
@@ -34,8 +47,14 @@ header {
 	.site_name_top {
 		margin: 0;
 		padding: 0;
-		z-index: 1001;
-		img{
+		width: 30%;
+
+		a {
+			display: block;
+			line-height: 0;
+		}
+
+		img {
 			display: block;
 			width: 100%;
 			height: auto;
@@ -91,6 +110,7 @@ header {
 		transition: right 0.3s ease;
 		z-index: 1000;
 		box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+		overflow: auto;
 
 		&.is-open {
 			right: 0;
@@ -100,16 +120,16 @@ header {
 			display: flex;
 			flex-direction: column;
 			list-style: none;
-			padding: 80px 20px 20px;
+			padding: 1em;
 			margin: 0;
 
 			li {
 				padding: 0;
-				margin: 0 0 10px 0;
+
 
 				a {
 					display: block;
-					padding: 15px 20px;
+					padding: .5em;
 					text-decoration: none;
 					border-bottom: 1px solid #e5e7eb;
 
@@ -151,12 +171,14 @@ body.menu-open {
 
 	.inner {
 		.catch {
-			font-size: 4vw;
+			font-size: 10vw;
 			font-weight: bold;
+			line-height: 1.5;
 			margin: 0 0 .5em;
 
 			.keyword {
 				color: $color_a;
+				margin-right: .2em;
 			}
 		}
 
@@ -186,7 +208,7 @@ body.menu-open {
 						}
 
 						&.pt2 {
-							background: none;
+							background: #ffffff99;
 							color: $color_a;
 							border: 2px solid $color_a;
 						}
@@ -201,11 +223,12 @@ body.menu-open {
 main {
 	max-width: $main_width;
 	margin: 0 auto;
+	padding: 0 2em;
 
 	&.front-page {
 
 		.mission {
-			padding: 5em 0;
+			padding: 5em 2em;
 
 			.title {
 				text-align: center;
@@ -229,17 +252,18 @@ main {
 
 footer {
 	background: #F7F4EF;
-	margin-top: auto;// footerを下に固定のため
+	margin-top: auto; // footerを下に固定のため
 
 	.inner {
-		padding: 2em 0;
-		max-width: $main_width;
+		padding: 2em;
 		margin: 0 auto;
-		display: flex;
-		justify-content: space-between;
 
 		.company_info {
-			.catch {}
+			margin: 0 0 3em;
+
+			.catch {
+				font-size: .5em;
+			}
 
 			.logo {}
 
@@ -247,10 +271,13 @@ footer {
 
 			address {
 				font-style: normal;
+				font-size: .7em;
 			}
 		}
 
 		nav {
+			display: flex;
+
 			ul {
 				li {
 					a {
