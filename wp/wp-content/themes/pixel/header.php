@@ -17,6 +17,24 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500&display=swap" rel="stylesheet">
+	<style>
+		/* ページ読み込み中は白画面を表示 */
+		body::before {
+			content: '';
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #ffffff;
+			z-index: 9999;
+			transition: opacity 1s ease-out;
+		}
+		body.loaded::before {
+			opacity: 0;
+			pointer-events: none;
+		}
+	</style>
 	<script src="<?php echo get_theme_file_uri(); ?>/js/menu.js?v=1.0" defer></script>
 	<?php wp_head(); ?>
 </head>
