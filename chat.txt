@@ -10,3 +10,5 @@
 2025-10-15 16:45 要求:アコーディオンデフォルト状態を閉じる 結果:terms_action.js修正、初期非表示(display:none)設定完了
 2025-10-15 16:50 要求:h2とp群をdiv.toggle_itemで包む 結果:terms_action.js修正、h2とp群をtoggle_itemでラップ処理追加完了
 2025-10-15 16:55 要求:h2と次のh2までの全要素をラップ 結果:terms_action.js修正、nextUntil('h2')で全要素取得に変更完了
+2025-10-15 17:00 要求:toggle_itemのCSS適用不具合修正 結果:pc.scssセレクタ修正(main.terms→body.terms)、自動コンパイル完了
+2025-10-15 17:05 要求:閉じているアコーディオンh2のmargin削除 結果:pc.scssにh2:not(.accordion-active)でmargin:0追加完了

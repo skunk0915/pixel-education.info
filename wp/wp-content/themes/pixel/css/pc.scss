@@ -464,9 +464,6 @@ main {
 			}
 		}
 	}
-	.terms{
-		
-	}
 }
 
 body.terms,
@@ -503,6 +500,25 @@ body.cancel {
 	}
 }
 
+body.terms {
+	.toggle_item {
+		background: #fff;
+		padding: 2em;
+		margin-bottom: 2em;
+		border-radius: 10px;
+		box-shadow: 0 5px 0px 0px #eee;
+
+		h2{
+			&::after{
+				content: "●";
+			}
+			&:not(.accordion-active) {
+				margin: 0;
+			}
+		}
+	}
+}
+
 .cancel {
 	h2 {
 		border-bottom: 2px solid green;
@@ -510,7 +526,6 @@ body.cancel {
 	}
 }
 
-.terms {}
 
 .wp-block-group {
 	position: relative;

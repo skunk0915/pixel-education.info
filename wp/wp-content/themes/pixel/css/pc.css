@@ -357,6 +357,7 @@ main.front-page .news .column .update .more:hover {
   background: green;
   color: #fff;
 }
+
 body.terms,
 body.privacy,
 body.cancel {
@@ -398,6 +399,20 @@ body.privacy ol li,
 body.cancel ul li,
 body.cancel ol li {
   margin: 0 0 1em;
+}
+
+body.terms .toggle_item {
+  background: #fff;
+  padding: 2em;
+  margin-bottom: 2em;
+  border-radius: 10px;
+  box-shadow: 0 5px 0px 0px #eee;
+}
+body.terms .toggle_item h2::after {
+  content: "●";
+}
+body.terms .toggle_item h2:not(.accordion-active) {
+  margin: 0;
 }
 
 .cancel h2 {
