@@ -35,6 +35,5 @@
 			pointer-events: none;
 		}
 	</style>
-	<script src="<?php echo get_theme_file_uri(); ?>/js/menu.js?v=1.0" defer></script>
 	<?php wp_head(); ?>
 </head>

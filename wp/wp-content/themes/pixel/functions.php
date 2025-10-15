@@ -33,6 +33,30 @@ function enqueue_theme_scripts() {
         '1.0.0',
         false // headで読み込む（ページロード前に実行するため）
     );
+
+    // termsページのみアコーディオン機能を読み込む
+    if (is_page('terms')) {
+        // jQuery（WordPressに同梱されているものを使用）
+        wp_enqueue_script('jquery');
+
+        // アコーディオン機能（jQueryに依存）
+        wp_enqueue_script(
+            'terms-action',
+            get_template_directory_uri() . '/js/terms_action.js',
+            array('jquery'),
+            '1.0.0',
+            true // footerで読み込む
+        );
+    }
+
+    // メニュー機能
+    wp_enqueue_script(
+        'menu',
+        get_template_directory_uri() . '/js/menu.js',
+        array(),
+        '1.0.0',
+        true // footerで読み込む
+    );
 }
 add_action('wp_enqueue_scripts', 'enqueue_theme_scripts');
 
