@@ -2,6 +2,7 @@ html body {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 500;
   font-style: normal;
+  container-type: inline-size;
   color: #374151;
   font-size: 16px;
   line-height: 1.8;
@@ -14,6 +15,9 @@ html body a {
 }
 html body ul {
   list-style: none;
+}
+html body ol {
+  padding: 0 0 0 1em;
 }
 html body:not(.home) h1 {
   padding: 3em 1em;
@@ -31,6 +35,15 @@ header {
 header .site_name_top {
   margin: 0;
   padding: 0;
+  width: 10%;
+}
+header .site_name_top a {
+  display: block;
+}
+header .site_name_top a img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 header .hamburger {
   display: none;
@@ -63,7 +76,24 @@ header nav ul li a:hover {
   color: #28993a;
 }
 
-.mv_top {
+.front-page .wp-block-cover .has-background-dim:not([class*=-background-color]),
+.front-page .wp-block-cover-image .has-background-dim:not([class*=-background-color]),
+.front-page .wp-block-cover-image.has-background-dim:not([class*=-background-color]),
+.front-page .wp-block-cover.has-background-dim:not([class*=-background-color]) {
+  background-color: transparent;
+  opacity: 1;
+  background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+.mv_top,
+.wp-block-cover.mv_top {
+  position: relative;
+  width: 100cqw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  box-sizing: border-box;
   background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%), url("../img/mv.jpg") no-repeat center center/cover;
   min-height: 100vh;
   display: flex;
@@ -71,28 +101,49 @@ header nav ul li a:hover {
   justify-content: flex-start;
   padding: 2em;
 }
-.mv_top .inner .catch {
+.mv_top .inner .catch,
+.wp-block-cover.mv_top .inner .catch {
   font-size: 7vw;
   line-height: 1.5;
   font-weight: bold;
   margin: 0 0 0.5em;
 }
-.mv_top .inner .catch .pc {
+.mv_top .inner .catch .pc,
+.wp-block-cover.mv_top .inner .catch .pc {
   display: none;
 }
-.mv_top .inner .catch .keyword {
+.mv_top .inner .catch .keyword,
+.wp-block-cover.mv_top .inner .catch .keyword {
   color: #28993a;
 }
-.mv_top .inner .lead {
+.mv_top .inner .lead,
+.wp-block-cover.mv_top .inner .lead {
   font-weight: bold;
   margin: 0 0 2em;
   padding: 0 0 0 0.2em;
 }
-.mv_top .inner nav ul {
+.mv_top .inner .wp-block-buttons,
+.wp-block-cover.mv_top .inner .wp-block-buttons {
   display: flex;
   gap: 1em;
 }
-.mv_top .inner nav ul li a {
+.mv_top .inner .wp-block-buttons .wp-block-button,
+.wp-block-cover.mv_top .inner .wp-block-buttons .wp-block-button {
+  display: block;
+}
+.mv_top .inner .wp-block-buttons .wp-block-button.pt1 a,
+.wp-block-cover.mv_top .inner .wp-block-buttons .wp-block-button.pt1 a {
+  background: #28993a;
+  color: #fff;
+}
+.mv_top .inner .wp-block-buttons .wp-block-button.pt2 a,
+.wp-block-cover.mv_top .inner .wp-block-buttons .wp-block-button.pt2 a {
+  background: none;
+  color: #28993a;
+  border: 2px solid #28993a;
+}
+.mv_top .inner .wp-block-buttons .wp-block-button a,
+.wp-block-cover.mv_top .inner .wp-block-buttons .wp-block-button a {
   text-decoration: none;
   text-align: center;
   display: block;
@@ -100,35 +151,178 @@ header nav ul li a:hover {
   padding: 1em;
   font-weight: bold;
 }
-.mv_top .inner nav ul li a.pt1 {
-  background: #28993a;
-  color: #fff;
-}
-.mv_top .inner nav ul li a.pt2 {
-  background: none;
-  color: #28993a;
-  border: 2px solid #28993a;
-}
 
 main {
+  width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 3em;
   padding: 0 2em;
 }
-main.front-page .mission {
-  padding: 5em 1em;
+main .btn01 {
+  margin: 2em 0;
 }
-main.front-page .mission .title {
+main .btn01 a {
+  display: block;
+  background: green;
+  color: #fff;
   text-align: center;
-  margin-bottom: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  text-decoration: none;
 }
-main.front-page .mission .catch {
+main.front-page h2 {
   font-size: 2.5em;
   text-align: center;
   margin: 0 0 1.5em;
 }
-main.front-page .mission .body p {
+main.front-page .body p {
   margin: 0 0 2em;
+}
+main.front-page .title {
+  text-align: center;
+  margin-bottom: 1em;
+}
+main.front-page .mission {
+  padding: 5em 0;
+  margin-top: 0;
+}
+main.front-page .about h3 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+main.front-page .about .is-layout-flex {
+  align-items: start;
+  gap: 50px;
+}
+main.front-page .about .is-layout-flex > * {
+  flex: 1;
+}
+main.front-page .about .wp-block-image img {
+  border-radius: 20px;
+}
+main.front-page .about p {
+  margin-bottom: 1em;
+}
+main.front-page .about .sign {
+  margin-top: 2em;
+}
+main.front-page .app .app_list_wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+main.front-page .app .app_list_wrap .app_list_item {
+  flex: 1;
+  background: #fff;
+  box-shadow: 0 4px 10px 0px #ccc;
+  border-radius: 30px;
+  padding: 2em;
+}
+main.front-page .app .app_list_wrap .app_list_item .app_name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+main.front-page .app .app_list_wrap .app_list_item .store_btn {
+  display: flex;
+  gap: 1em;
+}
+main.front-page .app .app_list_wrap .app_list_item .store_btn:not(:first-child) {
+  margin-top: 1em;
+}
+main.front-page .app .app_list_wrap .app_list_item .store_btn p {
+  flex: 1;
+  background: #e5e7eb;
+  text-align: center;
+  border-radius: 10px;
+}
+main.front-page .app .app_list_wrap .app_list_item .store_btn p a {
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
+}
+
+body.terms,
+body.privacy,
+body.cancel {
+  display: block;
+}
+body.terms h2,
+body.privacy h2,
+body.cancel h2 {
+  font-size: 1.5em;
+  margin: 0 0 1em;
+}
+body.terms h2:not(:first-child),
+body.privacy h2:not(:first-child),
+body.cancel h2:not(:first-child) {
+  margin: 3em 0 1em;
+}
+body.terms h3,
+body.privacy h3,
+body.cancel h3 {
+  font-size: 1em;
+}
+body.terms h3:not(:first-child),
+body.privacy h3:not(:first-child),
+body.cancel h3:not(:first-child) {
+  margin-top: 2em;
+}
+body.terms ul:not(:first-child),
+body.terms ol:not(:first-child),
+body.privacy ul:not(:first-child),
+body.privacy ol:not(:first-child),
+body.cancel ul:not(:first-child),
+body.cancel ol:not(:first-child) {
+  margin: 1em 0 0;
+}
+body.terms ul li,
+body.terms ol li,
+body.privacy ul li,
+body.privacy ol li,
+body.cancel ul li,
+body.cancel ol li {
+  margin: 0 0 1em;
+}
+
+.wp-block-group {
+  position: relative;
+}
+
+.bg01 {
+  position: relative;
+  background-color: #EEECE1;
+  width: 100cqw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  padding-top: 5em;
+  padding-bottom: 5em;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  box-sizing: border-box;
+}
+
+.bg02 {
+  background: linear-gradient(to bottom right, #28993a, #F2AB37);
+  position: relative;
+  width: 100cqw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  padding-bottom: 5em;
+  padding-top: 5em;
+  margin-bottom: 5em;
+  box-sizing: border-box;
+  color: #fff;
+  text-align: center;
+}
+.bg02:not(:first-child) {
+  margin-top: 5em;
 }
 
 footer {
@@ -136,11 +330,23 @@ footer {
   margin-top: auto;
 }
 footer .inner {
-  padding: 2em 0;
+  padding: 2em;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+}
+footer .inner .company_info {
+  width: 30%;
+}
+footer .inner .company_info a.logo {
+  display: block;
+  width: 50%;
+}
+footer .inner .company_info a.logo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 footer .inner .company_info address {
   font-style: normal;

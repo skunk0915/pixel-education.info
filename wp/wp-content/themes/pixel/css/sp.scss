@@ -23,12 +23,14 @@ html {
 			list-style: none;
 			padding: 0 0 0 1em;
 		}
-		ol{
+
+		ol {
 			padding: 0 0 0 1em;
 		}
 
 		&:not(.home) h1 {
-			padding: 3em 1em;
+			padding: 2em 1em;
+			font-size: 1.5em;
 		}
 
 	}
@@ -222,30 +224,77 @@ body.menu-open {
 
 main {
 	max-width: $main_width;
-	margin: 0 auto;
+	margin: 0 auto 3em;
 	padding: 0 2em;
 
+	h2 {
+		&:not(:first-child) {
+			margin: 2em 0 0;
+		}
+	}
+
 	&.front-page {
+		h2 {
+			font-size: 2.5em;
+			text-align: center;
+			margin: 0 0 1.5em;
+		}
+
+		.body {
+			p {
+				margin: 0 0 2em;
+			}
+		}
+
+		.title {
+			text-align: center;
+			margin-bottom: 1em;
+		}
 
 		.mission {
-			padding: 5em 2em;
+			padding: 5em 0;
 
 			.title {
 				text-align: center;
 				margin-bottom: 1em;
 			}
 
-			.catch {
-				font-size: 2.5em;
-				text-align: center;
-				margin: 0 0 1.5em;
-			}
 
-			.body {
-				p {
-					margin: 0 0 2em;
-				}
-			}
+		}
+	}
+}
+
+body.terms,
+body.privacy,
+body.cancel {
+
+	display: block;
+
+	h2 {
+		font-size: 1.5em;
+		margin: 0 0 1em;
+
+		&:not(:first-child) {
+			margin: 3em 0 1em;
+		}
+	}
+
+	h3 {
+		font-size: 1em;
+
+		&:not(:first-child) {
+			margin-top: 2em;
+		}
+	}
+
+	ul,
+	ol {
+		&:not(:first-child) {
+			margin: 1em 0 0;
+		}
+
+		li {
+			margin: 0 0 1em;
 		}
 	}
 }
@@ -265,7 +314,15 @@ footer {
 				font-size: .5em;
 			}
 
-			.logo {}
+			.logo {
+				display: block;
+				width: 50%;
+
+				img {
+					display: block;
+					width: 100%;
+				}
+			}
 
 			.company_name {}
 

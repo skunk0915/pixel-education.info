@@ -20,7 +20,8 @@ html body ol {
   padding: 0 0 0 1em;
 }
 html body:not(.home) h1 {
-  padding: 3em 1em;
+  padding: 2em 1em;
+  font-size: 1.5em;
 }
 
 header {
@@ -171,23 +172,73 @@ body.menu-open::before {
 
 main {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 3em;
   padding: 0 2em;
 }
+main h2:not(:first-child) {
+  margin: 2em 0 0;
+}
+main.front-page h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin: 0 0 1.5em;
+}
+main.front-page .body p {
+  margin: 0 0 2em;
+}
+main.front-page .title {
+  text-align: center;
+  margin-bottom: 1em;
+}
 main.front-page .mission {
-  padding: 5em 2em;
+  padding: 5em 0;
 }
 main.front-page .mission .title {
   text-align: center;
   margin-bottom: 1em;
 }
-main.front-page .mission .catch {
-  font-size: 2.5em;
-  text-align: center;
-  margin: 0 0 1.5em;
+
+body.terms,
+body.privacy,
+body.cancel {
+  display: block;
 }
-main.front-page .mission .body p {
-  margin: 0 0 2em;
+body.terms h2,
+body.privacy h2,
+body.cancel h2 {
+  font-size: 1.5em;
+  margin: 0 0 1em;
+}
+body.terms h2:not(:first-child),
+body.privacy h2:not(:first-child),
+body.cancel h2:not(:first-child) {
+  margin: 3em 0 1em;
+}
+body.terms h3,
+body.privacy h3,
+body.cancel h3 {
+  font-size: 1em;
+}
+body.terms h3:not(:first-child),
+body.privacy h3:not(:first-child),
+body.cancel h3:not(:first-child) {
+  margin-top: 2em;
+}
+body.terms ul:not(:first-child),
+body.terms ol:not(:first-child),
+body.privacy ul:not(:first-child),
+body.privacy ol:not(:first-child),
+body.cancel ul:not(:first-child),
+body.cancel ol:not(:first-child) {
+  margin: 1em 0 0;
+}
+body.terms ul li,
+body.terms ol li,
+body.privacy ul li,
+body.privacy ol li,
+body.cancel ul li,
+body.cancel ol li {
+  margin: 0 0 1em;
 }
 
 footer {
@@ -203,6 +254,14 @@ footer .inner .company_info {
 }
 footer .inner .company_info .catch {
   font-size: 0.5em;
+}
+footer .inner .company_info .logo {
+  display: block;
+  width: 50%;
+}
+footer .inner .company_info .logo img {
+  display: block;
+  width: 100%;
 }
 footer .inner .company_info address {
   font-style: normal;

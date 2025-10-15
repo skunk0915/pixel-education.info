@@ -6,6 +6,7 @@ html {
 		font-family: "Zen Kaku Gothic New", sans-serif;
 		font-weight: 500;
 		font-style: normal;
+		container-type: inline-size; // 全幅背景色で横スクロールバー防止するため
 
 		color: #374151;
 		font-size: 16px;
@@ -21,6 +22,10 @@ html {
 
 		ul {
 			list-style: none;
+		}
+
+		ol {
+			padding: 0 0 0 1em;
 		}
 
 		&:not(.home) h1 {
@@ -42,6 +47,18 @@ header {
 	.site_name_top {
 		margin: 0;
 		padding: 0;
+		width: 10%;
+
+		a {
+			display: block;
+
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+
 	}
 
 	// ハンバーガーボタンはPC版では非表示
@@ -83,7 +100,27 @@ header {
 	}
 }
 
-.mv_top {
+.front-page .wp-block-cover .has-background-dim:not([class*=-background-color]),
+.front-page .wp-block-cover-image .has-background-dim:not([class*=-background-color]),
+.front-page .wp-block-cover-image.has-background-dim:not([class*=-background-color]),
+.front-page .wp-block-cover.has-background-dim:not([class*=-background-color]) {
+	background-color: transparent;
+	opacity: 1;
+	background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+.mv_top,
+.wp-block-cover.mv_top {
+
+	position: relative;
+	width: 100cqw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	padding-left: calc(50vw - 50%);
+	padding-right: calc(50vw - 50%);
+	box-sizing: border-box;
+
+
 	background: linear-gradient(to right,
 			rgba(255, 255, 255, 1) 0%,
 			rgba(255, 255, 255, .7) 50%,
@@ -101,9 +138,11 @@ header {
 			line-height: 1.5;
 			font-weight: bold;
 			margin: 0 0 .5em;
-			.pc{
+
+			.pc {
 				display: none;
 			}
+
 			.keyword {
 				color: $color_a;
 			}
@@ -115,65 +154,236 @@ header {
 			padding: 0 0 0 .2em;
 		}
 
-		nav {
-			ul {
-				display: flex;
-				gap: 1em;
+		.wp-block-buttons {
 
-				li {
-					a {
-						text-decoration: none;
-						text-align: center;
-						display: block;
-						border-radius: 10px;
-						padding: 1em;
-						font-weight: bold;
+			display: flex;
+			gap: 1em;
 
-						&.pt1 {
-							background: $color_a;
-							color: #fff;
-						}
+			.wp-block-button {
+				display: block;
+				&.pt1 {
+					a{
 
-						&.pt2 {
-							background: none;
-							color: $color_a;
-							border: 2px solid $color_a;
-						}
-
+						background: $color_a;
+						color: #fff;
 					}
+				}
+
+				&.pt2 {
+					a{
+
+						background: none;
+						color: $color_a;
+						border: 2px solid $color_a;
+					}
+				}
+
+				a {
+					text-decoration: none;
+					text-align: center;
+					display: block;
+					border-radius: 10px;
+					padding: 1em;
+					font-weight: bold;
+				}
+			}
+
+		}
+	}
+}
+
+main {
+	width: 100%;
+	max-width: $main_width;
+	margin: 0 auto 3em;
+	padding: 0 2em;
+
+	.btn01 {
+		margin: 2em 0;
+
+		a {
+			display: block;
+			background: green;
+			color: #fff;
+			text-align: center;
+			padding: 1em;
+			border-radius: 10px;
+			width: fit-content;
+			margin: 0 auto;
+			text-decoration: none;
+		}
+	}
+
+	&.front-page {
+		h2 {
+			font-size: 2.5em;
+			text-align: center;
+			margin: 0 0 1.5em;
+		}
+
+
+		.body {
+			p {
+				margin: 0 0 2em;
+			}
+		}
+
+		.title {
+			text-align: center;
+			margin-bottom: 1em;
+		}
+
+		.mission {
+			padding: 5em 0;
+			margin-top: 0;
+		}
+
+		.about {
+			h3 {
+				font-size: 1.5em;
+				margin-bottom: 1em;
+			}
+
+			.is-layout-flex {
+				align-items: start;
+				gap: 50px;
+
+				&>* {
+					flex: 1;
+				}
+			}
+
+			.wp-block-image img {
+
+				border-radius: 20px;
+			}
+
+			p {
+				margin-bottom: 1em;
+			}
+
+			.sign {
+				margin-top: 2em;
+			}
+		}
+
+		.app {
+			.app_list_wrap {
+				display: flex;
+				justify-content: space-between;
+				gap: 50px;
+
+				.app_list_item {
+					flex: 1;
+					background: #fff;
+					box-shadow: 0 4px 10px 0px #ccc;
+					border-radius: 30px;
+					padding: 2em;
+
+					.app_name {
+						font-size: 1.5em;
+						font-weight: bold;
+					}
+
+					.store_btn {
+						display: flex;
+						gap: 1em;
+
+						&:not(:first-child) {
+							margin-top: 1em;
+						}
+
+						p {
+							flex: 1;
+							background: #e5e7eb;
+							text-align: center;
+							border-radius: 10px;
+
+							a {
+								display: block;
+								padding: .5em;
+								text-decoration: none;
+
+							}
+						}
+					}
+
 				}
 			}
 		}
 	}
 }
 
-main {
-	max-width: $main_width;
-	margin: 0 auto;
-	padding: 0 2em;
+body.terms,
+body.privacy,
+body.cancel {
+	display: block;
 
-	&.front-page {
+	h2 {
+		font-size: 1.5em;
+		margin: 0 0 1em;
 
-		.mission {
-			padding: 5em 1em;
-
-			.title {
-				text-align: center;
-				margin-bottom: 1em;
-			}
-
-			.catch {
-				font-size: 2.5em;
-				text-align: center;
-				margin: 0 0 1.5em;
-			}
-
-			.body {
-				p {
-					margin: 0 0 2em;
-				}
-			}
+		&:not(:first-child) {
+			margin: 3em 0 1em;
 		}
+	}
+
+	h3 {
+		font-size: 1em;
+
+		&:not(:first-child) {
+			margin-top: 2em;
+		}
+	}
+
+	ul,
+	ol {
+		&:not(:first-child) {
+			margin: 1em 0 0;
+		}
+
+		li {
+			margin: 0 0 1em;
+		}
+	}
+}
+
+.wp-block-group {
+	position: relative;
+}
+
+.bg01 {
+	position: relative;
+	background-color: #EEECE1;
+	width: 100cqw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	padding-left: calc(50vw - 50%);
+	padding-right: calc(50vw - 50%);
+	padding-top: 5em;
+	padding-bottom: 5em;
+	margin-top: 5em;
+	margin-bottom: 5em;
+	box-sizing: border-box;
+}
+
+.bg02 {
+	background: linear-gradient(to bottom right, #28993a, #F2AB37);
+	position: relative;
+	width: 100cqw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	padding-left: calc(50vw - 50%);
+	padding-right: calc(50vw - 50%);
+	padding-bottom: 5em;
+	padding-top: 5em;
+	margin-bottom: 5em;
+	box-sizing: border-box;
+	color: #fff;
+	text-align: center;
+
+	&:not(:first-child) {
+		margin-top: 5em;
 	}
 }
 
@@ -182,16 +392,27 @@ footer {
 	margin-top: auto; // footerを下に固定のため
 
 	.inner {
-		padding: 2em 0;
+		padding: 2em;
 		max-width: $main_width;
 		margin: 0 auto;
 		display: flex;
 		justify-content: space-between;
 
 		.company_info {
+			width: 30%;
+
 			.catch {}
 
-			.logo {}
+			a.logo {
+				display: block;
+				width: 50%;
+
+				img {
+					display: block;
+					width: 100%;
+					height: auto;
+				}
+			}
 
 			.company_name {}
 
