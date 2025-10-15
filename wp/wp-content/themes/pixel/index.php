@@ -6,7 +6,9 @@
 		<h1><?php the_title(); ?></h1>
 	</section><!-- /.mv -->
 	<main>
-		<?php the_content(); ?>
+		<div class="body_bg">
+			<?php the_content(); ?>
+		</div><!-- /.body_bg -->
 	</main>
 </body>
 <?php get_footer(); ?>

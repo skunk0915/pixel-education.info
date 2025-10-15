@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html body {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 500;
@@ -125,34 +126,74 @@ body.menu-open::before {
   z-index: 999;
 }
 
-.mv_top {
-  background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%), url("../img/mv.jpg") no-repeat center center/cover;
+.front-page .wp-block-cover .has-background-dim:not([class*=-background-color]),
+.front-page .wp-block-cover-image .has-background-dim:not([class*=-background-color]),
+.front-page .wp-block-cover-image.has-background-dim:not([class*=-background-color]),
+.front-page .wp-block-cover.has-background-dim:not([class*=-background-color]) {
+  background-color: transparent;
+  opacity: 1;
+  background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+.mv_top,
+.wp-block-cover.mv_top {
+  position: relative;
+  width: 100cqw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  box-sizing: border-box;
+  background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.9) 90%, rgba(255, 255, 255, 0) 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 2em;
 }
-.mv_top .inner .catch {
+.mv_top .inner .catch,
+.wp-block-cover.mv_top .inner .catch {
   font-size: 10vw;
-  font-weight: bold;
   line-height: 1.5;
+  font-weight: bold;
   margin: 0 0 0.5em;
 }
-.mv_top .inner .catch .keyword {
-  color: #28993a;
-  margin-right: 0.2em;
+.mv_top .inner .catch .pc,
+.wp-block-cover.mv_top .inner .catch .pc {
+  display: none;
 }
-.mv_top .inner .lead {
+.mv_top .inner .catch .keyword,
+.wp-block-cover.mv_top .inner .catch .keyword {
+  color: #28993a;
+}
+.mv_top .inner .lead,
+.wp-block-cover.mv_top .inner .lead {
   font-weight: bold;
   margin: 0 0 2em;
   padding: 0 0 0 0.2em;
 }
-.mv_top .inner nav ul {
+.mv_top .inner .wp-block-buttons,
+.wp-block-cover.mv_top .inner .wp-block-buttons {
   display: flex;
   gap: 1em;
 }
-.mv_top .inner nav ul li a {
+.mv_top .inner .wp-block-buttons .wp-block-button,
+.wp-block-cover.mv_top .inner .wp-block-buttons .wp-block-button {
+  display: block;
+}
+.mv_top .inner .wp-block-buttons .wp-block-button.pt1 a,
+.wp-block-cover.mv_top .inner .wp-block-buttons .wp-block-button.pt1 a {
+  background: #28993a;
+  color: #fff;
+}
+.mv_top .inner .wp-block-buttons .wp-block-button.pt2 a,
+.wp-block-cover.mv_top .inner .wp-block-buttons .wp-block-button.pt2 a {
+  background: none;
+  color: #28993a;
+  border: 2px solid #28993a;
+}
+.mv_top .inner .wp-block-buttons .wp-block-button a,
+.wp-block-cover.mv_top .inner .wp-block-buttons .wp-block-button a {
   text-decoration: none;
   text-align: center;
   display: block;
@@ -160,42 +201,209 @@ body.menu-open::before {
   padding: 1em;
   font-weight: bold;
 }
-.mv_top .inner nav ul li a.pt1 {
-  background: #28993a;
-  color: #fff;
-}
-.mv_top .inner nav ul li a.pt2 {
-  background: rgba(255, 255, 255, 0.6);
-  color: #28993a;
-  border: 2px solid #28993a;
-}
 
 main {
   max-width: 1200px;
   margin: 0 auto 3em;
   padding: 0 2em;
 }
+main .btn01 {
+  margin: 2em 0;
+}
+main .btn01 a {
+  display: block;
+  background: #28993a;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  border-radius: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  text-decoration: none;
+}
 main h2:not(:first-child) {
   margin: 2em 0 0;
 }
 main.front-page h2 {
-  font-size: 2.5em;
-  text-align: center;
-  margin: 0 0 1.5em;
+  font-size: 2em;
+  margin: 0 0 1em;
 }
 main.front-page .body p {
   margin: 0 0 2em;
 }
-main.front-page .title {
-  text-align: center;
-  margin-bottom: 1em;
-}
 main.front-page .mission {
-  padding: 5em 0;
+  padding: 5em 2em;
+  margin-top: 0;
 }
 main.front-page .mission .title {
   text-align: center;
   margin-bottom: 1em;
+}
+main.front-page .about .wp-block-group {
+  flex-direction: column-reverse;
+  gap: 3em;
+}
+main.front-page .about .wp-block-group h3 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+main.front-page .about .wp-block-group .is-layout-flex {
+  align-items: start;
+  gap: 50px;
+}
+main.front-page .about .wp-block-group .is-layout-flex > * {
+  flex: 1;
+}
+main.front-page .about .wp-block-group .wp-block-image img {
+  border-radius: 20px;
+}
+main.front-page .about .wp-block-group p {
+  margin-bottom: 1em;
+}
+main.front-page .about .wp-block-group .sign {
+  margin-top: 2em;
+}
+main.front-page .app .app_list_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1em;
+}
+main.front-page .app .app_list_wrap .app_list_item {
+  width: 40%;
+  flex: 1;
+  background: #fff;
+  box-shadow: 0 4px 10px 0px #ccc;
+  border-radius: 30px;
+  padding: 1em;
+}
+main.front-page .app .app_list_wrap .app_list_item .wp-block-image img {
+  border-radius: 20px;
+}
+main.front-page .app .app_list_wrap .app_list_item p {
+  font-size: 0.7em;
+}
+main.front-page .app .app_list_wrap .app_list_item p.app_name {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+main.front-page .app .app_list_wrap .app_list_item .store_btn {
+  display: flex;
+  gap: 1em;
+}
+main.front-page .app .app_list_wrap .app_list_item .store_btn:not(:first-child) {
+  margin-top: 1em;
+}
+main.front-page .app .app_list_wrap .app_list_item .store_btn p {
+  flex: 1;
+  background: #e5e7eb;
+  text-align: center;
+  border-radius: 10px;
+}
+main.front-page .app .app_list_wrap .app_list_item .store_btn p a {
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
+}
+main.front-page .news .column .press {
+  margin-bottom: 3em;
+}
+main.front-page .news .column .press h3 {
+  display: block;
+}
+main.front-page .news .column .press ul {
+  margin: 0;
+  padding: 0;
+}
+main.front-page .news .column .press ul li {
+  margin-bottom: 2em;
+}
+main.front-page .news .column .press ul li:nth-child(odd) a {
+  border-left: 5px solid #28993a;
+}
+main.front-page .news .column .press ul li:nth-child(even) a {
+  border-left: 5px solid orange;
+}
+main.front-page .news .column .press ul li a {
+  padding: 1em 1.5em;
+  display: block;
+  text-decoration: none;
+}
+main.front-page .news .column .press ul li a time {
+  color: #6b7280;
+}
+main.front-page .news .column .press ul li a h4 {
+  font-weight: bold;
+  color: #1f2937;
+}
+main.front-page .news .column .press .more {
+  display: block;
+  border: 2px solid green;
+  border-radius: 50px;
+  padding: 0.5em 2em;
+  font-size: 1em;
+  text-align: center;
+  color: green;
+  text-decoration: none;
+  font-weight: bold;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+main.front-page .news .column .press .more:hover {
+  background: green;
+  color: #fff;
+}
+main.front-page .news .column .update {
+  flex: 1;
+}
+main.front-page .news .column .update .update_bg {
+  background: #f4f6f7;
+  border-radius: 20px;
+  padding: 1.5em;
+  margin-bottom: 2em;
+}
+main.front-page .news .column .update .update_bg ul {
+  padding: 0;
+}
+main.front-page .news .column .update .update_bg ul li {
+  display: flex;
+}
+main.front-page .news .column .update .update_bg ul li:not(:last-child) {
+  margin-bottom: 1em;
+}
+main.front-page .news .column .update .update_bg ul li::before {
+  content: "●";
+  padding-right: 1em;
+}
+main.front-page .news .column .update .update_bg ul li:nth-child(even)::before {
+  color: green;
+}
+main.front-page .news .column .update .update_bg ul li:nth-child(odd)::before {
+  color: orange;
+}
+main.front-page .news .column .update .update_bg ul li a {
+  text-decoration: none;
+}
+main.front-page .news .column .update .more {
+  display: block;
+  border: 2px solid green;
+  border-radius: 50px;
+  padding: 0.5em 2em;
+  font-size: 1em;
+  text-align: center;
+  color: green;
+  text-decoration: none;
+  font-weight: bold;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+main.front-page .news .column .update .more:hover {
+  background: green;
+  color: #fff;
 }
 
 body.terms,
@@ -241,6 +449,43 @@ body.cancel ol li {
   margin: 0 0 1em;
 }
 
+.wp-block-group {
+  position: relative;
+}
+
+.bg01 {
+  position: relative;
+  background-color: #EEECE1;
+  width: 100cqw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  padding-top: 5em;
+  padding-bottom: 5em;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  box-sizing: border-box;
+}
+
+.bg02 {
+  background: linear-gradient(to bottom right, #28993a, #F2AB37);
+  position: relative;
+  width: 100cqw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  padding-bottom: 5em;
+  padding-top: 5em;
+  margin-bottom: 5em;
+  box-sizing: border-box;
+  color: #fff;
+}
+.bg02:not(:first-child) {
+  margin-top: 5em;
+}
+
 footer {
   background: #F7F4EF;
   margin-top: auto;
@@ -269,6 +514,9 @@ footer .inner .company_info address {
 }
 footer .inner nav {
   display: flex;
+}
+footer .inner nav ul {
+  padding: 0;
 }
 footer .inner nav ul li a {
   text-decoration: none;
