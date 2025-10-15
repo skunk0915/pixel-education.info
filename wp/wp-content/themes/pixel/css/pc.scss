@@ -509,11 +509,28 @@ body.terms {
 		box-shadow: 0 5px 0px 0px #eee;
 
 		h2{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
 			&::after{
-				content: "●";
+				font-family: "Material Symbols Outlined";
+				content: "keyboard_arrow_up";
+				transition: transform 0.3s ease;
+				font-size: 1.5em;
+				font-weight: 400;
 			}
+
+			&.accordion-active::after {
+				transform: rotate(0deg);
+			}
+
 			&:not(.accordion-active) {
 				margin: 0;
+
+				&::after {
+					transform: rotate(180deg);
+				}
 			}
 		}
 	}
