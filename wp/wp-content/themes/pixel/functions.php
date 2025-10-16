@@ -110,3 +110,43 @@ function change_post_object_label() {
 }
 add_action('init', 'change_post_object_label');
 
+// カスタム投稿タイプ「アプリ」を追加
+function create_app_post_type() {
+    $labels = array(
+        'name' => 'アプリ',
+        'singular_name' => 'アプリ',
+        'add_new' => '新規追加',
+        'add_new_item' => '新しいアプリを追加',
+        'edit_item' => 'アプリを編集',
+        'new_item' => '新しいアプリ',
+        'view_item' => 'アプリを表示',
+        'search_items' => 'アプリを検索',
+        'not_found' => 'アプリが見つかりませんでした',
+        'not_found_in_trash' => 'ゴミ箱にアプリはありません',
+        'all_items' => 'すべてのアプリ',
+        'menu_name' => 'アプリ',
+        'name_admin_bar' => 'アプリ'
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-smartphone',
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+        'rewrite' => array('slug' => 'app', 'with_front' => false),
+        'show_in_rest' => true
+    );
+
+    register_post_type('app', $args);
+}
+add_action('init', 'create_app_post_type');
+

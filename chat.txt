@@ -16,3 +16,4 @@
 2025-10-15 17:15 要求:Googleフォントアイコン表示不具合修正 結果:font-family修正(Material Icons→Symbols Outlined)、リガチャー使用完了
 2025-10-16 15:00 要求:投稿スラッグを保存日時（yyyymmddhhii）に設定 結果:functions.phpにwp_insert_post_dataフィルター追加、自動設定完了
 2025-10-16 15:30 要求:投稿名称をニュースに変更 結果:functions.phpにchange_post_object_label関数追加、管理画面表示名変更完了
+2025-10-16 16:00 要求:カスタム投稿タイプ「アプリ」追加 結果:functions.phpにcreate_app_post_type関数追加、register_post_type('app')実装完了
