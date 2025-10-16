@@ -14,3 +14,4 @@
 2025-10-15 17:05 要求:閉じているアコーディオンh2のmargin削除 結果:pc.scssにh2:not(.accordion-active)でmargin:0追加完了
 2025-10-15 17:10 要求:開閉状態アイコン表示(開:上矢印/閉:右矢印) 結果:pc.scssにh2::after矢印追加、rotate90deg設定完了
 2025-10-15 17:15 要求:Googleフォントアイコン表示不具合修正 結果:font-family修正(Material Icons→Symbols Outlined)、リガチャー使用完了
+2025-10-16 15:00 要求:投稿スラッグを保存日時（yyyymmddhhii）に設定 結果:functions.phpにwp_insert_post_dataフィルター追加、自動設定完了

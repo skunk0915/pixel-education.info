@@ -60,3 +60,33 @@ function enqueue_theme_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_theme_scripts');
 
+// 投稿のデフォルトスラッグを保存日時（yyyymmddhhii）にする
+function set_post_slug_to_datetime($data, $postarr) {
+    // 投稿タイプが'post'であることを確認
+    if ($data['post_type'] !== 'post') {
+        return $data;
+    }
+
+    // 新規投稿または既存投稿でスラッグが空の場合のみ処理
+    // post_nameが空の場合（自動下書き含む）、または明示的にスラッグが設定されていない場合
+    if (empty($data['post_name']) || $data['post_name'] === sanitize_title($data['post_title'])) {
+        // 既にカスタムスラッグが設定されているかチェック
+        if (!empty($postarr['ID'])) {
+            $existing_post = get_post($postarr['ID']);
+            // 既存投稿でカスタムスラッグが設定されている場合はスキップ
+            if ($existing_post && !empty($existing_post->post_name) &&
+                !preg_match('/^\d{12}$/', $existing_post->post_name) &&
+                $existing_post->post_name !== sanitize_title($existing_post->post_title)) {
+                return $data;
+            }
+        }
+
+        // 現在の日時を取得（東京タイムゾーン）
+        $current_datetime = current_time('YmdHi');
+        $data['post_name'] = $current_datetime;
+    }
+
+    return $data;
+}
+add_filter('wp_insert_post_data', 'set_post_slug_to_datetime', 10, 2);
+
