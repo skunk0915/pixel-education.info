@@ -90,3 +90,23 @@ function set_post_slug_to_datetime($data, $postarr) {
 }
 add_filter('wp_insert_post_data', 'set_post_slug_to_datetime', 10, 2);
 
+// 投稿の名称を「ニュース」に変更
+function change_post_object_label() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'ニュース';
+    $labels->singular_name = 'ニュース';
+    $labels->add_new = '新規追加';
+    $labels->add_new_item = '新しいニュースを追加';
+    $labels->edit_item = 'ニュースを編集';
+    $labels->new_item = '新しいニュース';
+    $labels->view_item = 'ニュースを表示';
+    $labels->search_items = 'ニュースを検索';
+    $labels->not_found = 'ニュースが見つかりませんでした';
+    $labels->not_found_in_trash = 'ゴミ箱にニュースはありません';
+    $labels->all_items = 'すべてのニュース';
+    $labels->menu_name = 'ニュース';
+    $labels->name_admin_bar = 'ニュース';
+}
+add_action('init', 'change_post_object_label');
+
