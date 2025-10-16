@@ -142,7 +142,7 @@ function create_app_post_type() {
         'capability_type' => 'post',
         'hierarchical' => false,
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
-        'rewrite' => array('slug' => 'app', 'with_front' => false),
+        'rewrite' => array('slug' => 'apps', 'with_front' => false),
         'show_in_rest' => true
     );
 
