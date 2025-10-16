@@ -20,3 +20,5 @@
 2025-10-16 16:05 要求:アプリのデフォルトスラッグを保存日時（yyyymmddhhii）に設定 結果:set_post_slug_to_datetime関数修正、postとappの両方に対応完了
 2025-10-16 16:10 要求:投稿「アプリ」と固定ページ/app/のスラッグ競合解決 結果:カスタム投稿タイプのrewrite slugをappからappsに変更完了
 2025-10-16 16:20 要求:page-app.phpに投稿「アプリ」の記事一覧表示機能追加 結果:WP_Query実装、PC版3カラムグリッド/SP版縦並び、body.app内にスタイル追加完了
+2025-10-16 17:00 要求:front-page.phpでカテゴリー別記事表示、page-press.phpにタブとページネーション実装 結果:front-page.phpにプレスリリース/更新情報最新4件表示追加、page-press.phpにタブ切替と2件ページネーション実装完了
+2025-10-16 17:15 要求:page-press.phpのページネーションが機能しない問題修正 結果:get_query_var('paged')使用、/page/N/形式URL対応、ページネーション正常動作完了

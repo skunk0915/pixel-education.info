@@ -19,26 +19,33 @@
 				<div class="press">
 					<h3>プレスリリース</h3>
 					<ul>
+						<?php
+						$press_query = new WP_Query(array(
+							'category_name' => 'press',
+							'posts_per_page' => 4,
+							'orderby' => 'date',
+							'order' => 'DESC'
+						));
+
+						if ($press_query->have_posts()) :
+							while ($press_query->have_posts()) : $press_query->the_post();
+						?>
 						<li>
-							<a href="">
-								<time datetime="2024-12-15">2024.12.15</time>
-								<h4>新アプリ「かんじ れんしゅう」をリリースしました</h4>
+							<a href="<?php the_permalink(); ?>">
+								<time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+								<h4><?php the_title(); ?></h4>
 								<p>
-									小学生向けの漢字学習アプリが新登場。書き順アニメーションと音声読み上げ機能を搭載し、より効果的な学習をサポートします。
+									<?php echo wp_trim_words(get_the_excerpt(), 40, '...'); ?>
 								</p>
 							</a>
 						</li>
-						<li>
-							<a href="">
-								<time datetime="2024-12-15">2024.12.15</time>
-								<h4>新アプリ「かんじ れんしゅう」をリリースしました</h4>
-								<p>
-									小学生向けの漢字学習アプリが新登場。書き順アニメーションと音声読み上げ機能を搭載し、より効果的な学習をサポートします。
-								</p>
-							</a>
-						</li>
+						<?php
+							endwhile;
+							wp_reset_postdata();
+						endif;
+						?>
 					</ul>
-					<a href="" class="more">プレスリリース一覧</a>
+					<a href="<?php echo home_url('/press/'); ?>" class="more">プレスリリース一覧</a>
 				</div><!-- /.press -->
 
 
@@ -46,27 +53,31 @@
 					<h3>更新情報</h3>
 					<div class="update_bg">
 						<ul>
+							<?php
+							$update_query = new WP_Query(array(
+								'category_name' => 'update',
+								'posts_per_page' => 4,
+								'orderby' => 'date',
+								'order' => 'DESC'
+							));
+
+							if ($update_query->have_posts()) :
+								while ($update_query->have_posts()) : $update_query->the_post();
+							?>
 							<li>
-								<a href="">
-									<time datetime="2024-12-15">2024.12.15</time>
-									<h4>「ひらがな れんしゅう」アップデート v2.1.0</h4>
+								<a href="<?php the_permalink(); ?>">
+									<time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+									<h4><?php the_title(); ?></h4>
 								</a>
 							</li>
-							<li>
-								<a href="">
-									<time datetime="2024-12-15">2024.12.15</time>
-									<h4>「ひらがな れんしゅう」アップデート v2.1.0</h4>
-								</a>
-							</li>
-							<li>
-								<a href="">
-									<time datetime="2024-12-15">2024.12.15</time>
-									<h4>「ひらがな れんしゅう」アップデート v2.1.0</h4>
-								</a>
-							</li>
+							<?php
+								endwhile;
+								wp_reset_postdata();
+							endif;
+							?>
 						</ul>
 					</div>
-					<a href="" class="more">更新情報一覧</a>
+					<a href="<?php echo home_url('/press/'); ?>" class="more">更新情報一覧</a>
 				</div><!-- /.update -->
 
 			</div><!-- /.column -->
