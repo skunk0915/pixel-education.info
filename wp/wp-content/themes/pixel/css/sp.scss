@@ -20,17 +20,45 @@ html {
 		}
 
 		ul {
-			list-style: none;
-			padding: 0 0 0 1em;
+			list-style: disc none outside;
+			padding: 0 0 0 1.5em;
 		}
 
 		ol {
 			padding: 0 0 0 1em;
 		}
 
-		&:not(.home) h1 {
-			padding: 2em 1em;
-			font-size: 1.5em;
+
+		&:not(.home) {
+			main {
+				background-color: #F7F4EF;
+				position: relative;
+				width: 100cqw;
+				margin-left: calc(50% - 50vw);
+				margin-right: calc(50% - 50vw);
+				padding-left: calc(50vw - 50%);
+				padding-right: calc(50vw - 50%);
+				padding-top: 2em;
+				padding-bottom: 2em;
+				margin-top: 0;
+				margin-bottom: 0;
+				box-sizing: border-box;
+				max-width: none;
+				.body_bg{
+					max-width: $main_width;
+					width: auto;
+					margin: 0 auto;
+					padding: 0 2em;
+				}
+			}
+
+			h1 {
+
+				padding: 1em 1em;
+				background: $color_a;
+				font-size: 1.5em;
+				color: #fff;
+			}
 		}
 
 	}
@@ -413,6 +441,7 @@ main {
 					}
 
 					ul {
+						list-style: none;
 						margin: 0;
 						padding: 0;
 						li {
@@ -541,8 +570,10 @@ body.cancel {
 	display: block;
 
 	h2 {
-		font-size: 1.5em;
+		font-size: 1.3em;
 		margin: 0 0 1em;
+		border-bottom: 2px solid green;
+		padding-bottom: .5em;
 
 		&:not(:first-child) {
 			margin: 3em 0 1em;
@@ -569,6 +600,47 @@ body.cancel {
 	}
 }
 
+body.terms {
+	.notice{
+		margin-bottom: 2em;
+	}
+	.toggle_item {
+		background: #fff;
+		padding: 1em;
+		margin-bottom: 1em;
+		border-radius: 10px;
+		box-shadow: 0 5px 0px 0px #eee;
+
+		h2{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 1em;
+			border: none;
+
+			&::after{
+				font-family: "Material Symbols Outlined";
+				content: "keyboard_arrow_up";
+				transition: transform 0.3s ease;
+				font-size: 1.5em;
+				font-weight: 400;
+				color: green;
+			}
+
+			&.accordion-active::after {
+				transform: rotate(0deg);
+			}
+
+			&:not(.accordion-active) {
+				margin: 0;
+
+				&::after {
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+}
 .wp-block-group {
 	position: relative;
 }
@@ -644,6 +716,7 @@ footer {
 			display: flex;
 
 			ul {
+				list-style: none;
 				padding: 0;
 				li {
 					a {

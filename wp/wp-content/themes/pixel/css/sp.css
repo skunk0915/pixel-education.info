@@ -14,15 +14,38 @@ html body a {
   color: #374151;
 }
 html body ul {
-  list-style: none;
-  padding: 0 0 0 1em;
+  list-style: disc none outside;
+  padding: 0 0 0 1.5em;
 }
 html body ol {
   padding: 0 0 0 1em;
 }
+html body:not(.home) main {
+  background-color: #F7F4EF;
+  position: relative;
+  width: 100cqw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  max-width: none;
+}
+html body:not(.home) main .body_bg {
+  max-width: 1200px;
+  width: auto;
+  margin: 0 auto;
+  padding: 0 2em;
+}
 html body:not(.home) h1 {
-  padding: 2em 1em;
+  padding: 1em 1em;
+  background: #28993a;
   font-size: 1.5em;
+  color: #fff;
 }
 
 header {
@@ -314,6 +337,7 @@ main.front-page .news .column .press h3 {
   display: block;
 }
 main.front-page .news .column .press ul {
+  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -414,8 +438,10 @@ body.cancel {
 body.terms h2,
 body.privacy h2,
 body.cancel h2 {
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin: 0 0 1em;
+  border-bottom: 2px solid green;
+  padding-bottom: 0.5em;
 }
 body.terms h2:not(:first-child),
 body.privacy h2:not(:first-child),
@@ -447,6 +473,41 @@ body.privacy ol li,
 body.cancel ul li,
 body.cancel ol li {
   margin: 0 0 1em;
+}
+
+body.terms .notice {
+  margin-bottom: 2em;
+}
+body.terms .toggle_item {
+  background: #fff;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 10px;
+  box-shadow: 0 5px 0px 0px #eee;
+}
+body.terms .toggle_item h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1em;
+  border: none;
+}
+body.terms .toggle_item h2::after {
+  font-family: "Material Symbols Outlined";
+  content: "keyboard_arrow_up";
+  transition: transform 0.3s ease;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: green;
+}
+body.terms .toggle_item h2.accordion-active::after {
+  transform: rotate(0deg);
+}
+body.terms .toggle_item h2:not(.accordion-active) {
+  margin: 0;
+}
+body.terms .toggle_item h2:not(.accordion-active)::after {
+  transform: rotate(180deg);
 }
 
 .wp-block-group {
@@ -516,6 +577,7 @@ footer .inner nav {
   display: flex;
 }
 footer .inner nav ul {
+  list-style: none;
   padding: 0;
 }
 footer .inner nav ul li a {

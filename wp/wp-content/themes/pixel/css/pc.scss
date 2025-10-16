@@ -21,7 +21,8 @@ html {
 		}
 
 		ul {
-			list-style: none;
+			list-style: disc none outside;
+			padding: 0 0 0 1.5em;
 		}
 
 		ol {
@@ -45,8 +46,8 @@ html {
 				max-width: none;
 				.body_bg{
 					max-width: $main_width;
-					width: 1200px;
 					margin: 0 auto;
+					padding: 0 2em;
 				}
 			}
 
@@ -352,6 +353,7 @@ main {
 					}
 
 					ul {
+						list-style: none;
 						li {
 							margin-bottom: 2em;
 
@@ -474,6 +476,8 @@ body.cancel {
 	h2 {
 		font-size: 1.5em;
 		margin: 0 0 1em;
+		border-bottom: 2px solid green;
+		padding-bottom: .5em;
 
 		&:not(:first-child) {
 			margin: 3em 0 1em;
@@ -499,8 +503,10 @@ body.cancel {
 		}
 	}
 }
-
 body.terms {
+	.notice{
+		margin-bottom: 2em;
+	}
 	.toggle_item {
 		background: #fff;
 		padding: 2em;
@@ -512,6 +518,7 @@ body.terms {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+			border: none;
 
 			&::after{
 				font-family: "Material Symbols Outlined";
@@ -519,6 +526,7 @@ body.terms {
 				transition: transform 0.3s ease;
 				font-size: 1.5em;
 				font-weight: 400;
+				color: green;
 			}
 
 			&.accordion-active::after {
@@ -536,12 +544,6 @@ body.terms {
 	}
 }
 
-.cancel {
-	h2 {
-		border-bottom: 2px solid green;
-		padding-bottom: .5em;
-	}
-}
 
 
 .wp-block-group {
@@ -619,6 +621,8 @@ footer {
 
 		nav {
 			ul {
+				list-style: none;
+				padding: 0;
 				li {
 					a {
 						text-decoration: none;

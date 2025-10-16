@@ -15,7 +15,8 @@ html body a {
   color: #374151;
 }
 html body ul {
-  list-style: none;
+  list-style: disc none outside;
+  padding: 0 0 0 1.5em;
 }
 html body ol {
   padding: 0 0 0 1em;
@@ -37,8 +38,8 @@ html body:not(.home) main {
 }
 html body:not(.home) main .body_bg {
   max-width: 1200px;
-  width: 1200px;
   margin: 0 auto;
+  padding: 0 2em;
 }
 html body:not(.home) h1 {
   padding: 3em 1em;
@@ -275,6 +276,9 @@ main.front-page .news .column .press {
 main.front-page .news .column .press h3 {
   display: block;
 }
+main.front-page .news .column .press ul {
+  list-style: none;
+}
 main.front-page .news .column .press ul li {
   margin-bottom: 2em;
 }
@@ -368,6 +372,8 @@ body.privacy h2,
 body.cancel h2 {
   font-size: 1.5em;
   margin: 0 0 1em;
+  border-bottom: 2px solid green;
+  padding-bottom: 0.5em;
 }
 body.terms h2:not(:first-child),
 body.privacy h2:not(:first-child),
@@ -401,6 +407,9 @@ body.cancel ol li {
   margin: 0 0 1em;
 }
 
+body.terms .notice {
+  margin-bottom: 2em;
+}
 body.terms .toggle_item {
   background: #fff;
   padding: 2em;
@@ -412,6 +421,7 @@ body.terms .toggle_item h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: none;
 }
 body.terms .toggle_item h2::after {
   font-family: "Material Symbols Outlined";
@@ -419,6 +429,7 @@ body.terms .toggle_item h2::after {
   transition: transform 0.3s ease;
   font-size: 1.5em;
   font-weight: 400;
+  color: green;
 }
 body.terms .toggle_item h2.accordion-active::after {
   transform: rotate(0deg);
@@ -428,11 +439,6 @@ body.terms .toggle_item h2:not(.accordion-active) {
 }
 body.terms .toggle_item h2:not(.accordion-active)::after {
   transform: rotate(180deg);
-}
-
-.cancel h2 {
-  border-bottom: 2px solid green;
-  padding-bottom: 0.5em;
 }
 
 .wp-block-group {
@@ -498,6 +504,10 @@ footer .inner .company_info a.logo img {
 }
 footer .inner .company_info address {
   font-style: normal;
+}
+footer .inner nav ul {
+  list-style: none;
+  padding: 0;
 }
 footer .inner nav ul li a {
   text-decoration: none;
