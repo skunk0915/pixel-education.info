@@ -9,6 +9,7 @@ html body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-width: 100vw;
 }
 html body a {
   color: #374151;
@@ -23,13 +24,12 @@ html body ol {
 html body:not(.home) main {
   background-color: #F7F4EF;
   position: relative;
-  width: 100cqw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
-  padding-top: 2em;
-  padding-bottom: 2em;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding: 2em;
   margin-top: 0;
   margin-bottom: 0;
   box-sizing: border-box;
@@ -161,11 +161,11 @@ body.menu-open::before {
 .mv_top,
 .wp-block-cover.mv_top {
   position: relative;
-  width: 100cqw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
   box-sizing: border-box;
   background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.9) 90%, rgba(255, 255, 255, 0) 100%);
   min-height: 100vh;
@@ -567,13 +567,12 @@ body.app .app_list_wrap .app_list_item .app_link:hover {
 .bg01 {
   position: relative;
   background-color: #EEECE1;
-  width: 100cqw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
-  padding-top: 5em;
-  padding-bottom: 5em;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding: 5em 2em;
   margin-top: 5em;
   margin-bottom: 5em;
   box-sizing: border-box;
@@ -582,13 +581,12 @@ body.app .app_list_wrap .app_list_item .app_link:hover {
 .bg02 {
   background: linear-gradient(to bottom right, #28993a, #F2AB37);
   position: relative;
-  width: 100cqw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
-  padding-bottom: 5em;
-  padding-top: 5em;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding: 5em 2em;
   margin-bottom: 5em;
   box-sizing: border-box;
   color: #fff;
