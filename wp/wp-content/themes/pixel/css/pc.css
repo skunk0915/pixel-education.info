@@ -441,6 +441,55 @@ body.terms .toggle_item h2:not(.accordion-active)::after {
   transform: rotate(180deg);
 }
 
+body.app .app_list_wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  margin-top: 2em;
+}
+body.app .app_list_wrap .app_list_item {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2em;
+  box-shadow: 0 4px 10px 0px #ccc;
+  display: flex;
+  flex-direction: column;
+}
+body.app .app_list_wrap .app_list_item .app_thumbnail {
+  margin-bottom: 1.5em;
+}
+body.app .app_list_wrap .app_list_item .app_thumbnail img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+body.app .app_list_wrap .app_list_item .app_name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0 0 1em;
+  color: #1f2937;
+}
+body.app .app_list_wrap .app_list_item .app_excerpt {
+  flex: 1;
+  margin-bottom: 1.5em;
+  color: #6b7280;
+  line-height: 1.6;
+}
+body.app .app_list_wrap .app_list_item .app_link {
+  display: block;
+  background: #28993a;
+  color: #fff;
+  text-align: center;
+  padding: 0.8em 1.5em;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+body.app .app_list_wrap .app_list_item .app_link:hover {
+  background: rgb(29.4300518135, 112.5699481865, 42.6735751295);
+}
+
 .wp-block-group {
   position: relative;
 }

@@ -19,3 +19,4 @@
 2025-10-16 16:00 要求:カスタム投稿タイプ「アプリ」追加 結果:functions.phpにcreate_app_post_type関数追加、register_post_type('app')実装完了
 2025-10-16 16:05 要求:アプリのデフォルトスラッグを保存日時（yyyymmddhhii）に設定 結果:set_post_slug_to_datetime関数修正、postとappの両方に対応完了
 2025-10-16 16:10 要求:投稿「アプリ」と固定ページ/app/のスラッグ競合解決 結果:カスタム投稿タイプのrewrite slugをappからappsに変更完了
+2025-10-16 16:20 要求:page-app.phpに投稿「アプリ」の記事一覧表示機能追加 結果:WP_Query実装、PC版3カラムグリッド/SP版縦並び、body.app内にスタイル追加完了
