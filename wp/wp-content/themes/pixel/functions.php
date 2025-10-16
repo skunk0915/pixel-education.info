@@ -60,10 +60,10 @@ function enqueue_theme_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_theme_scripts');
 
-// 投稿のデフォルトスラッグを保存日時（yyyymmddhhii）にする
+// 投稿とアプリのデフォルトスラッグを保存日時（yyyymmddhhii）にする
 function set_post_slug_to_datetime($data, $postarr) {
-    // 投稿タイプが'post'であることを確認
-    if ($data['post_type'] !== 'post') {
+    // 投稿タイプが'post'または'app'であることを確認
+    if (!in_array($data['post_type'], array('post', 'app'))) {
         return $data;
     }
 
