@@ -13,7 +13,7 @@ $category_name = ($current_tab === 'update') ? 'update' : 'press';
 // クエリを実行
 $press_query = new WP_Query(array(
 	'category_name' => $category_name,
-	'posts_per_page' => 2,
+	'posts_per_page' => 10,
 	'paged' => $paged,
 	'orderby' => 'date',
 	'order' => 'DESC'
@@ -102,116 +102,15 @@ $base_url = get_permalink();
 		</div><!-- /.body_bg -->
 	</main>
 
-	<style>
-		.press-tabs {
-			display: flex;
-			gap: 10px;
-			margin-bottom: 30px;
-			border-bottom: 2px solid #e0e0e0;
-		}
-
-		.press-tab {
-			padding: 12px 24px;
-			background: none;
-			border: none;
-			cursor: pointer;
-			font-size: 16px;
-			color: #666;
-			transition: all 0.3s;
-			border-bottom: 3px solid transparent;
-			margin-bottom: -2px;
-		}
-
-		.press-tab:hover {
-			color: #333;
-		}
-
-		.press-tab.active {
-			color: #333;
-			font-weight: bold;
-			border-bottom-color: #333;
-		}
-
-		.press-list {
-			display: flex;
-			flex-direction: column;
-			gap: 30px;
-		}
-
-		.press-item {
-			padding: 20px;
-			border: 1px solid #e0e0e0;
-			border-radius: 8px;
-		}
-
-		.press-item time {
-			display: block;
-			color: #999;
-			font-size: 14px;
-			margin-bottom: 10px;
-		}
-
-		.press-item h2 {
-			margin: 0 0 10px 0;
-			font-size: 20px;
-		}
-
-		.press-item h2 a {
-			color: #333;
-			text-decoration: none;
-		}
-
-		.press-item h2 a:hover {
-			text-decoration: underline;
-		}
-
-		.press-excerpt {
-			color: #666;
-			line-height: 1.6;
-		}
-
-		.press-pagination {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 10px;
-			margin-top: 40px;
-		}
-
-		.press-pagination a,
-		.press-pagination .current-page {
-			padding: 8px 12px;
-			text-decoration: none;
-			color: #333;
-			border: 1px solid #e0e0e0;
-			border-radius: 4px;
-		}
-
-		.press-pagination a:hover {
-			background: #f5f5f5;
-		}
-
-		.press-pagination .current-page {
-			background: #333;
-			color: #fff;
-			border-color: #333;
-		}
-
-		.page-numbers {
-			display: flex;
-			gap: 5px;
-		}
-	</style>
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
 			const tabs = document.querySelectorAll('.press-tab');
-			const baseUrl = '<?php echo $base_url; ?>';
 
 			tabs.forEach(tab => {
 				tab.addEventListener('click', function() {
 					const tabName = this.getAttribute('data-tab');
-					window.location.href = baseUrl + '?tab=' + tabName;
+					window.location.href = '?tab=' + tabName + '&paged=1';
 				});
 			});
 		});

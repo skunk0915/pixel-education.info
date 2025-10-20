@@ -12,8 +12,8 @@
 				$args = array(
 					'post_type' => 'app',
 					'posts_per_page' => -1,
-					'orderby' => 'date',
-					'order' => 'DESC'
+					// 'orderby' => 'date',
+					// 'order' => 'DESC'
 				);
 				$app_query = new WP_Query($args);
 

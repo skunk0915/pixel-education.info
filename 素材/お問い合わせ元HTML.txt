@@ -1,0 +1,37 @@
+
+			<div class="form">
+				<h2>お問い合わせ</h2>
+				<label>
+					名前
+					<input type="text">
+				</label>
+				<label>
+					メールアドレス
+					<input type="text">
+				</label>
+				<label>
+					電話番号
+					<input type="text">
+				</label>
+				<fieldset>
+					<legend>職種</legend>
+					<div class="wrap">
+						<label><input type="checkbox">エンジニア</label>
+						<label><input type="checkbox">デザイナー</label>
+						<label><input type="checkbox">プランナー</label>
+					</div>
+				</fieldset>
+				<label>
+					志望動機
+					<textarea name=""></textarea>
+				</label>
+				<label>
+					職歴
+					<textarea name=""></textarea>
+				</label>
+				<label>
+					備考
+					<textarea name=""></textarea>
+				</label>
+				<input type="submit">
+			</div><!-- /.form -->

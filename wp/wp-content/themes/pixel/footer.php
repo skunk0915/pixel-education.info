@@ -6,7 +6,8 @@
 				<div class="catch">
 					まなびを、もっと自由に。
 				</div>
-				<a href="" class="logo">
+				
+				<a href="<?php echo home_url() ?>" class="logo">
 					<img src="<?php echo get_theme_file_uri(); ?>/img/logo.png" alt="​株式会社 Pixel">
 				</a>
 				<address>

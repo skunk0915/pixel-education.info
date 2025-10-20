@@ -150,3 +150,75 @@ function create_app_post_type() {
 }
 add_action('init', 'create_app_post_type');
 
+
+//Really Simple CSV Importerでの記事一括取り込みでacfの画像フィールド５個を連携させるための設定 start
+add_filter( 'really_simple_csv_importer_save_meta', 'my_acf_multi_image_importer_save_meta', 10, 4 );
+// function my_acf_multi_image_importer_save_meta( $meta_value, $meta_key, $post_id, $post_data ) {
+    function my_acf_multi_image_importer_save_meta( $meta_value, $meta_key, $post_id, $post_data = null ) {
+	// 対象のACF画像フィールド名
+	$acf_image_fields = array( 'ss_1', 'ss_2', 'ss_3', 'ss_4', 'ss_5' );
+
+	// 対象フィールドでない場合はスルー
+	if ( ! in_array( $meta_key, $acf_image_fields, true ) ) {
+		return $meta_value;
+	}
+
+	// 画像URLが空ならスルー
+	if ( empty( $meta_value ) ) {
+		return $meta_value;
+	}
+
+	// URLから画像をメディアライブラリにインポート
+	$image_id = my_acf_import_image_from_url( $meta_value, $post_id );
+
+	if ( $image_id ) {
+		// ACFの画像フィールドに添付IDとして保存
+		update_field( $meta_key, $image_id, $post_id );
+		return $image_id;
+	}
+
+	return $meta_value;
+}
+
+/**
+ * URLから画像をWordPressメディアライブラリに取り込み、添付IDを返す
+ */
+function my_acf_import_image_from_url( $image_url, $post_id = 0 ) {
+	if ( ! filter_var( $image_url, FILTER_VALIDATE_URL ) ) {
+		return false;
+	}
+
+	// すでに同じURLの添付があるか確認
+	$existing = my_acf_get_attachment_id_by_url( $image_url );
+	if ( $existing ) {
+		return $existing;
+	}
+
+	// WordPress標準関数をロード（必要な場合）
+	if ( ! function_exists( 'media_sideload_image' ) ) {
+		require_once ABSPATH . 'wp-admin/includes/media.php';
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+		require_once ABSPATH . 'wp-admin/includes/image.php';
+	}
+
+	// 画像をサイドロード（メディアライブラリに保存）
+	$media = media_sideload_image( $image_url, $post_id, null, 'id' );
+
+	if ( is_wp_error( $media ) ) {
+		return false;
+	}
+
+	return $media;
+}
+
+/**
+ * 画像URLから添付IDを取得（重複登録を避けるため）
+ */
+function my_acf_get_attachment_id_by_url( $url ) {
+	global $wpdb;
+	return $wpdb->get_var( $wpdb->prepare(
+		"SELECT ID FROM $wpdb->posts WHERE guid = %s AND post_type = 'attachment'",
+		$url
+	) );
+}
+//Really Simple CSV Importerでの記事一括取り込みでacfの画像フィールド５個を連携させるための設定 end

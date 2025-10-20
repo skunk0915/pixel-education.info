@@ -46,6 +46,9 @@ html body:not(.home) h1 {
   background: #28993a;
   color: #fff;
 }
+html body .mv_app h1 {
+  background: none;
+}
 
 header {
   background: #F7F4EF;
@@ -275,9 +278,11 @@ main.front-page .news .column .press {
 }
 main.front-page .news .column .press h3 {
   display: block;
+  margin-bottom: 1em;
 }
 main.front-page .news .column .press ul {
   list-style: none;
+  padding: 0;
 }
 main.front-page .news .column .press ul li {
   margin-bottom: 2em;
@@ -321,14 +326,21 @@ main.front-page .news .column .press .more:hover {
 main.front-page .news .column .update {
   flex: 1;
 }
+main.front-page .news .column .update h3 {
+  margin-bottom: 1em;
+}
 main.front-page .news .column .update .update_bg {
   background: #f4f6f7;
   border-radius: 20px;
   padding: 2em;
   margin-bottom: 2em;
 }
+main.front-page .news .column .update .update_bg ul {
+  padding: 0;
+}
 main.front-page .news .column .update .update_bg ul li {
   display: flex;
+  margin-bottom: 1.5em;
 }
 main.front-page .news .column .update .update_bg ul li::before {
   content: "●";
@@ -411,13 +423,15 @@ body.terms .notice {
   margin-bottom: 2em;
 }
 body.terms .toggle_item {
-  background: #fff;
-  padding: 2em;
+  background: hsl(0, 0%, 100%);
+  padding: 1em;
   margin-bottom: 2em;
   border-radius: 10px;
   box-shadow: 0 5px 0px 0px #eee;
 }
 body.terms .toggle_item h2 {
+  font-size: 1em;
+  padding-bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -490,6 +504,225 @@ body.app .app_list_wrap .app_list_item .app_link:hover {
   background: rgb(29.4300518135, 112.5699481865, 42.6735751295);
 }
 
+body.single-app .app_icon {
+  display: block;
+}
+body.single-app .mv_app {
+  position: relative;
+  overflow: hidden;
+}
+body.single-app .mv_app::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  background-size: cover;
+  background-position: right center;
+  filter: grayscale(100%);
+  z-index: -2;
+}
+body.single-app .mv_app::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgb(0, 128, 0) 0%, rgb(0, 128, 0) 60%, rgba(0, 128, 0, 0.8) 100%);
+  z-index: -1;
+}
+body.single-app .mv_app h1 {
+  position: relative;
+  z-index: 1;
+}
+
+body.contact .form {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0px 5px 0 #ddd;
+  padding: 2em;
+  max-width: 700px;
+  margin: 0 auto;
+}
+body.contact .form h2 {
+  text-align: center;
+  font-weight: bold;
+  margin: 1em 0;
+  color: #28993a;
+}
+body.contact .form label {
+  display: block;
+  font-weight: bold;
+}
+body.contact .form label:not(:first-of-type) {
+  margin-top: 2em;
+}
+body.contact .form label input[type=text],
+body.contact .form label input[type=tel],
+body.contact .form label input[type=email] {
+  font-weight: normal;
+  display: block;
+  margin-top: 0.5em;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 0.5em 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+body.contact .form fieldset {
+  padding: 1em 0;
+  margin-top: 2em;
+  border: none;
+}
+body.contact .form fieldset legend {
+  font-weight: bold;
+}
+body.contact .form fieldset .wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+body.contact .form fieldset .wrap label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+body.contact .form fieldset .wrap label input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #28993a;
+  border-radius: 4px;
+  position: relative;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+body.contact .form fieldset .wrap label input[type=checkbox]:checked {
+  background: #28993a;
+}
+body.contact .form fieldset .wrap label input[type=checkbox]:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+body.contact .form textarea {
+  display: block;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 1em;
+  margin-top: 0.5em;
+  width: 100%;
+  height: 200px;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+body.contact .form input[type=submit] {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.5em 1em;
+  margin: 1em auto 0;
+  background: green;
+  border-radius: 10px;
+  color: #fff;
+}
+
+body.press .press-tabs {
+  display: flex;
+  margin: 2em 0 2em;
+  border-bottom: 2px solid #e0e0e0;
+}
+body.press .press-tabs .press-tab {
+  flex: 1;
+  padding: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #666;
+  transition: all 0.3s;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+body.press .press-tabs .press-tab:hover {
+  color: #333;
+}
+body.press .press-tabs .press-tab.active {
+  color: #333;
+  font-weight: bold;
+  border-bottom-color: #333;
+}
+body.press .press-content {
+  padding-bottom: 5em;
+}
+body.press .press-content .press-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+body.press .press-content .press-list .press-item {
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+body.press .press-content .press-list .press-item time {
+  display: block;
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+body.press .press-content .press-list .press-item h2 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+body.press .press-content .press-list .press-item h2 a {
+  color: #333;
+  text-decoration: none;
+}
+body.press .press-content .press-list .press-item h2 a:hover {
+  color: green;
+}
+body.press .press-content .press-list .press-item .press-excerpt {
+  color: #666;
+  line-height: 1.6;
+}
+body.press .press-content .press-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+body.press .press-content .press-pagination a,
+body.press .press-content .press-pagination .current-page {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+body.press .press-content .press-pagination a:hover {
+  background: #f5f5f5;
+}
+body.press .press-content .press-pagination .current-page {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+body.press .press-content .press-pagination .page-numbers {
+  display: flex;
+  gap: 5px;
+}
+
 .wp-block-group {
   position: relative;
 }
@@ -528,6 +761,22 @@ body.app .app_list_wrap .app_list_item .app_link:hover {
   margin-top: 5em;
 }
 
+.page_404 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.btn_ios {
+  display: block;
+  width: 200px;
+}
+.btn_ios img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 footer {
   background: #F7F4EF;
   margin-top: auto;
@@ -560,4 +809,10 @@ footer .inner nav ul {
 }
 footer .inner nav ul li a {
   text-decoration: none;
+}
+
+form input {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 0.5em;
 }/*# sourceMappingURL=pc.css.map */

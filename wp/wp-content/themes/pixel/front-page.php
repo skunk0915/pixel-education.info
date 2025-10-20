@@ -57,8 +57,8 @@
 							$update_query = new WP_Query(array(
 								'category_name' => 'update',
 								'posts_per_page' => 4,
-								'orderby' => 'date',
-								'order' => 'DESC'
+								// 'orderby' => 'date',
+								// 'order' => 'DESC'
 							));
 
 							if ($update_query->have_posts()) :
