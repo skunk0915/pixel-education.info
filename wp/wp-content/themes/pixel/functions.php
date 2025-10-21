@@ -68,6 +68,15 @@ function enqueue_theme_scripts() {
         '1.0.0',
         true // footerで読み込む
     );
+
+    // ol li間にpがある場合のナンバリング維持
+    wp_enqueue_script(
+        'ol-li-p',
+        get_template_directory_uri() . '/js/ol_li_p.js',
+        array(),
+        '1.0.0',
+        true // footerで読み込む
+    );
 }
 add_action('wp_enqueue_scripts', 'enqueue_theme_scripts');
 
