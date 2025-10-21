@@ -24,16 +24,18 @@
 					$has_icon = !empty($app_icon);
 					$icon_url = $has_icon ? esc_url($app_icon) : esc_url(get_theme_file_uri('/img/logo_mark_pixel.png'));
 				?>
-					<article class="app_list_item">
+					<a href="<?php the_permalink(); ?>" class="app_list_item">
 						<div class="app_thumbnail">
 							<img src="<?php echo $icon_url; ?>" alt="<?php the_title_attribute(); ?>" class="<?php echo !$has_icon ? 'default-icon' : ''; ?>">
 						</div>
-						<h2 class="app_name"><?php the_title(); ?></h2>
-						<div class="app_excerpt">
-							<?php the_excerpt(); ?>
-						</div>
-						<a href="<?php the_permalink(); ?>" class="app_link">詳細を見る</a>
-					</article>
+						<div class="app_txt">
+
+							<h2 class="app_name"><?php the_title(); ?></h2>
+							<div class="app_excerpt">
+								<?php the_excerpt(); ?>
+							</div>
+						</div><!-- /.app_txt -->
+					</a>
 				<?php
 					endwhile;
 					wp_reset_postdata();

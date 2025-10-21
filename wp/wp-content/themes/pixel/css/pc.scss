@@ -575,24 +575,22 @@ body.app {
 		.app_list_item {
 			background: #fff;
 			border-radius: 20px;
-			padding: 2em;
-			box-shadow: 0 4px 10px 0px #ccc;
+			box-shadow: 0 0px 20px 0px #ccc;
 			display: flex;
 			flex-direction: column;
+			text-decoration: none;
 
 			.app_thumbnail {
-				margin-bottom: 1.5em;
 				width: 100%;
 				height: 200px;
 				overflow: hidden;
-				border-radius: 10px;
+				border-radius: 10px 10px 0 0;
 
 				img {
 					width: 100%;
 					height: 100%;
 					object-fit: cover;
 					object-position: center;
-					border-radius: 10px;
 
 					&.default-icon {
 						filter: grayscale(100%);
@@ -600,33 +598,36 @@ body.app {
 				}
 			}
 
-			.app_name {
-				font-size: 1.5em;
-				font-weight: bold;
-				margin: 0 0 1em;
-				color: #1f2937;
-			}
+			.app_txt {
+				padding: 2em;
+				.app_name {
+					font-size: 1.5em;
+					font-weight: bold;
+					margin: 0 0 1em;
+					color: #1f2937;
+				}
 
-			.app_excerpt {
-				flex: 1;
-				margin-bottom: 1.5em;
-				color: #6b7280;
-				line-height: 1.6;
-			}
+				.app_excerpt {
+					flex: 1;
+					margin-bottom: 1.5em;
+					color: #6b7280;
+					line-height: 1.6;
+				}
 
-			.app_link {
-				display: block;
-				background: $color_a;
-				color: #fff;
-				text-align: center;
-				padding: 0.8em 1.5em;
-				border-radius: 10px;
-				text-decoration: none;
-				font-weight: bold;
-				transition: background 0.3s ease;
+				.app_link {
+					display: block;
+					background: $color_a;
+					color: #fff;
+					text-align: center;
+					padding: 0.8em 1.5em;
+					border-radius: 10px;
+					text-decoration: none;
+					font-weight: bold;
+					transition: background 0.3s ease;
 
-				&:hover {
-					background: darken($color_a, 10%);
+					&:hover {
+						background: darken($color_a, 10%);
+					}
 				}
 			}
 		}
@@ -636,7 +637,7 @@ body.app {
 body.single-app {
 
 
-	
+
 	.mv_app {
 		position: relative;
 		overflow: hidden;
@@ -679,6 +680,7 @@ body.single-app {
 	.app_summary {
 		display: flex;
 		gap: 1em;
+
 		.app_icon {
 			display: block;
 			width: 20%;
@@ -690,17 +692,19 @@ body.single-app {
 
 		.info {
 			flex: 1;
-			.app_name{
+
+			.app_name {
 				font-weight: bold;
 				font-size: 1.5em;
 				margin-bottom: 1em;
 				line-height: 1em;
 			}
+
 			.status {
 				display: flex;
 				gap: 1em;
 				container-type: inline-size;
-				max-width:300px;
+				max-width: 300px;
 				margin-bottom: 1em;
 
 				.price,
@@ -718,11 +722,13 @@ body.single-app {
 			.store {
 				display: flex;
 				gap: 1em;
-				max-width:300px;
+				max-width: 300px;
+
 				a {
 					flex: 1;
 					display: block;
-					img{
+
+					img {
 						display: block;
 						width: 100%;
 					}
@@ -730,13 +736,16 @@ body.single-app {
 			}
 		}
 	}
-	.body{
+
+	.body {
 		margin: 2em 0;
-		h2{
+
+		h2 {
 			color: green;
 			margin-bottom: 1em;
 		}
-		p{
+
+		p {
 			margin-bottom: 1em;
 		}
 	}

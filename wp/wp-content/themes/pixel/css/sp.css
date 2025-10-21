@@ -531,17 +531,15 @@ body.app .app_list_wrap {
 body.app .app_list_wrap .app_list_item {
   background: #fff;
   border-radius: 15px;
-  padding: 1.5em;
-  box-shadow: 0 4px 10px 0px #ccc;
+  box-shadow: 0 0px 20px 0px #ccc;
   display: flex;
   flex-direction: column;
 }
 body.app .app_list_wrap .app_list_item .app_thumbnail {
-  margin-bottom: 1em;
   width: 100%;
   height: 180px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 body.app .app_list_wrap .app_list_item .app_thumbnail img {
   width: 100%;
@@ -550,25 +548,27 @@ body.app .app_list_wrap .app_list_item .app_thumbnail img {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  border-radius: 10px;
 }
 body.app .app_list_wrap .app_list_item .app_thumbnail img.default-icon {
   filter: grayscale(100%);
 }
-body.app .app_list_wrap .app_list_item .app_name {
+body.app .app_list_wrap .app_list_item .app_txt {
+  padding: 1.5em;
+}
+body.app .app_list_wrap .app_list_item .app_txt .app_name {
   font-size: 1.3em;
   font-weight: bold;
   margin: 0 0 0.8em;
   color: #1f2937;
 }
-body.app .app_list_wrap .app_list_item .app_excerpt {
+body.app .app_list_wrap .app_list_item .app_txt .app_excerpt {
   flex: 1;
   margin-bottom: 1em;
   color: #6b7280;
   line-height: 1.6;
   font-size: 0.9em;
 }
-body.app .app_list_wrap .app_list_item .app_link {
+body.app .app_list_wrap .app_list_item .app_txt .app_link {
   display: block;
   background: #28993a;
   color: #fff;
@@ -579,7 +579,7 @@ body.app .app_list_wrap .app_list_item .app_link {
   font-weight: bold;
   transition: background 0.3s ease;
 }
-body.app .app_list_wrap .app_list_item .app_link:hover {
+body.app .app_list_wrap .app_list_item .app_txt .app_link:hover {
   background: rgb(29.4300518135, 112.5699481865, 42.6735751295);
 }
 
