@@ -537,6 +537,7 @@ body.app .app_list_wrap .app_list_item a {
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  height: 100%;
 }
 body.app .app_list_wrap .app_list_item a .app_thumbnail {
   width: 100%;
