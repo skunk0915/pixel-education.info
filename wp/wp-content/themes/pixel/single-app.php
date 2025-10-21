@@ -66,12 +66,22 @@
 						</div>
 					</div><!-- /.status -->
 					<div class="store">
-						<a href="<?php echo get_field('ios_url') ?>" class="ios" target="_blank">
-							<img src="<?php echo get_theme_file_uri(); ?>/img/btn_ios.png" alt="iPhone版アプリをダウンロードする">
-						</a>
-						<a href="<?php echo get_field('android_url') ?>" class="android" target="_blank">
-							<img src="<?php echo get_theme_file_uri(); ?>/img/btn_android.png" alt="Android版アプリをダウンロードする">
-						</a>
+						<?php
+						$ios_url = get_field('ios_url');
+						if (!empty($ios_url)) :
+						?>
+							<a href="<?php echo esc_url($ios_url); ?>" class="ios" target="_blank">
+								<img src="<?php echo get_theme_file_uri(); ?>/img/btn_ios.png" alt="iPhone版アプリをダウンロードする">
+							</a>
+						<?php endif; ?>
+						<?php
+						$android_url = get_field('android_url');
+						if (!empty($android_url)) :
+						?>
+							<a href="<?php echo esc_url($android_url); ?>" class="android" target="_blank">
+								<img src="<?php echo get_theme_file_uri(); ?>/img/btn_android.png" alt="Android版アプリをダウンロードする">
+							</a>
+						<?php endif; ?>
 					</div>
 
 				</div><!-- /.info -->
