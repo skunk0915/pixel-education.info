@@ -49,6 +49,17 @@ function enqueue_theme_scripts() {
         );
     }
 
+    // アプリ個別ページのみスクリーンショットスワイプ機能を読み込む
+    if (is_singular('app')) {
+        wp_enqueue_script(
+            'screenshot',
+            get_template_directory_uri() . '/js/screenshot.js',
+            array(),
+            '1.0.0',
+            true // footerで読み込む
+        );
+    }
+
     // メニュー機能
     wp_enqueue_script(
         'menu',

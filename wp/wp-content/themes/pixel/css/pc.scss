@@ -624,10 +624,6 @@ body.app {
 }
 
 body.single-app {
-	.app_icon {
-		display: block;
-
-	}
 
 	.mv_app {
 		position: relative;
@@ -642,7 +638,7 @@ body.single-app {
 			width: 70%;
 			height: 100%;
 			// background-image: url('<?php echo esc_url(get_field(' app_icon')); ?>');
-			background-size: cover;
+			background-size: auto 130%;
 			background-position: right center;
 			filter: grayscale(100%);
 			z-index: -2;
@@ -662,6 +658,69 @@ body.single-app {
 		h1 {
 			position: relative;
 			z-index: 1;
+		}
+
+
+
+	}
+
+	.app_summary {
+		display: flex;
+
+		.app_icon {
+			display: block;
+			flex: 1;
+		}
+
+		.info {
+			flex: 3;
+
+			.price {}
+
+			.store {
+				a {}
+			}
+		}
+	}
+
+	.app-screenshots {
+		display: flex;
+		gap: 1em;
+		overflow-x: auto;
+		padding: 2em 0;
+		list-style: none;
+		margin: 0;
+		-webkit-overflow-scrolling: touch;
+
+		li {
+			flex-shrink: 0;
+			width: 300px;
+
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+				border-radius: 10px;
+				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+			}
+		}
+
+		&::-webkit-scrollbar {
+			height: 8px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: #f1f1f1;
+			border-radius: 10px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: #888;
+			border-radius: 10px;
+
+			&:hover {
+				background: #555;
+			}
 		}
 	}
 }

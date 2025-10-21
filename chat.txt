@@ -23,3 +23,7 @@
 2025-10-16 17:00 要求:front-page.phpでカテゴリー別記事表示、page-press.phpにタブとページネーション実装 結果:front-page.phpにプレスリリース/更新情報最新4件表示追加、page-press.phpにタブ切替と2件ページネーション実装完了
 2025-10-16 17:15 要求:page-press.phpのページネーションが機能しない問題修正 結果:get_query_var('paged')使用、/page/N/形式URL対応、ページネーション正常動作完了
 2025-10-16 14:05 要求:iPhone横スクロール・余白問題修正 結果:sp.scssで全幅レイアウト計算変更(left:50%+margin-left:-50vw方式)、左右余白バランス修正完了
+2025-10-20 15:00 要求:app-screenshotsにスワイプスクロール機能実装 結果:screenshot.js作成、タッチ/マウスドラッグでスクロール可能化完了
+2025-10-20 15:05 要求:screenshot.jsをsingle-app.phpのみで読み込み 結果:functions.phpにis_singular('app')条件分岐追加、アプリ個別ページのみ読み込み完了
+2025-10-20 15:10 要求:screenshot.js構文エラー修正 結果:文字化けコメントを英語に変更、不正なタブ文字削除、構文エラー解決完了
+2025-10-20 15:15 要求:app-screenshotsスクロール機能CSS追加 結果:pc.scss/sp.scssにoverflow-x/flex/gap設定、スクロールバースタイル追加完了
