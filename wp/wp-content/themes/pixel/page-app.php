@@ -19,13 +19,15 @@
 
 				if ($app_query->have_posts()) :
 					while ($app_query->have_posts()) : $app_query->the_post();
+					// アプリアイコンの取得（なければデフォルト画像を使用）
+					$app_icon = get_field('app_icon');
+					$has_icon = !empty($app_icon);
+					$icon_url = $has_icon ? esc_url($app_icon) : esc_url(get_theme_file_uri('/img/logo_mark_pixel.png'));
 				?>
 					<article class="app_list_item">
-						<?php if (has_post_thumbnail()) : ?>
-							<div class="app_thumbnail">
-								<?php the_post_thumbnail('medium'); ?>
-							</div>
-						<?php endif; ?>
+						<div class="app_thumbnail">
+							<img src="<?php echo $icon_url; ?>" alt="<?php the_title_attribute(); ?>" class="<?php echo !$has_icon ? 'default-icon' : ''; ?>">
+						</div>
 						<h2 class="app_name"><?php the_title(); ?></h2>
 						<div class="app_excerpt">
 							<?php the_excerpt(); ?>

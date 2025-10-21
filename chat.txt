@@ -33,3 +33,5 @@
 2025-10-21 15:15 要求:年齢両方値なしの場合「全年齢」表記 結果:条件分岐追加、age要素常時表示化、全年齢表示実装完了
 2025-10-21 15:20 要求:ios_url/android_url値存在時のみa要素出力 結果:single-app.php修正、empty()条件分岐追加、esc_url()追加完了
 2025-10-21 15:55 要求:app_icon未設定時デフォルト画像表示（グレースケール・50%・中央） 結果:single-app.phpにフォールバック処理追加、pc.scss/sp.scssにdefault-iconスタイル追加完了
+2025-10-21 16:00 要求:アプリ一覧のサムネイル画像をcoverで中央表示 結果:pc.css/sp.scssでapp_thumbnailにobject-fit:cover追加、固定高設定（PC:200px/SP:180px）完了
+2025-10-21 16:05 要求:アプリアイコン画像をget_field('app_icon')で取得 結果:page-app.php修正、ACFカスタムフィールド使用、デフォルト画像フォールバック、グレースケール処理追加完了
