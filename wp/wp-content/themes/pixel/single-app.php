@@ -20,50 +20,68 @@
 			<div class="app_summary">
 				<img src="<?php echo esc_url(get_field('app_icon')); ?>" alt="" class="app_icon">
 				<div class="info">
-					<div class="price"><?php echo get_field('price'); ?></div>
-					<div class="age">対象：<?php echo get_field('age_min'); ?>歳～<?php echo get_field('age_max'); ?>歳</div>
+					<div class="app_name">
+						<?php the_title(); ?>
+					</div>
+					<div class="status">
+
+
+						<?php
+						// 価格の表示
+						$price = get_field('price');
+						if ($price !== '' && $price !== null && $price !== false) :
+						?>
+							<div class="price">
+								<?php echo ($price == 0) ? '無料' : esc_html($price); ?>
+							</div>
+						<?php endif; ?>
+
+						<?php
+						// 対象年齢の表示
+						$age_min = get_field('age_min');
+						$age_max = get_field('age_max');
+						$has_min = !empty($age_min);
+						$has_max = !empty($age_max);
+						?>
+						<div class="age">
+							対象：<?php
+								if (!$has_min && !$has_max) {
+									// 両方値がない場合
+									echo '全年齢';
+								} elseif ($has_min && $has_max) {
+									// 両方値がある場合
+									if ($age_min == $age_max) {
+										echo esc_html($age_min) . '歳';
+									} else {
+										echo esc_html($age_min) . '歳～' . esc_html($age_max) . '歳';
+									}
+								} elseif ($has_min) {
+									// age_minのみ値がある場合
+									echo esc_html($age_min) . '歳以上';
+								} else {
+									// age_maxのみ値がある場合
+									echo esc_html($age_max) . '歳以下';
+								}
+								?>
+						</div>
+					</div><!-- /.status -->
 					<div class="store">
-						<a href="" class="ios">
-							<img src="" alt="">
+						<a href="<?php echo get_field('ios_url') ?>" class="ios" target="_blank">
+							<img src="<?php echo get_theme_file_uri(); ?>/img/btn_ios.png" alt="iPhone版アプリをダウンロードする">
 						</a>
-						<a href="" class="android">
-							<img src="" alt="">
+						<a href="<?php echo get_field('android_url') ?>" class="android" target="_blank">
+							<img src="<?php echo get_theme_file_uri(); ?>/img/btn_android.png" alt="Android版アプリをダウンロードする">
 						</a>
 					</div>
+
 				</div><!-- /.info -->
 			</div><!-- /.app_summary -->
 
-			<?php
-			// ACFカスタムフィールド ss_1 から ss_5 の画像を表示
-			$screenshots = array();
-			for ($i = 1; $i <= 5; $i++) {
-				$field_name = 'ss_' . $i;
-				$image = get_field($field_name);
-				if ($image) {
-					$screenshots[] = $image;
-				}
-			}
-
-			if (!empty($screenshots)) :
-			?>
-				<ul class="app-screenshots">
-					<?php foreach ($screenshots as $screenshot) : ?>
-						<li>
-							<?php if (is_array($screenshot)) : ?>
-								<img src="<?php echo esc_url($screenshot['url']); ?>" alt="<?php echo esc_attr($screenshot['alt']); ?>">
-							<?php else : ?>
-								<img src="<?php echo esc_url($screenshot); ?>" alt="">
-							<?php endif; ?>
-						</li>
-					<?php endforeach; ?>
-				</ul>
-			<?php endif; ?>
-			<div class="excerpt">
-				<?php echo get_field('excerpt'); ?>
-			</div>
 			<div class="body">
 				<?php the_content(); ?>
 			</div>
+
+
 		</div><!-- /.body_bg -->
 	</main>
 </body>

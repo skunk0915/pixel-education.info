@@ -434,12 +434,14 @@ main.front-page .news .column .update .more:hover {
 
 body.terms,
 body.privacy,
-body.cancel {
+body.cancel,
+body.privacy {
   display: block;
 }
 body.terms h2,
 body.privacy h2,
-body.cancel h2 {
+body.cancel h2,
+body.privacy h2 {
   font-size: 1.3em;
   margin: 0 0 1em;
   border-bottom: 2px solid green;
@@ -447,17 +449,20 @@ body.cancel h2 {
 }
 body.terms h2:not(:first-child),
 body.privacy h2:not(:first-child),
-body.cancel h2:not(:first-child) {
+body.cancel h2:not(:first-child),
+body.privacy h2:not(:first-child) {
   margin: 3em 0 1em;
 }
 body.terms h3,
 body.privacy h3,
-body.cancel h3 {
+body.cancel h3,
+body.privacy h3 {
   font-size: 1em;
 }
 body.terms h3:not(:first-child),
 body.privacy h3:not(:first-child),
-body.cancel h3:not(:first-child) {
+body.cancel h3:not(:first-child),
+body.privacy h3:not(:first-child) {
   margin-top: 2em;
 }
 body.terms ul:not(:first-child),
@@ -465,7 +470,9 @@ body.terms ol:not(:first-child),
 body.privacy ul:not(:first-child),
 body.privacy ol:not(:first-child),
 body.cancel ul:not(:first-child),
-body.cancel ol:not(:first-child) {
+body.cancel ol:not(:first-child),
+body.privacy ul:not(:first-child),
+body.privacy ol:not(:first-child) {
   margin: 1em 0 0;
 }
 body.terms ul li,
@@ -473,7 +480,9 @@ body.terms ol li,
 body.privacy ul li,
 body.privacy ol li,
 body.cancel ul li,
-body.cancel ol li {
+body.cancel ol li,
+body.privacy ul li,
+body.privacy ol li {
   margin: 0 0 1em;
 }
 
@@ -600,17 +609,58 @@ body.single-app .app_summary {
 }
 body.single-app .app_summary .app_icon {
   display: block;
-  width: 100px;
+  width: 50%;
+  margin: 0 auto;
 }
-body.single-app .app_summary .info .price {
-  font-size: 1.2em;
+body.single-app .app_summary .info {
+  flex: 1;
+}
+body.single-app .app_summary .info .app_name {
   font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  line-height: 1em;
 }
-body.single-app .app_summary .info .age {
-  margin-top: 0.5em;
+body.single-app .app_summary .info .status {
+  display: flex;
+  gap: 1em;
+  container-type: inline-size;
+  max-width: 300px;
+  margin-bottom: 1em;
+}
+body.single-app .app_summary .info .status .price,
+body.single-app .app_summary .info .status .age {
+  flex: 1;
+  border-radius: 10px;
+  color: #fff;
+  background: orange;
+  text-align: center;
+  padding: 0.5em 0;
+  font-size: 5cqw;
 }
 body.single-app .app_summary .info .store {
-  margin-top: 1em;
+  display: flex;
+  gap: 1em;
+  max-width: 300px;
+}
+body.single-app .app_summary .info .store a {
+  flex: 1;
+  display: block;
+}
+body.single-app .app_summary .info .store a img {
+  display: block;
+  width: 100%;
+}
+body.single-app .body {
+  margin: 2em 0;
+}
+body.single-app .body h2 {
+  color: green;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+body.single-app .body p {
+  margin-bottom: 1em;
 }
 body.single-app .app-screenshots {
   display: flex;
