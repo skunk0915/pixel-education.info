@@ -6,19 +6,31 @@
 <body <?php body_class(); ?>>
 
 	<?php get_template_part('parts/gnav'); ?>
+	<?php
+	// アプリアイコンの取得（なければデフォルト画像を使用）
+	$app_icon = get_field('app_icon');
+	$has_icon = !empty($app_icon);
+	$icon_url = $has_icon ? esc_url($app_icon) : esc_url(get_theme_file_uri('/img/logo_mark_pixel.png'));
+	?>
 	<section class="mv mv_app">
 		<h1><?php the_title(); ?></h1>
 	</section><!-- /.mv -->
 	<style>
 		.mv_app::before {
-			background-image: url('<?php echo esc_url(get_field('app_icon')); ?>');
+			background-image: url('<?php echo $icon_url; ?>');
+			<?php if (!$has_icon) : ?>
+			background-size: 50%;
+			background-position: center;
+			background-repeat: no-repeat;
+			filter: grayscale(100%);
+			<?php endif; ?>
 		}
 	</style>
 	<main>
 		<div class="body_bg">
 
 			<div class="app_summary">
-				<img src="<?php echo esc_url(get_field('app_icon')); ?>" alt="" class="app_icon">
+				<img src="<?php echo $icon_url; ?>" alt="" class="app_icon<?php echo !$has_icon ? ' default-icon' : ''; ?>">
 				<div class="info">
 					<div class="app_name">
 						<?php the_title(); ?>
