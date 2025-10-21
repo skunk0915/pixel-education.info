@@ -36,3 +36,4 @@
 2025-10-21 16:00 要求:アプリ一覧のサムネイル画像をcoverで中央表示 結果:pc.css/sp.scssでapp_thumbnailにobject-fit:cover追加、固定高設定（PC:200px/SP:180px）完了
 2025-10-21 16:05 要求:アプリアイコン画像をget_field('app_icon')で取得 結果:page-app.php修正、ACFカスタムフィールド使用、デフォルト画像フォールバック、グレースケール処理追加完了
 2025-10-21 07:35 要求:アプリ一覧のリンクを.app_list_item全体に適用 結果:.app_link削除、.app_list_item全体をリンク化完了
+2025-10-21 07:46 要求:アプリ一覧をul/li構造に変更 結果:divからul/liに変更、CSS調整、文法的に正しい構造完了
