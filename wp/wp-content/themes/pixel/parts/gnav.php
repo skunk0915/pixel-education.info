@@ -14,26 +14,11 @@
 		<?php endif; ?>
 
 		<nav>
-			<ul>
-				<li>
-					<a href="<?php echo home_url(); ?>/company/">企業紹介</a>
-				</li>
-				<li>
-					<a href="<?php echo home_url(); ?>/app/">アプリ紹介</a>
-				</li>
-				<li>
-					<a href="<?php echo home_url(); ?>/contact/">お問い合わせ</a>
-				</li>
-
-				<li class="sp">
-					<a href="<?php echo home_url(); ?>/press/">プレスリリース</a>
-				</li>
-				<li class="sp">
-					<a href="<?php echo home_url(); ?>/recruit/">採用</a>
-				</li>
-				<li class="sp"><a href="<?php echo home_url(); ?>/cancel/">購入停止のご案内</a></li>
-				<li class="sp"><a href="<?php echo home_url(); ?>/terms/">利用規約</a></li>
-				<li class="sp"><a href="<?php echo home_url(); ?>/privacy/">プライバシーポリシー</a></li>
-			</ul>
+		<?php
+		wp_nav_menu(array(
+			'theme_location' => wp_is_mobile() ? 'header_sp' : 'header_pc',
+		));
+		?>
 		</nav>
+
 	</header>

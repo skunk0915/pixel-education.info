@@ -39,3 +39,4 @@
 2025-10-21 07:46 要求:アプリ一覧をul/li構造に変更 結果:divからul/liに変更、CSS調整、文法的に正しい構造完了
 2025-10-21 07:51 要求:.app_list_item内のa要素高さ修正 結果:height:100%追加、親要素の高さに合わせてレイアウト修正完了
 2025-10-21 08:00 要求:ol li間にpがある場合のナンバリング維持(wp-block-group単位) 結果:ol_li_p.js実装、functions.phpでサイト全体読込設定追加完了
+2025-10-22 10:00 要求:PCとスマホでメニューロケーション切替（PC:header、SP:footer） 結果:gnav.phpのwp_nav_menuにwp_is_mobile()条件分岐追加完了
