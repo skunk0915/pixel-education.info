@@ -18,8 +18,7 @@
 	<style>
 		.mv_app::before {
 			background-image: url('<?php echo $icon_url; ?>');
-			<?php if (!$has_icon) : ?>
-			background-size: 50%;
+			<?php if (!$has_icon) : ?>background-size: 50%;
 			background-position: center;
 			background-repeat: no-repeat;
 			filter: grayscale(100%);
@@ -103,7 +102,39 @@
 				<?php the_content(); ?>
 			</div>
 
+			<div class="notice">
+				※Apple および Apple ロゴは米国その他の国で登録された Apple Inc. の商標です。App Store は Apple Inc. のサービスマークです。<br>
+				※Google Play は Google Inc.の商標です。<br>
+			</div>
 
+			<ul class="relate_app">
+				<?php
+				// 関連アプリを取得（現在のアプリを除く）
+				$related_apps = new WP_Query(array(
+					'post_type' => 'app',
+					'posts_per_page' => 10,
+					'post__not_in' => array(get_the_ID()),
+					'orderby' => 'rand'
+				));
+
+				if ($related_apps->have_posts()) :
+					while ($related_apps->have_posts()) : $related_apps->the_post();
+						$relate_icon = get_field('app_icon');
+						$relate_icon_url = !empty($relate_icon) ? esc_url($relate_icon) : esc_url(get_theme_file_uri('/img/logo_mark_pixel.png'));
+				?>
+						<li>
+							<a href="<?php the_permalink(); ?>">
+								<img src="<?php echo $relate_icon_url; ?>" alt="<?php the_title_attribute(); ?>">
+								<div class="app_name"><?php the_title(); ?></div>
+							</a>
+						</li>
+				<?php
+					endwhile;
+					wp_reset_postdata();
+				endif;
+				?>
+			</ul>
+			<!-- /.relate_app -->
 		</div><!-- /.body_bg -->
 	</main>
 </body>

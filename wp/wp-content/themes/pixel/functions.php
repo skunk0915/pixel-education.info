@@ -60,6 +60,15 @@ function enqueue_theme_scripts()
 			'1.0.0',
 			true // footerで読み込む
 		);
+
+		// 関連アプリスワイプ機能を読み込む
+		wp_enqueue_script(
+			'relate-app',
+			get_template_directory_uri() . '/js/relate-app.js',
+			array(),
+			'1.0.0',
+			true // footerで読み込む
+		);
 	}
 
 	// メニュー機能
