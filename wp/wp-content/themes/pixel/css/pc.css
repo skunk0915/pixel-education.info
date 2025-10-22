@@ -540,7 +540,11 @@ body.single-app .mv_app h1 {
 }
 body.single-app .app_summary {
   display: flex;
-  gap: 1em;
+  gap: 2em;
+  background: #fff;
+  border-radius: 20px;
+  padding: 2em;
+  box-shadow: 0 0 20px 0 #ddd;
 }
 body.single-app .app_summary .app_icon {
   display: block;

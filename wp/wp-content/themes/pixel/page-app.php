@@ -7,6 +7,9 @@
 	</section><!-- /.mv -->
 	<main>
 		<div class="body_bg">
+			<div class="the_content">
+				<?php the_content() ?>
+			</div>
 			<ul class="app_list_wrap">
 				<?php
 				$args = array(

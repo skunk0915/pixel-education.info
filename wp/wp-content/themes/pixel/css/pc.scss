@@ -49,7 +49,8 @@ html {
 					max-width: $main_width;
 					margin: 0 auto;
 					padding: 0 2em;
-					p{
+
+					p {
 						margin-bottom: 1em;
 					}
 				}
@@ -586,7 +587,7 @@ body.app {
 				flex-direction: column;
 				text-decoration: none;
 				height: 100%;
-				
+
 
 				.app_thumbnail {
 					width: 100%;
@@ -608,6 +609,7 @@ body.app {
 
 				.app_txt {
 					padding: 2em;
+
 					.app_name {
 						font-size: 1.5em;
 						font-weight: bold;
@@ -672,7 +674,11 @@ body.single-app {
 
 	.app_summary {
 		display: flex;
-		gap: 1em;
+		gap: 2em;
+		background: #fff;
+		border-radius: 20px;
+		padding: 2em;
+		box-shadow: 0 0 20px 0 #ddd;
 
 		.app_icon {
 			display: block;

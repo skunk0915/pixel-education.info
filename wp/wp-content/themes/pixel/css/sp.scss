@@ -754,6 +754,10 @@ body.single-app {
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
+		background: #fff;
+		border-radius: 20px;
+		padding: 2em;
+		box-shadow: 0 0 20px 0 #ddd;
 
 		.app_icon {
 			display: block;
