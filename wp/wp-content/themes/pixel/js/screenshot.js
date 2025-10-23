@@ -1,7 +1,7 @@
 /**
  * App Screenshots Swipe Scroll Functionality
  */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const screenshotsContainer = document.querySelector('.app-screenshots');
 
   if (!screenshotsContainer) {

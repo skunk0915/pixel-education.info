@@ -1,6 +1,3 @@
-<?php
-
-?>
 <?php get_header(); ?>
 
 <body <?php body_class(); ?>>
@@ -43,7 +40,7 @@
 						if ($price !== '' && $price !== null && $price !== false) :
 						?>
 							<div class="price">
-								<?php echo ($price == 0) ? '無料' : esc_html($price); ?>
+								<?php echo ($price == 0) ? '無料' : '&yen;'.esc_html($price); ?>
 							</div>
 						<?php endif; ?>
 
@@ -102,10 +99,6 @@
 				<?php the_content(); ?>
 			</div>
 
-			<div class="notice">
-				※Apple および Apple ロゴは米国その他の国で登録された Apple Inc. の商標です。App Store は Apple Inc. のサービスマークです。<br>
-				※Google Play は Google Inc.の商標です。<br>
-			</div>
 
 			<ul class="relate_app">
 				<?php
@@ -135,6 +128,12 @@
 				?>
 			</ul>
 			<!-- /.relate_app -->
+
+			<div class="notice">
+				※Apple および Apple ロゴは米国その他の国で登録された Apple Inc. の商標です。App Store は Apple Inc. のサービスマークです。<br>
+				※Google Play は Google Inc.の商標です。<br>
+			</div>
+
 		</div><!-- /.body_bg -->
 	</main>
 </body>
