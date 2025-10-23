@@ -41,3 +41,4 @@
 2025-10-21 08:00 要求:ol li間にpがある場合のナンバリング維持(wp-block-group単位) 結果:ol_li_p.js実装、functions.phpでサイト全体読込設定追加完了
 2025-10-22 10:00 要求:PCとスマホでメニューロケーション切替（PC:header、SP:footer） 結果:gnav.phpのwp_nav_menuにwp_is_mobile()条件分岐追加完了
 2025-10-22 08:43 要求:.relate_appに関連アプリのアイコンと名前を横スクロール表示 結果:single-app.phpにWP_Query追加、pc/sp.scssにスワイプスタイル追加、relate-app.js作成、functions.phpで読み込み設定完了
+2025-10-23 10:30 要求:pixelテーマにアイキャッチ画像機能を有効化 結果:functions.phpのregister_menu関数内にadd_theme_support('post-thumbnails')追加完了

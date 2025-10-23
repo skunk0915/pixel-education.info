@@ -56,7 +56,7 @@ html {
 				}
 			}
 
-			h1 {
+			.mv {
 
 				padding: 3em 1em;
 				background: $color_a;
@@ -1074,7 +1074,14 @@ body.press {
 
 	}
 }
-
+body.recruit{
+	.mv{
+		.catch{
+			font-size: 2em;
+			font-weight: bold;
+		}
+	}
+}
 
 .wp-block-group {
 	position: relative;

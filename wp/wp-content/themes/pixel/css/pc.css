@@ -44,7 +44,7 @@ html body:not(.home) main .body_bg {
 html body:not(.home) main .body_bg p {
   margin-bottom: 1em;
 }
-html body:not(.home) h1 {
+html body:not(.home) .mv {
   padding: 3em 1em;
   background: #28993a;
   color: #fff;
@@ -870,6 +870,11 @@ body.press .press-content .press-pagination .current-page {
 body.press .press-content .press-pagination .page-numbers {
   display: flex;
   gap: 5px;
+}
+
+body.recruit .mv .catch {
+  font-size: 2em;
+  font-weight: bold;
 }
 
 .wp-block-group {

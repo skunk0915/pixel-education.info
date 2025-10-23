@@ -190,6 +190,8 @@ add_action('init', 'create_app_post_type');
 add_action('after_setup_theme', 'register_menu');
 function register_menu()
 {
+	// アイキャッチ画像を有効化
+	add_theme_support('post-thumbnails');
 
 	register_nav_menus( array(
 		'header_pc' => 'ヘッダー（PC）',
