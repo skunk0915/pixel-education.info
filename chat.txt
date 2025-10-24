@@ -47,3 +47,4 @@
 2025-10-24 15:20 要求:自動抜粋文字数制限50文字をpage-app.phpに反映 結果:page-app.phpの第2引数削除、functions.phpデフォルト値使用完了
 2025-10-24 15:25 要求:自動抜粋の先頭改行を削除 結果:get_excerpt_with_linebreaks関数にtrim()追加、先頭末尾の改行空白削除完了
 2025-10-24 15:30 要求:list03にチェックマークスタイル適用 結果:pc.scssの.list03にチェックマーク（✓）リストスタイル追加完了
+2025-10-24 18:00 要求:.list03内pで次にulがある場合のmargin-bottom調整 結果:pc.scssに.list03 p:has(+ ul)スタイル追加、margin-bottom:.5em設定完了
