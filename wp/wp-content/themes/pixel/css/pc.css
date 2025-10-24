@@ -910,6 +910,78 @@ body.press .press-content .press-pagination .page-numbers {
   margin-top: 5em;
 }
 
+.bg03 {
+  position: relative;
+  background-color: #FFF;
+  width: 100cqw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  padding-top: 5em;
+  padding-bottom: 5em;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  box-sizing: border-box;
+}
+
+.list01 {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+.list01 > .wp-block-group {
+  width: 40%;
+  padding: 1em;
+}
+.list01 > .wp-block-group > .wp-block-image {
+  width: 27%;
+  background: orange;
+  border-radius: 1000px;
+  padding: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list01 > .wp-block-group > .wp-block-image img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.list01 > .wp-block-group > h3 {
+  font-weight: bold;
+  margin: 1em 0 0.5em;
+}
+.list02 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+.list02 > .wp-block-group {
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0px #ddd;
+}
+
+.regular_time {
+  display: inline-block;
+  background: green;
+  color: #fff;
+  padding: 0.5em 1em;
+  font-size: 0.7em;
+  border-radius: 50px;
+}
+
+.part_time {
+  display: inline-block;
+  background: orange;
+  color: #fff;
+  padding: 0.5em 1em;
+  font-size: 0.7em;
+  border-radius: 50px;
+}
+
 .page_404 {
   text-align: center;
   font-size: 2em;
