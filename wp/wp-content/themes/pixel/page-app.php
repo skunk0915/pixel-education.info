@@ -36,7 +36,7 @@
 
 								<h2 class="app_name"><?php the_title(); ?></h2>
 								<div class="app_excerpt">
-									<?php the_excerpt(); ?>
+									<?php echo get_excerpt_with_linebreaks(get_the_ID()); ?>
 								</div>
 							</div><!-- /.app_txt -->
 						</a>

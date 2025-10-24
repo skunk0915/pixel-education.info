@@ -193,13 +193,26 @@ function register_menu()
 	// アイキャッチ画像を有効化
 	add_theme_support('post-thumbnails');
 
-	register_nav_menus( array(
+	register_nav_menus(array(
 		'header_pc' => 'ヘッダー（PC）',
 		'header_sp' => 'ヘッダー（スマホ）',
 		'footer_1' => 'フッター左側',
 		'footer_2' => 'フッター右側',
-	) );
+	));
 }
+
+//the_excerpt文字数
+function twpp_change_excerpt_length($length)
+{
+	return 100;
+}
+add_filter('excerpt_length', 'twpp_change_excerpt_length', 999);
+function twpp_change_excerpt_more($more)
+{
+	return '…';
+}
+add_filter('excerpt_more', 'twpp_change_excerpt_more');
+
 
 
 //Really Simple CSV Importerでの記事一括取り込みでacfの画像フィールド５個を連携させるための設定 start
@@ -276,3 +289,51 @@ function my_acf_get_attachment_id_by_url($url)
 	));
 }
 //Really Simple CSV Importerでの記事一括取り込みでacfの画像フィールド５個を連携させるための設定 end
+
+/**
+ * 本文の改行を反映した抜粋を取得（HTMLタグは除去、段落と改行のみ維持）
+ * 記事編集画面で「抜粋」を指定した場合はそれを優先
+ */
+function get_excerpt_with_linebreaks($post_id = null, $length = 50)
+{
+	if (!$post_id) {
+		$post_id = get_the_ID();
+	}
+
+	// 手動で設定された抜粋があるかチェック
+	if (has_excerpt($post_id)) {
+		// 手動抜粋を取得
+		$content = get_the_excerpt($post_id);
+	} else {
+		// 本文から抜粋を生成
+		$content = get_post_field('post_content', $post_id);
+	}
+
+	if (empty($content)) {
+		return '';
+	}
+
+	// 段落の終了タグを改行に変換
+	$content = str_replace('</p>', "\n", $content);
+	// brタグを改行に変換
+	$content = str_replace(array('<br>', '<br/>', '<br />'), "\n", $content);
+
+	// すべてのHTMLタグを除去
+	$content = strip_tags($content);
+
+	// 連続する改行を1つにまとめる
+	$content = preg_replace("/\n+/", "\n", $content);
+
+	// 先頭と末尾の改行・空白を削除
+	$content = trim($content);
+
+	// 文字数制限（手動抜粋でない場合のみ）
+	if (!has_excerpt($post_id) && mb_strlen($content) > $length) {
+		$content = mb_substr($content, 0, $length) . '…';
+	}
+
+	// 改行をbrタグに変換
+	$content = nl2br($content);
+
+	return $content;
+}

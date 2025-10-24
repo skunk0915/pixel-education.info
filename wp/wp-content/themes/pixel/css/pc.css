@@ -872,11 +872,6 @@ body.press .press-content .press-pagination .page-numbers {
   gap: 5px;
 }
 
-body.recruit .mv .catch {
-  font-size: 2em;
-  font-weight: bold;
-}
-
 .wp-block-group {
   position: relative;
 }
