@@ -23,11 +23,6 @@ html body ol {
 html body:not(.home) main {
   background-color: #F7F4EF;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
   padding: 2em 0em;
   margin-top: 0;
   margin-bottom: 0;
@@ -890,7 +885,7 @@ body.press .press-content .press-pagination .page-numbers {
 .bg03 {
   position: relative;
   background-color: #FFF;
-  width: 100cqw;
+  width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding-left: calc(50vw - 50%);

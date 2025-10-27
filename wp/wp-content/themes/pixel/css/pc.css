@@ -24,11 +24,6 @@ html body ol {
 html body:not(.home) main {
   background-color: #F7F4EF;
   position: relative;
-  width: 100cqw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
   padding-top: 5em;
   padding-bottom: 5em;
   margin-top: 0;
@@ -123,7 +118,7 @@ header nav ul li a:hover {
 .mv_top,
 .wp-block-cover.mv_top {
   position: relative;
-  width: 100cqw;
+  width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding-left: calc(50vw - 50%);
@@ -880,6 +875,10 @@ body.press .press-content .press-pagination .page-numbers {
 html body.recruit main {
   padding-top: 0;
 }
+html body.company .is-layout-flex {
+  align-items: start;
+}
+
 .wp-block-group {
   position: relative;
 }
@@ -887,7 +886,7 @@ html body.recruit main {
 .bg01 {
   position: relative;
   background-color: #EEECE1;
-  width: 100cqw;
+  width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding-left: calc(50vw - 50%);
@@ -902,7 +901,7 @@ html body.recruit main {
 .bg02 {
   background: linear-gradient(to bottom right, #28993a, #F2AB37);
   position: relative;
-  width: 100cqw;
+  width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding-left: calc(50vw - 50%);
@@ -921,7 +920,7 @@ html body.recruit main {
 .bg03 {
   position: relative;
   background-color: #FFF;
-  width: 100cqw;
+  width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding-left: calc(50vw - 50%);
@@ -1033,7 +1032,7 @@ html body.recruit main {
 }
 
 .width100 {
-  width: 100cqw;
+  width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding-left: calc(50vw - 50%);

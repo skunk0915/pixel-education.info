@@ -35,11 +35,11 @@ html {
 			main {
 				background-color: #F7F4EF;
 				position: relative;
-				left: 50%;
-				right: 50%;
-				margin-left: -50vw;
-				margin-right: -50vw;
-				width: 100vw;
+				// left: 50%;
+				// right: 50%;
+				// margin-left: -50vw;
+				// margin-right: -50vw;
+				// width: 100vw;
 				padding: 2em 0em; //左右はbody_bgと二重の余白になるため0
 				margin-top: 0;
 				margin-bottom: 0;
@@ -1095,7 +1095,7 @@ body.press {
 .bg03 {
 	position: relative;
 	background-color: #FFF;
-	width: 100cqw;
+	width: 100vw;
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	padding-left: calc(50vw - 50%);

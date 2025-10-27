@@ -33,11 +33,11 @@ html {
 			main {
 				background-color: #F7F4EF;
 				position: relative;
-				width: 100cqw;
-				margin-left: calc(50% - 50vw);
-				margin-right: calc(50% - 50vw);
-				padding-left: calc(50vw - 50%);
-				padding-right: calc(50vw - 50%);
+				// width: 100vw;
+				// margin-left: calc(50% - 50vw);
+				// margin-right: calc(50% - 50vw);
+				// padding-left: calc(50vw - 50%);
+				// padding-right: calc(50vw - 50%);
 				padding-top: 5em;
 				padding-bottom: 5em;
 				margin-top: 0;
@@ -154,7 +154,7 @@ header {
 .wp-block-cover.mv_top {
 
 	position: relative;
-	width: 100cqw;
+	width: 100vw;
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	padding-left: calc(50vw - 50%);
@@ -1090,6 +1090,11 @@ html body.recruit {
 	}
 
 }
+html body.company {
+	.is-layout-flex{
+		align-items: start;//創業者の段組みの上橋を揃える
+	}
+}
 
 .wp-block-group {
 	position: relative;
@@ -1098,7 +1103,7 @@ html body.recruit {
 .bg01 {
 	position: relative;
 	background-color: #EEECE1;
-	width: 100cqw;
+	width: 100vw;
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	padding-left: calc(50vw - 50%);
@@ -1113,7 +1118,7 @@ html body.recruit {
 .bg02 {
 	background: linear-gradient(to bottom right, #28993a, #F2AB37);
 	position: relative;
-	width: 100cqw;
+	width: 100vw;
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	padding-left: calc(50vw - 50%);
@@ -1133,7 +1138,7 @@ html body.recruit {
 .bg03 {
 	position: relative;
 	background-color: #FFF;
-	width: 100cqw;
+	width: 100vw;
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	padding-left: calc(50vw - 50%);
@@ -1275,7 +1280,7 @@ html body.recruit {
 }
 
 .width100 {
-	width: 100cqw;
+	width: 100vw;
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	padding-left: calc(50vw - 50%);
