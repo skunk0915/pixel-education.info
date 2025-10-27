@@ -1,4 +1,4 @@
-$color_a: #28993a; // アクセントカラー
+$color_a: #28993a;
 $main_width: 1200px;
 
 html {
@@ -146,7 +146,10 @@ header {
 	opacity: 1;
 	background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
 }
-
+:root :where(.is-layout-constrained) > *{
+	margin: 0;
+	margin-block-start: 0;
+}
 .mv_top,
 .wp-block-cover.mv_top {
 
@@ -1075,7 +1078,10 @@ body.press {
 	}
 }
 
-body.recruit {
+html body.recruit {
+	main{
+		padding-top: 0;
+	}
 	.recruit_catch {
 
 		.catch {}
@@ -1181,8 +1187,8 @@ body.recruit {
 
 	&>.wp-block-group {
 		background: #fff;
-		padding: 2em;
-		border-radius: 10px;
+		padding: 2em 2.5em;
+		border-radius: 20px;
 		box-shadow: 0 0 10px 0px #ddd;
 	}
 
@@ -1210,7 +1216,7 @@ body.recruit {
 			content: "✓";
 			position: absolute;
 			left: -1.5em;
-			color: green;
+			color: orange;
 			font-weight: bold;
 		}
 
@@ -1223,6 +1229,8 @@ body.recruit {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 2em;
+
+
 
 	&>.wp-block-group {
 		background: #faf5f2;
@@ -1241,12 +1249,72 @@ body.recruit {
 				width: 100%;
 			}
 		}
-		.wp-block-heading{
+
+		.wp-block-heading {
 			margin: .5em auto 1em;
 		}
 	}
+
+	&.col2 {
+		grid-template-columns: 1fr 1fr;
+
+		&>.wp-block-group {
+			&>.wp-block-image {
+				padding: 1.5em;
+			}
+		}
+	}
+
+	&.nowrap {
+		&>.wp-block-group {
+
+			background: none;
+			padding: 0;
+		}
+	}
 }
-.band01{
+
+.width100 {
+	width: 100cqw;
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	padding-left: calc(50vw - 50%);
+	padding-right: calc(50vw - 50%);
+}
+
+.list05 {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 2em;
+
+	&>.wp-block-group {
+		background: #fff;
+		border-radius: 10px;
+		padding: 0;
+		box-shadow: 0 0 10px 0 #ddd;
+
+		&>.wp-block-image {
+			margin: 0 auto;
+			border-radius: 100px;
+
+			img {
+				display: block;
+				width: 100%;
+				border-radius: 10px 10px 0 0;
+			}
+		}
+
+		&>.wp-block-group {
+			padding: 1em;
+
+			.wp-block-heading {
+				margin: .5em auto 1em;
+			}
+		}
+	}
+}
+
+.band01 {
 	border-radius: 10px;
 	background-image: linear-gradient(90deg, green, orange);
 	padding: 2em;
@@ -1256,17 +1324,111 @@ body.recruit {
 	grid-template-columns: 1fr 1fr 1fr;
 
 
-	&>.wp-block-group{
+	&>.wp-block-group {
 		text-align: center;
-		p:first-child{
+
+		p:first-child {
 			margin-bottom: .5em;
 		}
-		p:not(:first-child){
-			font-weight: bold;
-			font-size: 2em;
-		}
-		p:last-child{
+
+		p:not(:first-child) {}
+
+		p:last-child {
 			margin-bottom: 0;
+		}
+	}
+}
+
+.block01 {
+	background: #fff;
+	border-radius: 10px;
+	padding: 2em;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+
+	&>.wp-block-group {
+		&>.wp-block-group {
+			display: grid;
+			grid-template-columns: 1fr 12fr;
+			gap: 1em;
+			&:first-child {
+
+				&>.wp-block-group {
+					width: 100%;
+
+					.wp-block-image {}
+				}
+			}
+			p{
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+
+	.wp-block-list {
+		column-count: 2;
+
+		&:has(li.icon) {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			$icon-list: wifi, drink, shield, game, cookie;
+
+			@each $name in $icon-list {
+				.icon_#{$name} {
+					background: url("../img/icon_#{$name}.png") no-repeat left center;
+				}
+			}
+
+			.icon {
+				background-size: 1.2em;
+				padding-left: 1.7em;
+				margin-bottom: 1em;
+
+			}
+
+		}
+	}
+
+}
+
+.block02 {
+	display: flex;
+	gap: 3em;
+	margin-bottom: 5em;
+
+	&:nth-of-type(even) {
+		flex-direction: row-reverse;
+	}
+
+	.wp-block-image {
+		flex: 1;
+
+		img {
+			border-radius: 20px;
+
+
+		}
+	}
+
+	&>.wp-block-group {
+		flex: 1;
+
+		.wp-block-heading {
+			margin-bottom: .5em;
+		}
+
+		.year {
+			background: green;
+			color: #fff;
+			font-size: 0.8em;
+			padding: 0 1em;
+			text-align: center;
+			border-radius: 100px;
+			display: inline-block;
+			margin: 0;
 		}
 	}
 }

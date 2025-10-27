@@ -1,0 +1,48 @@
+{
+    "version": 2,
+    "settings": {
+        "spacing": {
+            "margin": true,
+            "padding": true,
+            "blockGap": true,
+            "units": [
+                "em",
+                "px",
+                "%",
+                "vw",
+                "rem"
+            
+            ]
+        },
+        "border": {
+            "radius": true,
+            "width": true,
+            "color": true,
+            "style": true
+        },
+        "color": {
+            "background": true,
+            "text": true,
+            "palette": [
+                {
+                    "slug": "white",
+                    "color": "#FFFFFF",
+                    "name": "ホワイト"
+                },
+                {
+                    "slug": "black",
+                    "color": "#000000",
+                    "name": "ブラック"
+                }
+            ]
+        },
+        "background": {
+            "backgroundImage": true
+        }
+    },
+    "styles": {
+        "spacing": {
+            "blockGap": "0"
+        }
+    }
+}

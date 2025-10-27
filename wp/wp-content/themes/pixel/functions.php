@@ -2,11 +2,14 @@
 function login_logo()
 {
 	echo '<style type="text/css">
+	body{
+	background:#fff;
+	}
 	#login h1 a {
 	  background: url(' . get_template_directory_uri() . '/img/logo.png) no-repeat center;
 	  background-size: contain;
-	  width: 135px;
-	  height: 61px;
+	  width: 320px;
+	  height: 120px;
 	}
   </style>';
 }

@@ -115,6 +115,11 @@ header nav ul li a:hover {
   background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
 }
 
+:root :where(.is-layout-constrained) > * {
+  margin: 0;
+  margin-block-start: 0;
+}
+
 .mv_top,
 .wp-block-cover.mv_top {
   position: relative;
@@ -872,6 +877,9 @@ body.press .press-content .press-pagination .page-numbers {
   gap: 5px;
 }
 
+html body.recruit main {
+  padding-top: 0;
+}
 .wp-block-group {
   position: relative;
 }
@@ -959,8 +967,8 @@ body.press .press-content .press-pagination .page-numbers {
 }
 .list02 > .wp-block-group {
   background: #fff;
-  padding: 2em;
-  border-radius: 10px;
+  padding: 2em 2.5em;
+  border-radius: 20px;
   box-shadow: 0 0 10px 0px #ddd;
 }
 .list02 .wp-block-heading {
@@ -985,7 +993,7 @@ body.press .press-content .press-pagination .page-numbers {
   content: "✓";
   position: absolute;
   left: -1.5em;
-  color: green;
+  color: orange;
   font-weight: bold;
 }
 
@@ -1013,6 +1021,51 @@ body.press .press-content .press-pagination .page-numbers {
 .list04 > .wp-block-group .wp-block-heading {
   margin: 0.5em auto 1em;
 }
+.list04.col2 {
+  grid-template-columns: 1fr 1fr;
+}
+.list04.col2 > .wp-block-group > .wp-block-image {
+  padding: 1.5em;
+}
+.list04.nowrap > .wp-block-group {
+  background: none;
+  padding: 0;
+}
+
+.width100 {
+  width: 100cqw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
+.list05 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+}
+.list05 > .wp-block-group {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0;
+  box-shadow: 0 0 10px 0 #ddd;
+}
+.list05 > .wp-block-group > .wp-block-image {
+  margin: 0 auto;
+  border-radius: 100px;
+}
+.list05 > .wp-block-group > .wp-block-image img {
+  display: block;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.list05 > .wp-block-group > .wp-block-group {
+  padding: 1em;
+}
+.list05 > .wp-block-group > .wp-block-group .wp-block-heading {
+  margin: 0.5em auto 1em;
+}
 
 .band01 {
   border-radius: 10px;
@@ -1029,12 +1082,88 @@ body.press .press-content .press-pagination .page-numbers {
 .band01 > .wp-block-group p:first-child {
   margin-bottom: 0.5em;
 }
-.band01 > .wp-block-group p:not(:first-child) {
-  font-weight: bold;
-  font-size: 2em;
-}
 .band01 > .wp-block-group p:last-child {
   margin-bottom: 0;
+}
+
+.block01 {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.block01 > .wp-block-group > .wp-block-group {
+  display: grid;
+  grid-template-columns: 1fr 12fr;
+  gap: 1em;
+}
+.block01 > .wp-block-group > .wp-block-group:first-child > .wp-block-group {
+  width: 100%;
+}
+.block01 > .wp-block-group > .wp-block-group p {
+  margin: 0;
+  padding: 0;
+}
+.block01 .wp-block-list {
+  -moz-column-count: 2;
+       column-count: 2;
+}
+.block01 .wp-block-list:has(li.icon) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.block01 .wp-block-list:has(li.icon) .icon_wifi {
+  background: url("../img/icon_wifi.png") no-repeat left center;
+}
+.block01 .wp-block-list:has(li.icon) .icon_drink {
+  background: url("../img/icon_drink.png") no-repeat left center;
+}
+.block01 .wp-block-list:has(li.icon) .icon_shield {
+  background: url("../img/icon_shield.png") no-repeat left center;
+}
+.block01 .wp-block-list:has(li.icon) .icon_game {
+  background: url("../img/icon_game.png") no-repeat left center;
+}
+.block01 .wp-block-list:has(li.icon) .icon_cookie {
+  background: url("../img/icon_cookie.png") no-repeat left center;
+}
+.block01 .wp-block-list:has(li.icon) .icon {
+  background-size: 1.2em;
+  padding-left: 1.7em;
+  margin-bottom: 1em;
+}
+
+.block02 {
+  display: flex;
+  gap: 3em;
+  margin-bottom: 5em;
+}
+.block02:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+.block02 .wp-block-image {
+  flex: 1;
+}
+.block02 .wp-block-image img {
+  border-radius: 20px;
+}
+.block02 > .wp-block-group {
+  flex: 1;
+}
+.block02 > .wp-block-group .wp-block-heading {
+  margin-bottom: 0.5em;
+}
+.block02 > .wp-block-group .year {
+  background: green;
+  color: #fff;
+  font-size: 0.8em;
+  padding: 0 1em;
+  text-align: center;
+  border-radius: 100px;
+  display: inline-block;
+  margin: 0;
 }
 
 .regular_time {
