@@ -16,6 +16,8 @@ html {
 		flex-direction: column; // footerを下に固定のため
 		min-height: 100vh; // footerを下に固定のため
 
+		overflow-x: hidden; //全幅背景による横スクロールバー消すため
+
 		a {
 			color: #374151;
 		}
@@ -52,6 +54,10 @@ html {
 
 					p {
 						margin-bottom: 1em;
+						&.intro {
+							margin: 0 auto 3em;
+							text-align: center;
+						}
 					}
 				}
 			}
@@ -146,10 +152,12 @@ header {
 	opacity: 1;
 	background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
 }
-:root :where(.is-layout-constrained) > *{
+
+:root :where(.is-layout-constrained)>* {
 	margin: 0;
 	margin-block-start: 0;
 }
+
 .mv_top,
 .wp-block-cover.mv_top {
 
@@ -856,117 +864,206 @@ body.single-app {
 	}
 }
 
-body.contact {
-	.form {
-		background: #fff;
-		border-radius: 20px;
-		box-shadow: 0 0px 5px 0 #ddd;
-		padding: 2em;
+html body.contact main {
+	.intro {
 		max-width: 700px;
-		margin: 0 auto;
+	}
 
-		h2 {
-			text-align: center;
-			font-weight: bold;
-			margin: 1em 0;
-			color: $color_a;
+	.wrap {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 2em;
+
+		.wp-block-contact-form-7-contact-form-selector {
+			width: 100%;
 		}
 
-		label {
-			display: block;
-			font-weight: bold;
-
-			&:not(:first-of-type) {
-				margin-top: 2em;
+		.form {
+			background: #fff;
+			border-radius: 20px;
+			box-shadow: 0 0px 5px 0 #ddd;
+			padding: 2em;
+			margin: 0 auto;
+			br{
+				display: none;
 			}
-
-			input[type="text"],
-			input[type="tel"],
-			input[type="email"] {
-				font-weight: normal;
-				display: block;
-				margin-top: .5em;
-				border-radius: 10px;
-				border: 1px solid #d1d5db;
-				padding: .5em 1em;
-				width: 100%;
-				box-sizing: border-box;
+			p{
+				margin: 0;
 			}
-		}
-
-		fieldset {
-			padding: 1em 0;
-			margin-top: 2em;
-			border: none;
-
-			legend {
+			h2 {
+				text-align: center;
 				font-weight: bold;
+				margin: 1em 0;
+				color: $color_a;
 			}
 
-			.wrap {
-				display: flex;
-				flex-wrap: wrap;
+			label {
+				display: block;
+				font-weight: bold;
+				margin-bottom: 1em;
 
-				label {
-					flex: 1;
+				&:not(:first-of-type) {
+					margin-top: 2em;
+				}
+
+				input[type="text"],
+				input[type="tel"],
+				input[type="email"] {
+					font-weight: normal;
+					display: block;
+					margin-top: .5em;
+					border-radius: 10px;
+					border: 1px solid #d1d5db;
+					padding: .5em 1em;
+					width: 100%;
+					box-sizing: border-box;
+					&:focus{
+						border: 2px solid green;
+					}
+				}
+			}
+
+			.wpcf7-select {
+				border: 1px solid #ccc;
+				border-radius: 10px;
+				padding: 1em;
+				width: 100%;
+				&:focus{
+					border: 2px solid green;
+				}
+			}
+
+			fieldset {
+				padding: 1em 0;
+				margin-top: 2em;
+				margin-bottom: 1em;
+				border: none;
+
+				legend {
+					font-weight: bold;
+				}
+
+				.wrap {
 					display: flex;
-					align-items: center;
-					margin: 0;
+					flex-wrap: wrap;
 
-					input[type="checkbox"] {
-						appearance: none;
-						width: 1.25rem;
-						height: 1.25rem;
-						border: 2px solid #28993a;
-						border-radius: 4px;
-						position: relative;
-						margin-right: .5em;
-						cursor: pointer;
+					label {
+						flex: 1;
+						display: flex;
+						align-items: center;
+						margin: 0;
 
-						&:checked {
-							background: #28993a;
+						input[type="checkbox"] {
+							appearance: none;
+							width: 1.25rem;
+							height: 1.25rem;
+							border: 2px solid #28993a;
+							border-radius: 4px;
+							position: relative;
+							margin-right: .5em;
+							cursor: pointer;
 
-							&::after {
-								content: '✓';
-								position: absolute;
-								top: 50%;
-								left: 50%;
-								transform: translate(-50%, -50%);
-								color: white;
-								font-size: 0.875rem;
-								font-weight: bold;
+							&:checked {
+								background: #28993a;
+
+								&::after {
+									content: '✓';
+									position: absolute;
+									top: 50%;
+									left: 50%;
+									transform: translate(-50%, -50%);
+									color: white;
+									font-size: 0.875rem;
+									font-weight: bold;
+								}
+
 							}
+						}
 
+					}
+				}
+			}
+
+			textarea {
+				display: block;
+				border: 1px solid #d1d5db;
+				border-radius: 10px;
+				padding: 1em;
+				margin-top: .5em;
+				width: 100%;
+				height: 200px;
+				font-weight: normal;
+				box-sizing: border-box;
+				&:focus{
+					border: 2px solid green;
+				}
+			}
+
+			input[type="submit"] {
+				display: block;
+				width: 100%;
+				padding: .5em 1em;
+				margin: 1em auto 0;
+				background: green;
+				border-radius: 10px;
+				color: #fff;
+			}
+
+
+		}
+
+		.info {
+
+			&>.wp-block-group {
+				background: #fff;
+				padding: 2em;
+				border-radius: 20px;
+				box-shadow: 0 0px 5px 0 #ddd;
+
+				&>.wp-block-group {
+					display: flex;
+					align-items: flex-start;
+					gap: 1em;
+
+					[class^="icon-"] {
+						background: #ffa5001a;
+						color: orange;
+						padding: .5em;
+						border-radius: 10px;
+						font-size: 1.5em;
+						margin: 0;
+
+					}
+
+					&:nth-child(odd) {
+						[class^="icon-"] {
+							background: #28993a1a;
+							color: green;
 						}
 					}
 
+					&>.wp-block-group {
+						width: 100%;
+						margin-bottom: 2em;
+
+						p {
+							margin-bottom: 0;
+						}
+					}
 				}
+
+
+			}
+
+			.notice {
+				margin-top: 2em;
+				background: #28993a;
+				padding: 2em;
+				border-radius: 20px;
+				color: #fff;
+
 			}
 		}
-
-		textarea {
-			display: block;
-			border: 1px solid #d1d5db;
-			border-radius: 10px;
-			padding: 1em;
-			margin-top: .5em;
-			width: 100%;
-			height: 200px;
-			font-weight: normal;
-			box-sizing: border-box;
-		}
-
-		input[type="submit"] {
-			display: block;
-			width: fit-content;
-			padding: .5em 1em;
-			margin: 1em auto 0;
-			background: green;
-			border-radius: 10px;
-			color: #fff;
-		}
-
-
 	}
 }
 
@@ -1079,9 +1176,10 @@ body.press {
 }
 
 html body.recruit {
-	main{
+	main {
 		padding-top: 0;
 	}
+
 	.recruit_catch {
 
 		.catch {}
@@ -1090,10 +1188,19 @@ html body.recruit {
 	}
 
 }
+
 html body.company {
-	.is-layout-flex{
-		align-items: start;//創業者の段組みの上橋を揃える
+
+	.is-layout-flex {
+		align-items: start; //創業者の段組みの上橋を揃える
 	}
+
+	h2 {
+		font-size: 2em;
+		line-height: 1.2;
+		color: green;
+	}
+
 }
 
 .wp-block-group {
@@ -1356,6 +1463,7 @@ html body.company {
 			display: grid;
 			grid-template-columns: 1fr 12fr;
 			gap: 1em;
+
 			&:first-child {
 
 				&>.wp-block-group {
@@ -1364,7 +1472,8 @@ html body.company {
 					.wp-block-image {}
 				}
 			}
-			p{
+
+			p {
 				margin: 0;
 				padding: 0;
 			}

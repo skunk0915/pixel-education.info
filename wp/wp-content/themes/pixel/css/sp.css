@@ -149,11 +149,28 @@ body.menu-open::before {
   z-index: 999;
 }
 
-body.recruit .recruit_catch .body {
+html body.recruit main {
+  padding-top: 0em;
+}
+html body.recruit .recruit_catch .body {
   text-align: left;
 }
-body.recruit .recruit_catch .body br {
+html body.recruit .recruit_catch .body br {
   display: none;
+}
+
+html body.company main {
+  padding-top: 5em;
+}
+html body.company h2 {
+  font-size: 2em;
+  color: green;
+}
+html body.company .bg03 {
+  padding-bottom: 2em;
+}
+html body.company .is-layout-flex {
+  flex-direction: column;
 }
 
 .front-page .wp-block-cover .has-background-dim:not([class*=-background-color]),
@@ -760,6 +777,171 @@ body.single-app .notice {
   line-height: 1.5;
 }
 
+body.contact .intro {
+  margin: 0 auto;
+}
+body.contact .wrap .wp-block-contact-form-7-contact-form-selector {
+  width: 100%;
+}
+body.contact .wrap .form {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0px 5px 0 #ddd;
+  padding: 2em;
+  margin: 0 auto;
+}
+body.contact .wrap .form br {
+  display: none;
+}
+body.contact .wrap .form p {
+  margin: 0;
+}
+body.contact .wrap .form h2 {
+  text-align: center;
+  font-weight: bold;
+  margin: 1em 0;
+  color: #28993a;
+}
+body.contact .wrap .form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+body.contact .wrap .form label:not(:first-of-type) {
+  margin-top: 2em;
+}
+body.contact .wrap .form label input[type=text],
+body.contact .wrap .form label input[type=tel],
+body.contact .wrap .form label input[type=email] {
+  font-weight: normal;
+  display: block;
+  margin-top: 0.5em;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 0.5em 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+body.contact .wrap .form label input[type=text]:focus,
+body.contact .wrap .form label input[type=tel]:focus,
+body.contact .wrap .form label input[type=email]:focus {
+  border: 2px solid green;
+}
+body.contact .wrap .form .wpcf7-select {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1em;
+  width: 100%;
+}
+body.contact .wrap .form .wpcf7-select:focus {
+  border: 2px solid green;
+}
+body.contact .wrap .form fieldset {
+  padding: 1em 0;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  border: none;
+}
+body.contact .wrap .form fieldset legend {
+  font-weight: bold;
+}
+body.contact .wrap .form fieldset .wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+body.contact .wrap .form fieldset .wrap label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+body.contact .wrap .form fieldset .wrap label input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #28993a;
+  border-radius: 4px;
+  position: relative;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+body.contact .wrap .form fieldset .wrap label input[type=checkbox]:checked {
+  background: #28993a;
+}
+body.contact .wrap .form fieldset .wrap label input[type=checkbox]:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+body.contact .wrap .form textarea {
+  display: block;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 1em;
+  margin-top: 0.5em;
+  width: 100%;
+  height: 200px;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+body.contact .wrap .form textarea:focus {
+  border: 2px solid green;
+}
+body.contact .wrap .form input[type=submit] {
+  display: block;
+  width: 100%;
+  padding: 0.5em 1em;
+  margin: 1em auto 0;
+  background: green;
+  border-radius: 10px;
+  color: #fff;
+}
+body.contact .wrap .info > .wp-block-group {
+  background: #fff;
+  padding: 2em;
+  margin-top: 2em;
+  border-radius: 20px;
+  box-shadow: 0 0px 5px 0 #ddd;
+}
+body.contact .wrap .info > .wp-block-group > .wp-block-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+}
+body.contact .wrap .info > .wp-block-group > .wp-block-group [class^=icon-] {
+  background: rgba(255, 165, 0, 0.1019607843);
+  color: orange;
+  padding: 0.5em;
+  border-radius: 10px;
+  font-size: 1.5em;
+  margin: 0;
+}
+body.contact .wrap .info > .wp-block-group > .wp-block-group:nth-child(odd) [class^=icon-] {
+  background: rgba(40, 153, 58, 0.1019607843);
+  color: green;
+}
+body.contact .wrap .info > .wp-block-group > .wp-block-group > .wp-block-group {
+  width: 100%;
+  margin-bottom: 2em;
+}
+body.contact .wrap .info > .wp-block-group > .wp-block-group > .wp-block-group p {
+  margin-bottom: 0;
+}
+body.contact .wrap .info .notice {
+  margin-top: 2em;
+  background: #28993a;
+  padding: 2em;
+  border-radius: 20px;
+  color: #fff;
+}
+
 body.press .press-tabs {
   display: flex;
   margin: 2em 0 2em;
@@ -996,6 +1178,14 @@ body.press .press-content .press-pagination .page-numbers {
   margin: 0.5em auto 1em;
 }
 
+.width100 {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+
 .band01 {
   border-radius: 10px;
   background-image: linear-gradient(90deg, green, orange);
@@ -1051,6 +1241,35 @@ body.press .press-content .press-pagination .page-numbers {
   background-size: 1.2em;
   padding-left: 1.7em;
   margin-bottom: 1em;
+}
+
+.block02 {
+  margin-bottom: 5em;
+}
+.block02:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+.block02 .wp-block-image {
+  flex: 1;
+}
+.block02 .wp-block-image img {
+  border-radius: 20px;
+}
+.block02 > .wp-block-group {
+  flex: 1;
+}
+.block02 > .wp-block-group .wp-block-heading {
+  margin-bottom: 0.5em;
+}
+.block02 > .wp-block-group .year {
+  background: green;
+  color: #fff;
+  font-size: 0.8em;
+  padding: 0 1em;
+  text-align: center;
+  border-radius: 100px;
+  display: inline-block;
+  margin: 0;
 }
 
 .regular_time {

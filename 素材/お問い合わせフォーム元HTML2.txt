@@ -1,0 +1,39 @@
+<div class="form">
+
+
+	<label>
+		お名前
+		[text* your-name]
+	</label>
+
+	<label>
+		メールアドレス
+		[email* your-email]
+	</label>
+
+	<label>
+		電話番号
+		[tel your-tel]
+	</label>
+
+	<fieldset>
+		<legend>お問い合わせ種類</legend>
+
+[select* inquiry-type class:icon-ctrl first_as_label "（選択してください】" "アプリについて" "採用について" "その他"]
+
+
+	</fieldset>
+
+	<label>
+		お問い合わせ内容
+		[textarea* your-message]
+	</label>
+
+	<div class="consent-check">
+			<label>
+				[acceptance your-acceptance] <a href="https://pixel-education.info/privacy/" target="_blank">プライバシーポリシー</a>に同意する
+			</label>
+	</div>
+
+	[submit "送信"]
+</div>

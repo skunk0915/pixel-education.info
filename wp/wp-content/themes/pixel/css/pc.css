@@ -10,6 +10,7 @@ html body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 html body a {
   color: #374151;
@@ -38,6 +39,10 @@ html body:not(.home) main .body_bg {
 }
 html body:not(.home) main .body_bg p {
   margin-bottom: 1em;
+}
+html body:not(.home) main .body_bg p.intro {
+  margin: 0 auto 3em;
+  text-align: center;
 }
 html body:not(.home) .mv {
   padding: 3em 1em;
@@ -687,30 +692,47 @@ body.single-app .notice {
   line-height: 1.5;
 }
 
-body.contact .form {
+html body.contact main .intro {
+  max-width: 700px;
+}
+html body.contact main .wrap {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2em;
+}
+html body.contact main .wrap .wp-block-contact-form-7-contact-form-selector {
+  width: 100%;
+}
+html body.contact main .wrap .form {
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 0px 5px 0 #ddd;
   padding: 2em;
-  max-width: 700px;
   margin: 0 auto;
 }
-body.contact .form h2 {
+html body.contact main .wrap .form br {
+  display: none;
+}
+html body.contact main .wrap .form p {
+  margin: 0;
+}
+html body.contact main .wrap .form h2 {
   text-align: center;
   font-weight: bold;
   margin: 1em 0;
   color: #28993a;
 }
-body.contact .form label {
+html body.contact main .wrap .form label {
   display: block;
   font-weight: bold;
+  margin-bottom: 1em;
 }
-body.contact .form label:not(:first-of-type) {
+html body.contact main .wrap .form label:not(:first-of-type) {
   margin-top: 2em;
 }
-body.contact .form label input[type=text],
-body.contact .form label input[type=tel],
-body.contact .form label input[type=email] {
+html body.contact main .wrap .form label input[type=text],
+html body.contact main .wrap .form label input[type=tel],
+html body.contact main .wrap .form label input[type=email] {
   font-weight: normal;
   display: block;
   margin-top: 0.5em;
@@ -720,25 +742,40 @@ body.contact .form label input[type=email] {
   width: 100%;
   box-sizing: border-box;
 }
-body.contact .form fieldset {
+html body.contact main .wrap .form label input[type=text]:focus,
+html body.contact main .wrap .form label input[type=tel]:focus,
+html body.contact main .wrap .form label input[type=email]:focus {
+  border: 2px solid green;
+}
+html body.contact main .wrap .form .wpcf7-select {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1em;
+  width: 100%;
+}
+html body.contact main .wrap .form .wpcf7-select:focus {
+  border: 2px solid green;
+}
+html body.contact main .wrap .form fieldset {
   padding: 1em 0;
   margin-top: 2em;
+  margin-bottom: 1em;
   border: none;
 }
-body.contact .form fieldset legend {
+html body.contact main .wrap .form fieldset legend {
   font-weight: bold;
 }
-body.contact .form fieldset .wrap {
+html body.contact main .wrap .form fieldset .wrap {
   display: flex;
   flex-wrap: wrap;
 }
-body.contact .form fieldset .wrap label {
+html body.contact main .wrap .form fieldset .wrap label {
   flex: 1;
   display: flex;
   align-items: center;
   margin: 0;
 }
-body.contact .form fieldset .wrap label input[type=checkbox] {
+html body.contact main .wrap .form fieldset .wrap label input[type=checkbox] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -750,10 +787,10 @@ body.contact .form fieldset .wrap label input[type=checkbox] {
   margin-right: 0.5em;
   cursor: pointer;
 }
-body.contact .form fieldset .wrap label input[type=checkbox]:checked {
+html body.contact main .wrap .form fieldset .wrap label input[type=checkbox]:checked {
   background: #28993a;
 }
-body.contact .form fieldset .wrap label input[type=checkbox]:checked::after {
+html body.contact main .wrap .form fieldset .wrap label input[type=checkbox]:checked::after {
   content: "✓";
   position: absolute;
   top: 50%;
@@ -763,7 +800,7 @@ body.contact .form fieldset .wrap label input[type=checkbox]:checked::after {
   font-size: 0.875rem;
   font-weight: bold;
 }
-body.contact .form textarea {
+html body.contact main .wrap .form textarea {
   display: block;
   border: 1px solid #d1d5db;
   border-radius: 10px;
@@ -774,14 +811,53 @@ body.contact .form textarea {
   font-weight: normal;
   box-sizing: border-box;
 }
-body.contact .form input[type=submit] {
+html body.contact main .wrap .form textarea:focus {
+  border: 2px solid green;
+}
+html body.contact main .wrap .form input[type=submit] {
   display: block;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
   padding: 0.5em 1em;
   margin: 1em auto 0;
   background: green;
   border-radius: 10px;
+  color: #fff;
+}
+html body.contact main .wrap .info > .wp-block-group {
+  background: #fff;
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0 0px 5px 0 #ddd;
+}
+html body.contact main .wrap .info > .wp-block-group > .wp-block-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+}
+html body.contact main .wrap .info > .wp-block-group > .wp-block-group [class^=icon-] {
+  background: rgba(255, 165, 0, 0.1019607843);
+  color: orange;
+  padding: 0.5em;
+  border-radius: 10px;
+  font-size: 1.5em;
+  margin: 0;
+}
+html body.contact main .wrap .info > .wp-block-group > .wp-block-group:nth-child(odd) [class^=icon-] {
+  background: rgba(40, 153, 58, 0.1019607843);
+  color: green;
+}
+html body.contact main .wrap .info > .wp-block-group > .wp-block-group > .wp-block-group {
+  width: 100%;
+  margin-bottom: 2em;
+}
+html body.contact main .wrap .info > .wp-block-group > .wp-block-group > .wp-block-group p {
+  margin-bottom: 0;
+}
+html body.contact main .wrap .info .notice {
+  margin-top: 2em;
+  background: #28993a;
+  padding: 2em;
+  border-radius: 20px;
   color: #fff;
 }
 
@@ -877,6 +953,11 @@ html body.recruit main {
 }
 html body.company .is-layout-flex {
   align-items: start;
+}
+html body.company h2 {
+  font-size: 2em;
+  line-height: 1.2;
+  color: green;
 }
 
 .wp-block-group {

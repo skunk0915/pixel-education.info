@@ -8,6 +8,7 @@
 	<title><?php wp_title('｜', true, 'right'); ?><?php bloginfo('name'); ?></title>
 	<meta name="description" content="">
 	<link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/ress.min.css?v=1.0">
+	<link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/icomoon.css?v=1.0">
 	<link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/pc.css?v=1.0" media="(min-width: 768px)">
 	<link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/sp.css?v=1.0" media="(max-width: 767px)">
 	<link rel="icon" href="<?php echo get_theme_file_uri(); ?>/img/favicon/favicon.ico" sizes="any"><!-- 32×32 -->
