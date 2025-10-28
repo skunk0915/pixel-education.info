@@ -14,7 +14,7 @@ html {
 		display: flex; // footerを下に固定のため
 		flex-direction: column; // footerを下に固定のため
 		min-height: 100vh; // footerを下に固定のため
-		// overflow-x: hidden; // 横スクロール防止
+		overflow-x: hidden; // 横スクロール防止
 		// max-width: 100vw; // 最大幅制限
 
 		a {
@@ -47,10 +47,10 @@ html {
 				max-width: none;
 
 				.body_bg {
-					max-width: $main_width;
 					width: auto;
 					margin: 0 auto;
 					padding: 0 2em;
+
 					p {
 						margin-bottom: 1em;
 					}
@@ -199,32 +199,39 @@ body.menu-open {
 		z-index: 999;
 	}
 }
-html body.recruit{
-	main{
+
+html body.recruit {
+	main {
 		padding-top: 0em;
 	}
-	.recruit_catch{
-		.body{
+
+	.recruit_catch {
+		.body {
 			text-align: left;
-			br{
+
+			br {
 				display: none;
 			}
 		}
 	}
 
 }
-html body.company{
-	main{
+
+html body.company {
+	main {
 		padding-top: 5em;
 	}
-	h2{
+
+	h2 {
 		font-size: 2em;
 		color: green;
 	}
-	.bg03{
+
+	.bg03 {
 		padding-bottom: 2em;
 	}
-	.is-layout-flex{
+
+	.is-layout-flex {
 		flex-direction: column;
 	}
 
@@ -962,7 +969,7 @@ body.single-app {
 		}
 	}
 
-	.notice{
+	.notice {
 		font-size: .8em;
 		line-height: 1.5;
 	}
@@ -975,7 +982,7 @@ body.contact {
 	}
 
 	.wrap {
-		
+
 
 		.wp-block-contact-form-7-contact-form-selector {
 			width: 100%;
@@ -987,12 +994,15 @@ body.contact {
 			box-shadow: 0 0px 5px 0 #ddd;
 			padding: 2em;
 			margin: 0 auto;
-			br{
+
+			br {
 				display: none;
 			}
-			p{
+
+			p {
 				margin: 0;
 			}
+
 			h2 {
 				text-align: center;
 				font-weight: bold;
@@ -1020,7 +1030,8 @@ body.contact {
 					padding: .5em 1em;
 					width: 100%;
 					box-sizing: border-box;
-					&:focus{
+
+					&:focus {
 						border: 2px solid green;
 					}
 				}
@@ -1031,7 +1042,8 @@ body.contact {
 				border-radius: 10px;
 				padding: 1em;
 				width: 100%;
-				&:focus{
+
+				&:focus {
 					border: 2px solid green;
 				}
 			}
@@ -1097,7 +1109,8 @@ body.contact {
 				height: 200px;
 				font-weight: normal;
 				box-sizing: border-box;
-				&:focus{
+
+				&:focus {
 					border: 2px solid green;
 				}
 			}
@@ -1314,14 +1327,24 @@ body.press {
 		margin-top: 5em;
 	}
 }
+
 .bg03 {
 	position: relative;
 	background-color: #FFF;
+	// width: 100vw;
+	// margin-left: calc(50% - 50vw);
+	// margin-right: calc(50% - 50vw);
+	// padding-left: calc(50vw - 50%);
+	// padding-right: calc(50vw - 50%);
+
+	position: relative;
 	width: 100vw;
-	margin-left: calc(50% - 50vw);
-	margin-right: calc(50% - 50vw);
-	padding-left: calc(50vw - 50%);
-	padding-right: calc(50vw - 50%);
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	padding: 2em;
+
 	padding-top: 5em;
 	padding-bottom: 5em;
 	margin-top: 5em;
@@ -1334,6 +1357,7 @@ body.press {
 	&>.wp-block-group {
 		padding: 1em;
 		margin-bottom: 2em;
+
 		&>.wp-block-image {
 			width: 27%;
 			background: orange;
@@ -1459,13 +1483,22 @@ body.press {
 		}
 	}
 }
+
 .width100 {
+	// width: 100vw;
+	// margin-left: calc(50% - 50vw);
+	// margin-right: calc(50% - 50vw);
+	// padding-left: calc(50vw - 50%);
+	// padding-right: calc(50vw - 50%);
+	position: relative;
 	width: 100vw;
-	margin-left: calc(50% - 50vw);
-	margin-right: calc(50% - 50vw);
-	padding-left: calc(50vw - 50%);
-	padding-right: calc(50vw - 50%);
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	padding: 2em;
 }
+
 .band01 {
 	border-radius: 10px;
 	background-image: linear-gradient(90deg, green, orange);
@@ -1539,6 +1572,7 @@ body.press {
 	}
 
 }
+
 .block02 {
 	margin-bottom: 5em;
 
@@ -1594,6 +1628,7 @@ body.press {
 	border-radius: 50px;
 
 }
+
 .btn_ios {
 	display: block;
 	width: 200px;
@@ -1653,4 +1688,8 @@ footer {
 			}
 		}
 	}
+}
+
+.dispnone {
+	display: none;
 }
