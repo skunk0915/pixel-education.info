@@ -48,7 +48,7 @@ html {
 
 				.body_bg {
 					width: auto;
-					max-width: 100vw;//スワイパーはみ出し部分を隠すため
+					max-width: 100vw; //スワイパーはみ出し部分を隠すため
 					margin: 0 auto;
 					padding: 0 2em;
 
@@ -685,83 +685,105 @@ body.app {
 
 			display: block;
 
-			.block_a {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 1em;
-				margin-bottom: 1em;
+			a {
+				text-decoration: none;
 
-				.app_thumbnail {
-					// width: 100%;
-					// height: 180px;
-					// overflow: hidden;
-					// border-radius: 10px 10px 0 0;
-
-
-
-					img {
-						display: block;
-						width: 100%;
-						height: 100%;
-						border-radius: 30px;
-
-						&.default-icon {
-							filter: grayscale(100%);
-						}
-					}
-				}
-
-				.status {
-
-					.price,
-					.age {
-						flex: 1;
-						border-radius: 10px;
-						color: #fff;
-						background: orange;
-						text-align: center;
-						padding: 0.5em 0;
-						font-size: 4cqw;
-						&:not(:last-child) {
-							margin-bottom: 1em;
-						}
-					}
-
-				}
-			}
-
-			.app_txt {
-				padding: 0;
-
-				.app_name {
-					font-size: 1em;
-					font-weight: bold;
-					margin: 0 auto .5em;
-					color: #1f2937;
-				}
-
-				.app_excerpt {
-					flex: 1;
+				.block_a {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					gap: 1em;
 					margin-bottom: 1em;
-					color: #6b7280;
-					line-height: 1.6;
-					font-size: 0.9em;
+					align-items: flex-end;
+
+					.app_thumbnail {
+						// width: 100%;
+						// height: 180px;
+						// overflow: hidden;
+						// border-radius: 10px 10px 0 0;
+
+
+
+						img {
+							display: block;
+							width: 100%;
+							height: auto;
+							border-radius: 30px;
+
+							&.default-icon {
+								filter: grayscale(100%);
+							}
+						}
+					}
+
+					.status {
+
+						.price,
+						.age {
+							flex: 1;
+							border-radius: 10px;
+							color: #fff;
+							background: orange;
+							text-align: center;
+							padding: 0.5em 0;
+							font-size: 4cqw;
+
+							&:not(:last-child) {
+								margin-bottom: 1em;
+							}
+						}
+
+					}
+				}
+
+				.app_txt {
+					padding: 0;
+
+					.app_name {
+						font-size: 1em;
+						font-weight: bold;
+						margin: 0 auto .5em;
+						color: #1f2937;
+					}
+
+					.app_excerpt {
+						flex: 1;
+						margin-bottom: 1em;
+						color: #6b7280;
+						line-height: 1.6;
+						font-size: 0.9em;
+					}
 				}
 			}
 
 			.store {
 				display: flex;
-				grid-area: 1em;
 				gap: 1em;
+				width: 100%;
+				justify-content: center;
 
 				a {
-					display: block;
+					flex: 1 1 auto;
+					min-width: 0;
+					max-width: 50%;
+					height: 100%;
 
 					img {
 						width: 100%;
-						height: auto;
+						height: 100%;
 					}
 				}
+
+			}
+
+			.more {
+				display: block;
+				background: green;
+				color: #fff;
+				text-align: center;
+				border-radius: 100px;
+				padding: .5em 2em;
+				width: fit-content;
+				margin: 1em auto 0;
 
 			}
 
@@ -870,31 +892,8 @@ body.single-app {
 		position: relative;
 		overflow: hidden;
 
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 100%;
-			height: 100%;
-			background-size: auto 100%;
-			background-position: right;
-			filter: grayscale(100%);
-			z-index: -2;
-		}
-
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: linear-gradient(to right, rgba(0, 128, 0, 1) 0%, rgba(0, 128, 0, 0.9) 80%, rgba(0, 128, 0, 0.7) 100%);
-			z-index: -1;
-		}
-
 		h1 {
+			background: green;
 			position: relative;
 			z-index: 1;
 		}
@@ -902,10 +901,10 @@ body.single-app {
 
 	.app_summary {
 		display: flex;
-		flex-direction: column;
-		gap: 1em;
 
-		display: none;
+		align-items: flex-end;
+		gap: 1em;
+		margin-bottom: 1em;
 
 		.app_icon {
 			display: block;
@@ -921,19 +920,11 @@ body.single-app {
 		.info {
 			flex: 1;
 
-			.app_name {
-				font-weight: bold;
-				font-size: 1.5em;
-				margin-bottom: 1em;
-				line-height: 1em;
-			}
-
 			.status {
 				display: flex;
+				flex-direction: column;
 				gap: 1em;
 				container-type: inline-size;
-				max-width: 300px;
-				margin-bottom: 1em;
 
 				.price,
 				.age {
@@ -943,33 +934,49 @@ body.single-app {
 					background: orange;
 					text-align: center;
 					padding: 0.5em 0;
-					font-size: 5cqw;
+					font-size: 9cqw;
 				}
 			}
 
-			.store {
-				display: flex;
-				gap: 1em;
-				max-width: 300px;
 
-				a {
-					flex: 1;
-					display: block;
+		}
 
-					img {
-						display: block;
-						width: 100%;
-					}
-				}
+
+	}
+
+	.store {
+		display: flex;
+		gap: 1em;
+		width: 100%;
+		height: 60px;
+
+		a {
+			flex: 1 1 auto;
+			min-width: 0;
+			max-width: 50%;
+			height: 100%;
+			display: block;
+			margin: 0 auto;
+
+			img {
+				display: block;
+				width: 100%;
 			}
 		}
+	}
+
+	.app_name {
+		font-weight: bold;
+		font-size: 1.5em;
+		margin: 1em auto;
+		line-height: 1em;
+		color: green;
 	}
 
 	.body {
 		margin: 2em 0;
 
 		h2 {
-			color: green;
 			margin-bottom: 1em;
 			font-size: 1.2em;
 		}

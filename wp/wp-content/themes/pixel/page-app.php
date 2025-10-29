@@ -29,7 +29,8 @@
 						$icon_url = $has_icon ? esc_url($app_icon) : esc_url(get_theme_file_uri('/img/logo_mark_pixel.png'));
 				?>
 						<li class="app_list_item">
-							<a href="">
+							<a href="<?php the_permalink(); ?>">
+								
 								<div class="block_a">
 									<div class="app_thumbnail">
 										<img src="<?php echo $icon_url; ?>" alt="<?php the_title_attribute(); ?>" class="<?php echo !$has_icon ? 'default-icon' : ''; ?>">
@@ -103,7 +104,8 @@
 								<?php endif; ?>
 							</div><!-- /.store -->
 
-
+							<a href="<?php the_permalink() ?>" class="more">もっと見る</a>
+							
 
 						</li>
 					<?php

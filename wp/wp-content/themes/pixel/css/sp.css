@@ -515,23 +515,27 @@ body.app .app_list_wrap .app_list_item {
   padding: 1em;
   display: block;
 }
-body.app .app_list_wrap .app_list_item .block_a {
+body.app .app_list_wrap .app_list_item a {
+  text-decoration: none;
+}
+body.app .app_list_wrap .app_list_item a .block_a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
   margin-bottom: 1em;
+  align-items: flex-end;
 }
-body.app .app_list_wrap .app_list_item .block_a .app_thumbnail img {
+body.app .app_list_wrap .app_list_item a .block_a .app_thumbnail img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   border-radius: 30px;
 }
-body.app .app_list_wrap .app_list_item .block_a .app_thumbnail img.default-icon {
+body.app .app_list_wrap .app_list_item a .block_a .app_thumbnail img.default-icon {
   filter: grayscale(100%);
 }
-body.app .app_list_wrap .app_list_item .block_a .status .price,
-body.app .app_list_wrap .app_list_item .block_a .status .age {
+body.app .app_list_wrap .app_list_item a .block_a .status .price,
+body.app .app_list_wrap .app_list_item a .block_a .status .age {
   flex: 1;
   border-radius: 10px;
   color: #fff;
@@ -540,20 +544,20 @@ body.app .app_list_wrap .app_list_item .block_a .status .age {
   padding: 0.5em 0;
   font-size: 4cqw;
 }
-body.app .app_list_wrap .app_list_item .block_a .status .price:not(:last-child),
-body.app .app_list_wrap .app_list_item .block_a .status .age:not(:last-child) {
+body.app .app_list_wrap .app_list_item a .block_a .status .price:not(:last-child),
+body.app .app_list_wrap .app_list_item a .block_a .status .age:not(:last-child) {
   margin-bottom: 1em;
 }
-body.app .app_list_wrap .app_list_item .app_txt {
+body.app .app_list_wrap .app_list_item a .app_txt {
   padding: 0;
 }
-body.app .app_list_wrap .app_list_item .app_txt .app_name {
+body.app .app_list_wrap .app_list_item a .app_txt .app_name {
   font-size: 1em;
   font-weight: bold;
   margin: 0 auto 0.5em;
   color: #1f2937;
 }
-body.app .app_list_wrap .app_list_item .app_txt .app_excerpt {
+body.app .app_list_wrap .app_list_item a .app_txt .app_excerpt {
   flex: 1;
   margin-bottom: 1em;
   color: #6b7280;
@@ -562,15 +566,30 @@ body.app .app_list_wrap .app_list_item .app_txt .app_excerpt {
 }
 body.app .app_list_wrap .app_list_item .store {
   display: flex;
-  grid-area: 1em;
   gap: 1em;
+  width: 100%;
+  justify-content: center;
 }
 body.app .app_list_wrap .app_list_item .store a {
-  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 50%;
+  height: 100%;
 }
 body.app .app_list_wrap .app_list_item .store a img {
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+body.app .app_list_wrap .app_list_item .more {
+  display: block;
+  background: green;
+  color: #fff;
+  text-align: center;
+  border-radius: 100px;
+  padding: 0.5em 2em;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1em auto 0;
 }
 body.app .app_list_wrap .app_list_item .store_btn {
   display: flex;
@@ -595,37 +614,16 @@ body.single-app .mv_app {
   position: relative;
   overflow: hidden;
 }
-body.single-app .mv_app::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-size: auto 100%;
-  background-position: right;
-  filter: grayscale(100%);
-  z-index: -2;
-}
-body.single-app .mv_app::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgb(0, 128, 0) 0%, rgba(0, 128, 0, 0.9) 80%, rgba(0, 128, 0, 0.7) 100%);
-  z-index: -1;
-}
 body.single-app .mv_app h1 {
+  background: green;
   position: relative;
   z-index: 1;
 }
 body.single-app .app_summary {
   display: flex;
-  flex-direction: column;
+  align-items: flex-end;
   gap: 1em;
-  display: none;
+  margin-bottom: 1em;
 }
 body.single-app .app_summary .app_icon {
   display: block;
@@ -639,18 +637,11 @@ body.single-app .app_summary .app_icon.default-icon {
 body.single-app .app_summary .info {
   flex: 1;
 }
-body.single-app .app_summary .info .app_name {
-  font-weight: bold;
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  line-height: 1em;
-}
 body.single-app .app_summary .info .status {
   display: flex;
+  flex-direction: column;
   gap: 1em;
   container-type: inline-size;
-  max-width: 300px;
-  margin-bottom: 1em;
 }
 body.single-app .app_summary .info .status .price,
 body.single-app .app_summary .info .status .age {
@@ -660,26 +651,37 @@ body.single-app .app_summary .info .status .age {
   background: orange;
   text-align: center;
   padding: 0.5em 0;
-  font-size: 5cqw;
+  font-size: 9cqw;
 }
-body.single-app .app_summary .info .store {
+body.single-app .store {
   display: flex;
   gap: 1em;
-  max-width: 300px;
+  width: 100%;
+  height: 60px;
 }
-body.single-app .app_summary .info .store a {
-  flex: 1;
+body.single-app .store a {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 50%;
+  height: 100%;
   display: block;
+  margin: 0 auto;
 }
-body.single-app .app_summary .info .store a img {
+body.single-app .store a img {
   display: block;
   width: 100%;
+}
+body.single-app .app_name {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 1em auto;
+  line-height: 1em;
+  color: green;
 }
 body.single-app .body {
   margin: 2em 0;
 }
 body.single-app .body h2 {
-  color: green;
   margin-bottom: 1em;
   font-size: 1.2em;
 }

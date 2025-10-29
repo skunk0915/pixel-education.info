@@ -13,14 +13,14 @@
 		<h1><?php the_title(); ?></h1>
 	</section><!-- /.mv -->
 	<style>
-		.mv_app::before {
+		/* .mv_app::before {
 			background-image: url('<?php echo $icon_url; ?>');
 			<?php if (!$has_icon) : ?>background-size: 50%;
 			background-position: center;
 			background-repeat: no-repeat;
 			filter: grayscale(100%);
 			<?php endif; ?>
-		}
+		} */
 	</style>
 	<main>
 		<div class="body_bg">
@@ -28,9 +28,6 @@
 			<div class="app_summary">
 				<img src="<?php echo $icon_url; ?>" alt="" class="app_icon<?php echo !$has_icon ? ' default-icon' : ''; ?>">
 				<div class="info">
-					<div class="app_name">
-						<?php the_title(); ?>
-					</div>
 					<div class="status">
 
 
@@ -40,7 +37,7 @@
 						if ($price !== '' && $price !== null && $price !== false) :
 						?>
 							<div class="price">
-								<?php echo ($price == 0) ? '無料' : '&yen;'.esc_html($price); ?>
+								<?php echo ($price == 0) ? '無料' : '&yen;' . esc_html($price); ?>
 							</div>
 						<?php endif; ?>
 
@@ -73,6 +70,7 @@
 								?>
 						</div>
 					</div><!-- /.status -->
+
 					<div class="store">
 						<?php
 						$ios_url = get_field('ios_url');
@@ -93,7 +91,13 @@
 					</div>
 
 				</div><!-- /.info -->
+
+				<div class="app_name">
+					<?php the_title(); ?>
+				</div>
+
 			</div><!-- /.app_summary -->
+
 
 			<div class="body">
 				<?php the_content(); ?>

@@ -244,40 +244,6 @@ main.front-page .about p {
 main.front-page .about .sign {
   margin-top: 2em;
 }
-main.front-page .app .app_list_wrap {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-}
-main.front-page .app .app_list_wrap .app_list_item {
-  flex: 1;
-  background: #fff;
-  box-shadow: 0 4px 10px 0px #ccc;
-  border-radius: 30px;
-  padding: 2em;
-}
-main.front-page .app .app_list_wrap .app_list_item .app_name {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-main.front-page .app .app_list_wrap .app_list_item .store_btn {
-  display: flex;
-  gap: 1em;
-}
-main.front-page .app .app_list_wrap .app_list_item .store_btn:not(:first-child) {
-  margin-top: 1em;
-}
-main.front-page .app .app_list_wrap .app_list_item .store_btn p {
-  flex: 1;
-  background: #e5e7eb;
-  text-align: center;
-  border-radius: 10px;
-}
-main.front-page .app .app_list_wrap .app_list_item .store_btn p a {
-  display: block;
-  padding: 0.5em;
-  text-decoration: none;
-}
 main.front-page .news .column {
   display: flex;
 }
@@ -464,111 +430,140 @@ body.terms .toggle_item h2:not(.accordion-active)::after {
 }
 
 body.app .app_list_wrap {
-  list-style: none;
+  margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2em;
-  margin-top: 2em;
 }
-body.app .app_list_wrap .app_list_item a {
+body.app .app_list_wrap .app_list_item {
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 0px 20px 0px #ccc;
-  display: flex;
-  flex-direction: column;
+  padding: 1em;
+  display: block;
+}
+body.app .app_list_wrap .app_list_item a {
   text-decoration: none;
-  height: 100%;
 }
-body.app .app_list_wrap .app_list_item a .app_thumbnail {
+body.app .app_list_wrap .app_list_item a .block_a {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin-bottom: 1em;
+  align-items: flex-end;
+}
+body.app .app_list_wrap .app_list_item a .block_a .app_thumbnail img {
+  display: block;
   width: 100%;
-  overflow: hidden;
-  border-radius: 10px 10px 0 0;
+  height: auto;
+  border-radius: 30px;
 }
-body.app .app_list_wrap .app_list_item a .app_thumbnail img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-}
-body.app .app_list_wrap .app_list_item a .app_thumbnail img.default-icon {
+body.app .app_list_wrap .app_list_item a .block_a .app_thumbnail img.default-icon {
   filter: grayscale(100%);
 }
+body.app .app_list_wrap .app_list_item a .block_a .status .price,
+body.app .app_list_wrap .app_list_item a .block_a .status .age {
+  flex: 1;
+  border-radius: 10px;
+  color: #fff;
+  background: orange;
+  text-align: center;
+  padding: 0.5em 0;
+  font-size: 1.5cqw;
+}
+body.app .app_list_wrap .app_list_item a .block_a .status .price:not(:last-child),
+body.app .app_list_wrap .app_list_item a .block_a .status .age:not(:last-child) {
+  margin-bottom: 1em;
+}
 body.app .app_list_wrap .app_list_item a .app_txt {
-  padding: 2em;
+  padding: 0;
 }
 body.app .app_list_wrap .app_list_item a .app_txt .app_name {
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
-  margin: 0 0 1em;
+  margin: 0 auto 0.5em;
   color: #1f2937;
 }
 body.app .app_list_wrap .app_list_item a .app_txt .app_excerpt {
   flex: 1;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   color: #6b7280;
   line-height: 1.6;
+  font-size: 0.9em;
+}
+body.app .app_list_wrap .app_list_item .store {
+  display: flex;
+  gap: 1em;
+  width: 100%;
+  justify-content: center;
+}
+body.app .app_list_wrap .app_list_item .store a {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 50%;
+  height: 100%;
+}
+body.app .app_list_wrap .app_list_item .store a img {
+  width: 100%;
+  height: 100%;
+}
+body.app .app_list_wrap .app_list_item .store_btn {
+  display: flex;
+  gap: 1em;
+}
+body.app .app_list_wrap .app_list_item .store_btn:not(:first-child) {
+  margin-top: 1em;
+}
+body.app .app_list_wrap .app_list_item .store_btn p {
+  flex: 1;
+  background: #e5e7eb;
+  text-align: center;
+  border-radius: 10px;
+}
+body.app .app_list_wrap .app_list_item .store_btn p a {
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
+}
+body.app .app_list_wrap .app_list_item .more {
+  display: block;
+  background: green;
+  color: #fff;
+  text-align: center;
+  border-radius: 100px;
+  padding: 0.5em 2em;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 1em auto 0;
 }
 
 body.single-app .mv_app {
   position: relative;
   overflow: hidden;
 }
-body.single-app .mv_app::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 70%;
-  height: 100%;
-  background-size: auto 130%;
-  background-position: right center;
-  filter: grayscale(100%);
-  z-index: -2;
-}
-body.single-app .mv_app::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgb(0, 128, 0) 0%, rgb(0, 128, 0) 70%, rgba(0, 128, 0, 0.8) 100%);
-  z-index: -1;
-}
 body.single-app .mv_app h1 {
   position: relative;
   z-index: 1;
 }
 body.single-app .app_summary {
-  display: flex;
-  gap: 1em;
+  overflow: hidden;
+  max-width: 600px;
 }
 body.single-app .app_summary .app_icon {
-  display: block;
-  width: 20%;
-  border-radius: 40px;
+  float: left;
+  width: 30%;
+  margin-right: 1em;
 }
 body.single-app .app_summary .app_icon.default-icon {
   filter: grayscale(100%);
 }
 body.single-app .app_summary .info {
-  flex: 1;
-}
-body.single-app .app_summary .info .app_name {
-  font-weight: bold;
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  line-height: 1em;
+  float: left;
+  width: 60%;
 }
 body.single-app .app_summary .info .status {
   display: flex;
   gap: 1em;
-  container-type: inline-size;
-  max-width: 300px;
-  margin-bottom: 1em;
 }
 body.single-app .app_summary .info .status .price,
 body.single-app .app_summary .info .status .age {
@@ -578,20 +573,34 @@ body.single-app .app_summary .info .status .age {
   background: orange;
   text-align: center;
   padding: 0.5em 0;
-  font-size: 5cqw;
 }
 body.single-app .app_summary .info .store {
+  float: left;
   display: flex;
+  width: 100%;
+  height: 70px;
   gap: 1em;
-  max-width: 300px;
+  justify-content: center;
 }
 body.single-app .app_summary .info .store a {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 50%;
+  height: 100%;
   display: block;
 }
 body.single-app .app_summary .info .store a img {
   display: block;
   width: 100%;
+}
+body.single-app .app_summary .app_name {
+  float: left;
+  width: 60%;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin: 1em auto;
+  line-height: 1em;
+  color: green;
 }
 body.single-app .body {
   margin: 2em 0;
