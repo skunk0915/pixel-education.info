@@ -1,0 +1,1 @@
+2025-10-29 15:30 要求:page-app.phpのprice/age/ストアURL動的取得 処理結果:get_field()使用、価格・年齢・iOS/Android URL動的表示実装完了
