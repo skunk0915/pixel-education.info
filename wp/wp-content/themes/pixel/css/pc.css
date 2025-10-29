@@ -1356,6 +1356,9 @@ footer .inner .company_info address {
 footer .inner nav ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 footer .inner nav ul li a {
   text-decoration: none;

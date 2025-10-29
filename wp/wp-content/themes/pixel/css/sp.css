@@ -1373,6 +1373,9 @@ footer .inner nav ul {
   list-style: none;
   padding: 0;
 }
+footer .inner nav ul li {
+  margin-bottom: 1em;
+}
 footer .inner nav ul li a {
   text-decoration: none;
 }
