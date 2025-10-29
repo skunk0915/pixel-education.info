@@ -89,12 +89,12 @@
 							</a>
 						<?php endif; ?>
 					</div>
+					<div class="app_name">
+						<?php the_title(); ?>
+					</div>
 
 				</div><!-- /.info -->
 
-				<div class="app_name">
-					<?php the_title(); ?>
-				</div>
 
 			</div><!-- /.app_summary -->
 

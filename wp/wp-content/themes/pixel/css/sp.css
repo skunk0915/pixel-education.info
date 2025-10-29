@@ -621,7 +621,8 @@ body.single-app .mv_app h1 {
 }
 body.single-app .app_summary {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 1em;
   margin-bottom: 1em;
 }
@@ -636,10 +637,12 @@ body.single-app .app_summary .app_icon.default-icon {
 }
 body.single-app .app_summary .info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 body.single-app .app_summary .info .status {
   display: flex;
-  flex-direction: column;
   gap: 1em;
   container-type: inline-size;
 }
@@ -651,7 +654,6 @@ body.single-app .app_summary .info .status .age {
   background: orange;
   text-align: center;
   padding: 0.5em 0;
-  font-size: 9cqw;
 }
 body.single-app .store {
   display: flex;
