@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <body <?php body_class(); ?>>
 
 	<?php get_template_part('parts/gnav'); ?>
@@ -22,15 +23,21 @@
 
 				if ($app_query->have_posts()) :
 					while ($app_query->have_posts()) : $app_query->the_post();
-					// アプリアイコンの取得（なければデフォルト画像を使用）
-					$app_icon = get_field('app_icon');
-					$has_icon = !empty($app_icon);
-					$icon_url = $has_icon ? esc_url($app_icon) : esc_url(get_theme_file_uri('/img/logo_mark_pixel.png'));
+						// アプリアイコンの取得（なければデフォルト画像を使用）
+						$app_icon = get_field('app_icon');
+						$has_icon = !empty($app_icon);
+						$icon_url = $has_icon ? esc_url($app_icon) : esc_url(get_theme_file_uri('/img/logo_mark_pixel.png'));
 				?>
-					<li class="app_list_item">
-						<a href="<?php the_permalink(); ?>">
-							<div class="app_thumbnail">
-								<img src="<?php echo $icon_url; ?>" alt="<?php the_title_attribute(); ?>" class="<?php echo !$has_icon ? 'default-icon' : ''; ?>">
+						<li class="app_list_item">
+
+							<div class="block_a">
+								<div class="app_thumbnail">
+									<img src="<?php echo $icon_url; ?>" alt="<?php the_title_attribute(); ?>" class="<?php echo !$has_icon ? 'default-icon' : ''; ?>">
+								</div>
+								<div class="status">
+									<div class="price">無料</div>
+									<div class="age">全年齢</div>
+								</div>
 							</div>
 							<div class="app_txt">
 
@@ -39,14 +46,20 @@
 									<?php echo get_excerpt_with_linebreaks(get_the_ID()); ?>
 								</div>
 							</div><!-- /.app_txt -->
-						</a>
-					</li>
-				<?php
+							<div class="store">
+								<a href=""><img src="<?php echo get_theme_file_uri(); ?>/img/btn_ios.png" alt="iPhone版アプリをダウンロードする"></a>
+								<a href=""><img src="<?php echo get_theme_file_uri(); ?>/img/btn_android.png" alt="Android版アプリをダウンロードする"></a>
+							</div>
+
+						</li>
+					<?php
 					endwhile;
 					wp_reset_postdata();
 				else :
-				?>
-					<li><p>現在、登録されているアプリはありません。</p></li>
+					?>
+					<li>
+						<p>現在、登録されているアプリはありません。</p>
+					</li>
 				<?php endif; ?>
 			</ul><!-- /.app_list_wrap -->
 		</div><!-- /.body_bg -->

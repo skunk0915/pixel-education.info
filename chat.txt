@@ -1,51 +1,53 @@
-1→1→2025-10-09 14:30 要求:768px境界でpc.css/sp.css切替設定 結果:sp.css作成、front-page.phpにメディアクエリ追加完了
-     2→     2→2025-10-09 14:45 要求:767px以下でハンバーガーメニュー実装 結果:menu.js作成、sp/pc.scssに追加、右スライド完了
-     3→     3→2025-10-14 03:45 要求:GitHubリポジトリへプッシュ(pixel-education.info.git) 結果:リモート追加、31ファイル変更コミット、プッシュ完了
-     4→     4→2025-10-14 03:55 要求:セキュリティ対応で機密情報を含むファイル削除 結果:.gitignore作成、3164ファイル削除、pixelテーマのみ管理対象化、force push完了
-2025-10-15 15:30 要求:ページローディング画面実装（白背景、中央ローディング、0.5秒フェード） 結果:page_fade.js作成、ローディングオーバーレイとスピナー実装完了
-2025-10-15 16:00 要求:フェードアウト前にページが表示される問題修正 結果:header.phpにインラインCSS追加、page_fade.js簡素化、初期状態から白画面表示完了
-2025-10-15 16:30 要求:h2クリックでアコーディオン開閉機能実装 結果:terms_action.js作成、次のh2までのp群開閉処理完了
-2025-10-15 16:35 要求:jQuery未定義エラー修正 結果:functions.phpにjQuery依存関係追加、header.php直接読み込み削除完了
-2025-10-15 16:40 要求:termsページのみterms_action.js読み込み 結果:functions.phpにis_page('terms')条件分岐追加完了
-2025-10-15 16:45 要求:アコーディオンデフォルト状態を閉じる 結果:terms_action.js修正、初期非表示(display:none)設定完了
-2025-10-15 16:50 要求:h2とp群をdiv.toggle_itemで包む 結果:terms_action.js修正、h2とp群をtoggle_itemでラップ処理追加完了
-2025-10-15 16:55 要求:h2と次のh2までの全要素をラップ 結果:terms_action.js修正、nextUntil('h2')で全要素取得に変更完了
-2025-10-15 17:00 要求:toggle_itemのCSS適用不具合修正 結果:pc.scssセレクタ修正(main.terms→body.terms)、自動コンパイル完了
-2025-10-15 17:05 要求:閉じているアコーディオンh2のmargin削除 結果:pc.scssにh2:not(.accordion-active)でmargin:0追加完了
-2025-10-15 17:10 要求:開閉状態アイコン表示(開:上矢印/閉:右矢印) 結果:pc.scssにh2::after矢印追加、rotate90deg設定完了
-2025-10-15 17:15 要求:Googleフォントアイコン表示不具合修正 結果:font-family修正(Material Icons→Symbols Outlined)、リガチャー使用完了
-2025-10-16 15:00 要求:投稿スラッグを保存日時（yyyymmddhhii）に設定 結果:functions.phpにwp_insert_post_dataフィルター追加、自動設定完了
-2025-10-16 15:30 要求:投稿名称をニュースに変更 結果:functions.phpにchange_post_object_label関数追加、管理画面表示名変更完了
-2025-10-16 16:00 要求:カスタム投稿タイプ「アプリ」追加 結果:functions.phpにcreate_app_post_type関数追加、register_post_type('app')実装完了
-2025-10-16 16:05 要求:アプリのデフォルトスラッグを保存日時（yyyymmddhhii）に設定 結果:set_post_slug_to_datetime関数修正、postとappの両方に対応完了
-2025-10-16 16:10 要求:投稿「アプリ」と固定ページ/app/のスラッグ競合解決 結果:カスタム投稿タイプのrewrite slugをappからappsに変更完了
-2025-10-16 16:20 要求:page-app.phpに投稿「アプリ」の記事一覧表示機能追加 結果:WP_Query実装、PC版3カラムグリッド/SP版縦並び、body.app内にスタイル追加完了
-2025-10-16 17:00 要求:front-page.phpでカテゴリー別記事表示、page-press.phpにタブとページネーション実装 結果:front-page.phpにプレスリリース/更新情報最新4件表示追加、page-press.phpにタブ切替と2件ページネーション実装完了
-2025-10-16 17:15 要求:page-press.phpのページネーションが機能しない問題修正 結果:get_query_var('paged')使用、/page/N/形式URL対応、ページネーション正常動作完了
-2025-10-16 14:05 要求:iPhone横スクロール・余白問題修正 結果:sp.scssで全幅レイアウト計算変更(left:50%+margin-left:-50vw方式)、左右余白バランス修正完了
-2025-10-20 15:00 要求:app-screenshotsにスワイプスクロール機能実装 結果:screenshot.js作成、タッチ/マウスドラッグでスクロール可能化完了
-2025-10-20 15:05 要求:screenshot.jsをsingle-app.phpのみで読み込み 結果:functions.phpにis_singular('app')条件分岐追加、アプリ個別ページのみ読み込み完了
-2025-10-20 15:10 要求:screenshot.js構文エラー修正 結果:文字化けコメントを英語に変更、不正なタブ文字削除、構文エラー解決完了
-2025-10-20 15:15 要求:app-screenshotsスクロール機能CSS追加 結果:pc.scss/sp.scssにoverflow-x/flex/gap設定、スクロールバースタイル追加完了
-2025-10-21 15:00 要求:価格0は無料表記、年齢同値は単一表記、空値は非表示化 結果:価格・年齢表示ロジックに条件分岐追加完了
-2025-10-21 15:05 要求:年齢片方のみ値がある場合の表記改善（以上/以下） 結果:age_min/age_max個別判定で「◯歳以上」「◯歳以下」表記追加完了
-2025-10-21 15:10 要求:年齢0を値がないと判定するよう修正 結果:empty()使用で0/空文字/null/false全て値なし判定に変更完了
-2025-10-21 15:15 要求:年齢両方値なしの場合「全年齢」表記 結果:条件分岐追加、age要素常時表示化、全年齢表示実装完了
-2025-10-21 15:20 要求:ios_url/android_url値存在時のみa要素出力 結果:single-app.php修正、empty()条件分岐追加、esc_url()追加完了
-2025-10-21 15:55 要求:app_icon未設定時デフォルト画像表示（グレースケール・50%・中央） 結果:single-app.phpにフォールバック処理追加、pc.scss/sp.scssにdefault-iconスタイル追加完了
-2025-10-21 16:00 要求:アプリ一覧のサムネイル画像をcoverで中央表示 結果:pc.css/sp.scssでapp_thumbnailにobject-fit:cover追加、固定高設定（PC:200px/SP:180px）完了
-2025-10-21 16:05 要求:アプリアイコン画像をget_field('app_icon')で取得 結果:page-app.php修正、ACFカスタムフィールド使用、デフォルト画像フォールバック、グレースケール処理追加完了
-2025-10-21 07:35 要求:アプリ一覧のリンクを.app_list_item全体に適用 結果:.app_link削除、.app_list_item全体をリンク化完了
-2025-10-21 07:46 要求:アプリ一覧をul/li構造に変更 結果:divからul/liに変更、CSS調整、文法的に正しい構造完了
-2025-10-21 07:51 要求:.app_list_item内のa要素高さ修正 結果:height:100%追加、親要素の高さに合わせてレイアウト修正完了
-2025-10-21 08:00 要求:ol li間にpがある場合のナンバリング維持(wp-block-group単位) 結果:ol_li_p.js実装、functions.phpでサイト全体読込設定追加完了
-2025-10-22 10:00 要求:PCとスマホでメニューロケーション切替（PC:header、SP:footer） 結果:gnav.phpのwp_nav_menuにwp_is_mobile()条件分岐追加完了
-2025-10-22 08:43 要求:.relate_appに関連アプリのアイコンと名前を横スクロール表示 結果:single-app.phpにWP_Query追加、pc/sp.scssにスワイプスタイル追加、relate-app.js作成、functions.phpで読み込み設定完了
-2025-10-23 10:30 要求:pixelテーマにアイキャッチ画像機能を有効化 結果:functions.phpのregister_menu関数内にadd_theme_support('post-thumbnails')追加完了
-2025-10-24 15:00 要求:app_excerpt本文改行反映（段落も改行、HTML除去） 結果:functions.phpにget_excerpt_with_linebreaks関数追加、page-app.phpで使用完了
-2025-10-24 15:10 要求:app_excerpt手動抜粋優先、改行反映（段落も改行、HTML除去） 結果:get_excerpt_with_linebreaks関数修正、has_excerpt判定追加、page-app.phpで使用完了
-2025-10-24 15:20 要求:自動抜粋文字数制限50文字をpage-app.phpに反映 結果:page-app.phpの第2引数削除、functions.phpデフォルト値使用完了
-2025-10-24 15:25 要求:自動抜粋の先頭改行を削除 結果:get_excerpt_with_linebreaks関数にtrim()追加、先頭末尾の改行空白削除完了
-2025-10-24 15:30 要求:list03にチェックマークスタイル適用 結果:pc.scssの.list03にチェックマーク（✓）リストスタイル追加完了
-2025-10-24 18:00 要求:.list03内pで次にulがある場合のmargin-bottom調整 結果:pc.scssに.list03 p:has(+ ul)スタイル追加、margin-bottom:.5em設定完了
-2025-10-28 15:00 要求:.wpcf7-select右端中央にea50アイコン表示 結果:pc/sp.scssにlabel::afterで\ea50追加、右端中央配置完了
+     1→1→1→2025-10-09 14:30 要求:768px境界でpc.css/sp.css切替設定 結果:sp.css作成、front-page.phpにメディアクエリ追加完了
+     2→     2→     2→2025-10-09 14:45 要求:767px以下でハンバーガーメニュー実装 結果:menu.js作成、sp/pc.scssに追加、右スライド完了
+     3→     3→     3→2025-10-14 03:45 要求:GitHubリポジトリへプッシュ(pixel-education.info.git) 結果:リモート追加、31ファイル変更コミット、プッシュ完了
+     4→     4→     4→2025-10-14 03:55 要求:セキュリティ対応で機密情報を含むファイル削除 結果:.gitignore作成、3164ファイル削除、pixelテーマのみ管理対象化、force push完了
+     5→2025-10-15 15:30 要求:ページローディング画面実装（白背景、中央ローディング、0.5秒フェード） 結果:page_fade.js作成、ローディングオーバーレイとスピナー実装完了
+     6→2025-10-15 16:00 要求:フェードアウト前にページが表示される問題修正 結果:header.phpにインラインCSS追加、page_fade.js簡素化、初期状態から白画面表示完了
+     7→2025-10-15 16:30 要求:h2クリックでアコーディオン開閉機能実装 結果:terms_action.js作成、次のh2までのp群開閉処理完了
+     8→2025-10-15 16:35 要求:jQuery未定義エラー修正 結果:functions.phpにjQuery依存関係追加、header.php直接読み込み削除完了
+     9→2025-10-15 16:40 要求:termsページのみterms_action.js読み込み 結果:functions.phpにis_page('terms')条件分岐追加完了
+    10→2025-10-15 16:45 要求:アコーディオンデフォルト状態を閉じる 結果:terms_action.js修正、初期非表示(display:none)設定完了
+    11→2025-10-15 16:50 要求:h2とp群をdiv.toggle_itemで包む 結果:terms_action.js修正、h2とp群をtoggle_itemでラップ処理追加完了
+    12→2025-10-15 16:55 要求:h2と次のh2までの全要素をラップ 結果:terms_action.js修正、nextUntil('h2')で全要素取得に変更完了
+    13→2025-10-15 17:00 要求:toggle_itemのCSS適用不具合修正 結果:pc.scssセレクタ修正(main.terms→body.terms)、自動コンパイル完了
+    14→2025-10-15 17:05 要求:閉じているアコーディオンh2のmargin削除 結果:pc.scssにh2:not(.accordion-active)でmargin:0追加完了
+    15→2025-10-15 17:10 要求:開閉状態アイコン表示(開:上矢印/閉:右矢印) 結果:pc.scssにh2::after矢印追加、rotate90deg設定完了
+    16→2025-10-15 17:15 要求:Googleフォントアイコン表示不具合修正 結果:font-family修正(Material Icons→Symbols Outlined)、リガチャー使用完了
+    17→2025-10-16 15:00 要求:投稿スラッグを保存日時（yyyymmddhhii）に設定 結果:functions.phpにwp_insert_post_dataフィルター追加、自動設定完了
+    18→2025-10-16 15:30 要求:投稿名称をニュースに変更 結果:functions.phpにchange_post_object_label関数追加、管理画面表示名変更完了
+    19→2025-10-16 16:00 要求:カスタム投稿タイプ「アプリ」追加 結果:functions.phpにcreate_app_post_type関数追加、register_post_type('app')実装完了
+    20→2025-10-16 16:05 要求:アプリのデフォルトスラッグを保存日時（yyyymmddhhii）に設定 結果:set_post_slug_to_datetime関数修正、postとappの両方に対応完了
+    21→2025-10-16 16:10 要求:投稿「アプリ」と固定ページ/app/のスラッグ競合解決 結果:カスタム投稿タイプのrewrite slugをappからappsに変更完了
+    22→2025-10-16 16:20 要求:page-app.phpに投稿「アプリ」の記事一覧表示機能追加 結果:WP_Query実装、PC版3カラムグリッド/SP版縦並び、body.app内にスタイル追加完了
+    23→2025-10-16 17:00 要求:front-page.phpでカテゴリー別記事表示、page-press.phpにタブとページネーション実装 結果:front-page.phpにプレスリリース/更新情報最新4件表示追加、page-press.phpにタブ切替と2件ページネーション実装完了
+    24→2025-10-16 17:15 要求:page-press.phpのページネーションが機能しない問題修正 結果:get_query_var('paged')使用、/page/N/形式URL対応、ページネーション正常動作完了
+    25→2025-10-16 14:05 要求:iPhone横スクロール・余白問題修正 結果:sp.scssで全幅レイアウト計算変更(left:50%+margin-left:-50vw方式)、左右余白バランス修正完了
+    26→2025-10-20 15:00 要求:app-screenshotsにスワイプスクロール機能実装 結果:screenshot.js作成、タッチ/マウスドラッグでスクロール可能化完了
+    27→2025-10-20 15:05 要求:screenshot.jsをsingle-app.phpのみで読み込み 結果:functions.phpにis_singular('app')条件分岐追加、アプリ個別ページのみ読み込み完了
+    28→2025-10-20 15:10 要求:screenshot.js構文エラー修正 結果:文字化けコメントを英語に変更、不正なタブ文字削除、構文エラー解決完了
+    29→2025-10-20 15:15 要求:app-screenshotsスクロール機能CSS追加 結果:pc.scss/sp.scssにoverflow-x/flex/gap設定、スクロールバースタイル追加完了
+    30→2025-10-21 15:00 要求:価格0は無料表記、年齢同値は単一表記、空値は非表示化 結果:価格・年齢表示ロジックに条件分岐追加完了
+    31→2025-10-21 15:05 要求:年齢片方のみ値がある場合の表記改善（以上/以下） 結果:age_min/age_max個別判定で「◯歳以上」「◯歳以下」表記追加完了
+    32→2025-10-21 15:10 要求:年齢0を値がないと判定するよう修正 結果:empty()使用で0/空文字/null/false全て値なし判定に変更完了
+    33→2025-10-21 15:15 要求:年齢両方値なしの場合「全年齢」表記 結果:条件分岐追加、age要素常時表示化、全年齢表示実装完了
+    34→2025-10-21 15:20 要求:ios_url/android_url値存在時のみa要素出力 結果:single-app.php修正、empty()条件分岐追加、esc_url()追加完了
+    35→2025-10-21 15:55 要求:app_icon未設定時デフォルト画像表示（グレースケール・50%・中央） 結果:single-app.phpにフォールバック処理追加、pc.scss/sp.scssにdefault-iconスタイル追加完了
+    36→2025-10-21 16:00 要求:アプリ一覧のサムネイル画像をcoverで中央表示 結果:pc.css/sp.scssでapp_thumbnailにobject-fit:cover追加、固定高設定（PC:200px/SP:180px）完了
+    37→2025-10-21 16:05 要求:アプリアイコン画像をget_field('app_icon')で取得 結果:page-app.php修正、ACFカスタムフィールド使用、デフォルト画像フォールバック、グレースケール処理追加完了
+    38→2025-10-21 07:35 要求:アプリ一覧のリンクを.app_list_item全体に適用 結果:.app_link削除、.app_list_item全体をリンク化完了
+    39→2025-10-21 07:46 要求:アプリ一覧をul/li構造に変更 結果:divからul/liに変更、CSS調整、文法的に正しい構造完了
+    40→2025-10-21 07:51 要求:.app_list_item内のa要素高さ修正 結果:height:100%追加、親要素の高さに合わせてレイアウト修正完了
+    41→2025-10-21 08:00 要求:ol li間にpがある場合のナンバリング維持(wp-block-group単位) 結果:ol_li_p.js実装、functions.phpでサイト全体読込設定追加完了
+    42→2025-10-22 10:00 要求:PCとスマホでメニューロケーション切替（PC:header、SP:footer） 結果:gnav.phpのwp_nav_menuにwp_is_mobile()条件分岐追加完了
+    43→2025-10-22 08:43 要求:.relate_appに関連アプリのアイコンと名前を横スクロール表示 結果:single-app.phpにWP_Query追加、pc/sp.scssにスワイプスタイル追加、relate-app.js作成、functions.phpで読み込み設定完了
+    44→2025-10-23 10:30 要求:pixelテーマにアイキャッチ画像機能を有効化 結果:functions.phpのregister_menu関数内にadd_theme_support('post-thumbnails')追加完了
+    45→2025-10-24 15:00 要求:app_excerpt本文改行反映（段落も改行、HTML除去） 結果:functions.phpにget_excerpt_with_linebreaks関数追加、page-app.phpで使用完了
+    46→2025-10-24 15:10 要求:app_excerpt手動抜粋優先、改行反映（段落も改行、HTML除去） 結果:get_excerpt_with_linebreaks関数修正、has_excerpt判定追加、page-app.phpで使用完了
+    47→2025-10-24 15:20 要求:自動抜粋文字数制限50文字をpage-app.phpに反映 結果:page-app.phpの第2引数削除、functions.phpデフォルト値使用完了
+    48→2025-10-24 15:25 要求:自動抜粋の先頭改行を削除 結果:get_excerpt_with_linebreaks関数にtrim()追加、先頭末尾の改行空白削除完了
+    49→2025-10-24 15:30 要求:list03にチェックマークスタイル適用 結果:pc.scssの.list03にチェックマーク（✓）リストスタイル追加完了
+    50→2025-10-24 18:00 要求:.list03内pで次にulがある場合のmargin-bottom調整 結果:pc.scssに.list03 p:has(+ ul)スタイル追加、margin-bottom:.5em設定完了
+    51→2025-10-28 15:00 要求:.wpcf7-select右端中央にea50アイコン表示 結果:pc/sp.scssにlabel::afterで\ea50追加、右端中央配置完了
+    52→2025-10-29 15:00 要求:sp.scssをコミット564cc38に戻す 処理結果:sp.scssを指定コミットに復元完了
+    53→

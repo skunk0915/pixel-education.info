@@ -311,49 +311,6 @@ main.front-page .about .wp-block-group p {
 main.front-page .about .wp-block-group .sign {
   margin-top: 2em;
 }
-main.front-page .app .app_list_wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1em;
-}
-main.front-page .app .app_list_wrap .app_list_item {
-  width: 40%;
-  flex: 1;
-  background: #fff;
-  box-shadow: 0 4px 10px 0px #ccc;
-  border-radius: 30px;
-  padding: 1em;
-}
-main.front-page .app .app_list_wrap .app_list_item .wp-block-image img {
-  border-radius: 20px;
-}
-main.front-page .app .app_list_wrap .app_list_item p {
-  font-size: 0.7em;
-}
-main.front-page .app .app_list_wrap .app_list_item p.app_name {
-  font-size: 1em;
-  font-weight: bold;
-  margin-bottom: 0.5em;
-}
-main.front-page .app .app_list_wrap .app_list_item .store_btn {
-  display: flex;
-  gap: 1em;
-}
-main.front-page .app .app_list_wrap .app_list_item .store_btn:not(:first-child) {
-  margin-top: 1em;
-}
-main.front-page .app .app_list_wrap .app_list_item .store_btn p {
-  flex: 1;
-  background: #e5e7eb;
-  text-align: center;
-  border-radius: 10px;
-}
-main.front-page .app .app_list_wrap .app_list_item .store_btn p a {
-  display: block;
-  padding: 0.5em;
-  text-decoration: none;
-}
 main.front-page .news .column .press {
   margin-bottom: 3em;
 }
@@ -545,53 +502,92 @@ body.terms .toggle_item h2:not(.accordion-active)::after {
 }
 
 body.app .app_list_wrap {
-  list-style: none;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
-  margin-top: 2em;
+  gap: 2em;
 }
-body.app .app_list_wrap .app_list_item a {
+body.app .app_list_wrap .app_list_item {
   background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 0px 20px 0px #ccc;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  height: 100%;
+  border-radius: 20px;
+  padding: 1em;
+  display: block;
 }
-body.app .app_list_wrap .app_list_item a .app_thumbnail {
+body.app .app_list_wrap .app_list_item .block_a {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+body.app .app_list_wrap .app_list_item .block_a .app_thumbnail img {
+  display: block;
   width: 100%;
-  overflow: hidden;
-  border-radius: 10px 10px 0 0;
-}
-body.app .app_list_wrap .app_list_item a .app_thumbnail img {
-  width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  border-radius: 30px;
 }
-body.app .app_list_wrap .app_list_item a .app_thumbnail img.default-icon {
+body.app .app_list_wrap .app_list_item .block_a .app_thumbnail img.default-icon {
   filter: grayscale(100%);
 }
-body.app .app_list_wrap .app_list_item a .app_txt {
-  padding: 1.5em;
+body.app .app_list_wrap .app_list_item .block_a .status .price,
+body.app .app_list_wrap .app_list_item .block_a .status .age {
+  flex: 1;
+  border-radius: 10px;
+  color: #fff;
+  background: orange;
+  text-align: center;
+  padding: 0.5em 0;
+  font-size: 4cqw;
 }
-body.app .app_list_wrap .app_list_item a .app_txt .app_name {
-  font-size: 1.3em;
+body.app .app_list_wrap .app_list_item .block_a .status .price:not(:last-child),
+body.app .app_list_wrap .app_list_item .block_a .status .age:not(:last-child) {
+  margin-bottom: 1em;
+}
+body.app .app_list_wrap .app_list_item .app_txt {
+  padding: 0;
+}
+body.app .app_list_wrap .app_list_item .app_txt .app_name {
+  font-size: 1em;
   font-weight: bold;
-  margin: 0 0 0.8em;
+  margin: 0 auto 0.5em;
   color: #1f2937;
 }
-body.app .app_list_wrap .app_list_item a .app_txt .app_excerpt {
+body.app .app_list_wrap .app_list_item .app_txt .app_excerpt {
   flex: 1;
   margin-bottom: 1em;
   color: #6b7280;
   line-height: 1.6;
   font-size: 0.9em;
+}
+body.app .app_list_wrap .app_list_item .store {
+  display: flex;
+  grid-area: 1em;
+  gap: 1em;
+}
+body.app .app_list_wrap .app_list_item .store a {
+  display: block;
+}
+body.app .app_list_wrap .app_list_item .store a img {
+  width: 100%;
+  height: auto;
+}
+body.app .app_list_wrap .app_list_item .store_btn {
+  display: flex;
+  gap: 1em;
+}
+body.app .app_list_wrap .app_list_item .store_btn:not(:first-child) {
+  margin-top: 1em;
+}
+body.app .app_list_wrap .app_list_item .store_btn p {
+  flex: 1;
+  background: #e5e7eb;
+  text-align: center;
+  border-radius: 10px;
+}
+body.app .app_list_wrap .app_list_item .store_btn p a {
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
 }
 
 body.single-app .mv_app {
