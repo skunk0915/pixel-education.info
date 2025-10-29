@@ -419,6 +419,51 @@ main {
 		}
 
 
+		.app {
+			.app_list_wrap {
+				display: flex;
+				justify-content: space-between;
+				gap: 2em;
+				flex-direction: column;
+
+				.app_list_item {
+					flex: 1;
+					background: #fff;
+					box-shadow: 0 4px 10px 0px #ccc;
+					border-radius: 30px;
+					padding: 2em;
+
+					.app_name {
+						font-size: 1.5em;
+						font-weight: bold;
+					}
+
+					.store_btn {
+						display: flex;
+						gap: 1em;
+
+						&:not(:first-child) {
+							margin-top: 1em;
+						}
+
+						p {
+							flex: 1;
+							background: #e5e7eb;
+							text-align: center;
+							border-radius: 10px;
+
+							a {
+								display: block;
+								padding: .5em;
+								text-decoration: none;
+
+							}
+						}
+					}
+
+				}
+			}
+		}
 		.news {
 			h2 {}
 
@@ -555,6 +600,7 @@ main {
 				}
 			}
 		}
+
 	}
 }
 
@@ -707,7 +753,7 @@ body.app {
 							display: block;
 							width: 100%;
 							height: auto;
-							border-radius: 30px;
+							border-radius: 20%;
 
 							&.default-icon {
 								filter: grayscale(100%);
@@ -911,7 +957,7 @@ body.single-app {
 			display: block;
 			width: 50%;
 			margin: 0 auto;
-			border-radius: 40px;
+			border-radius: 20%;
 
 			&.default-icon {
 				filter: grayscale(100%);
@@ -1054,7 +1100,7 @@ body.single-app {
 					display: block;
 					width: 100%;
 					height: auto;
-					border-radius: 40px;
+					border-radius: 20%;
 					// box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 					margin-bottom: 0.5em;
 				}

@@ -312,6 +312,41 @@ main.front-page .about .wp-block-group p {
 main.front-page .about .wp-block-group .sign {
   margin-top: 2em;
 }
+main.front-page .app .app_list_wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  flex-direction: column;
+}
+main.front-page .app .app_list_wrap .app_list_item {
+  flex: 1;
+  background: #fff;
+  box-shadow: 0 4px 10px 0px #ccc;
+  border-radius: 30px;
+  padding: 2em;
+}
+main.front-page .app .app_list_wrap .app_list_item .app_name {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+main.front-page .app .app_list_wrap .app_list_item .store_btn {
+  display: flex;
+  gap: 1em;
+}
+main.front-page .app .app_list_wrap .app_list_item .store_btn:not(:first-child) {
+  margin-top: 1em;
+}
+main.front-page .app .app_list_wrap .app_list_item .store_btn p {
+  flex: 1;
+  background: #e5e7eb;
+  text-align: center;
+  border-radius: 10px;
+}
+main.front-page .app .app_list_wrap .app_list_item .store_btn p a {
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
+}
 main.front-page .news .column .press {
   margin-bottom: 3em;
 }
@@ -529,7 +564,7 @@ body.app .app_list_wrap .app_list_item a .block_a .app_thumbnail img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 30px;
+  border-radius: 20%;
 }
 body.app .app_list_wrap .app_list_item a .block_a .app_thumbnail img.default-icon {
   filter: grayscale(100%);
@@ -630,7 +665,7 @@ body.single-app .app_summary .app_icon {
   display: block;
   width: 50%;
   margin: 0 auto;
-  border-radius: 40px;
+  border-radius: 20%;
 }
 body.single-app .app_summary .app_icon.default-icon {
   filter: grayscale(100%);
@@ -748,7 +783,7 @@ body.single-app .relate_app li a img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 40px;
+  border-radius: 20%;
   margin-bottom: 0.5em;
 }
 body.single-app .relate_app li a .app_name {
