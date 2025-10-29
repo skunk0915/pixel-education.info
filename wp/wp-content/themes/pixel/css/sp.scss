@@ -48,6 +48,7 @@ html {
 
 				.body_bg {
 					width: auto;
+					max-width: 100vw;//スワイパーはみ出し部分を隠すため
 					margin: 0 auto;
 					padding: 0 2em;
 
@@ -904,6 +905,8 @@ body.single-app {
 		flex-direction: column;
 		gap: 1em;
 
+		display: none;
+
 		.app_icon {
 			display: block;
 			width: 50%;
@@ -994,7 +997,7 @@ body.single-app {
 				width: 100%;
 				height: auto;
 				border-radius: 10px;
-				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+				// box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 			}
 		}
 
