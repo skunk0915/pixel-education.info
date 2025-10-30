@@ -86,22 +86,14 @@
 							</a>
 
 							<div class="store">
-								<?php
-								$ios_url = get_field('ios_url');
-								if (!empty($ios_url)) :
-								?>
-									<a href="<?php echo esc_url($ios_url); ?>" target="_blank">
-										<img src="<?php echo get_theme_file_uri(); ?>/img/btn_ios.png" alt="iPhone版アプリをダウンロードする">
-									</a>
-								<?php endif; ?>
-								<?php
-								$android_url = get_field('android_url');
-								if (!empty($android_url)) :
-								?>
-									<a href="<?php echo esc_url($android_url); ?>" target="_blank">
-										<img src="<?php echo get_theme_file_uri(); ?>/img/btn_android.png" alt="Android版アプリをダウンロードする">
-									</a>
-								<?php endif; ?>
+								<?php $ios_url = get_field('ios_url'); ?>
+								<a href="<?php echo !empty($ios_url) ? esc_url($ios_url) : '#'; ?>" target="_blank" class="<?php echo empty($ios_url) ? 'hidden' : ''; ?>">
+									<img src="<?php echo get_theme_file_uri(); ?>/img/btn_ios.png" alt="iPhone版アプリをダウンロードする">
+								</a>
+								<?php $android_url = get_field('android_url'); ?>
+								<a href="<?php echo !empty($android_url) ? esc_url($android_url) : '#'; ?>" target="_blank" class="<?php echo empty($android_url) ? 'hidden' : ''; ?>">
+									<img src="<?php echo get_theme_file_uri(); ?>/img/btn_android.png" alt="Android版アプリをダウンロードする">
+								</a>
 							</div><!-- /.store -->
 
 							<a href="<?php the_permalink() ?>" class="more">もっと見る</a>
