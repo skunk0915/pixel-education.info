@@ -1392,14 +1392,15 @@ footer .inner nav ul li a {
   position: fixed !important;
   top: 50%;
   left: 50%;
+  width: 80%;
   transform: translate(-50%, -50%);
   background: orange;
   color: #fff;
-  padding: 2em 3em;
+  padding: 1em;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
   z-index: 10000;
-  text-align: center;
+  text-align: left;
   font-size: 1.2em;
   font-weight: bold;
   opacity: 0;
