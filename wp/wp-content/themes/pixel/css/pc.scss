@@ -603,6 +603,7 @@ body.app {
 			background: #fff;
 			border-radius: 20px;
 			padding: 1em;
+			box-shadow: 0 0px 5px 0 #ddd;
 
 			// width: 40%;
 			// flex: 1;
@@ -632,7 +633,7 @@ body.app {
 
 				.block_a {
 					display: grid;
-					grid-template-columns: 1fr 1fr;
+					grid-template-columns: 1.3fr 1fr;
 					gap: 1em;
 					margin-bottom: 1em;
 					align-items: flex-end;
@@ -667,7 +668,7 @@ body.app {
 							background: orange;
 							text-align: center;
 							padding: 0.5em 0;
-							font-size: 1.5cqw;
+							font-size: 1cqw;
 
 							&:not(:last-child) {
 								margin-bottom: 1em;
@@ -701,7 +702,7 @@ body.app {
 				display: flex;
 				gap: 1em;
 				width: 100%;
-				justify-content: center;
+				justify-content: flex-start;
 
 				a {
 					flex: 1 1 auto;
