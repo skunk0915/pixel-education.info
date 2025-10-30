@@ -1768,3 +1768,39 @@ form {
 		padding: .5em;
 	}
 }
+
+// お問い合わせフォーム送信完了メッセージのオーバーレイ表示
+.wpcf7-response-overlay {
+	position: fixed !important;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: rgba(0, 0, 0, 0.9);
+	color: #fff;
+	padding: 2em 3em;
+	border-radius: 20px;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+	z-index: 10000;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: bold;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	border: none !important;
+	margin: 0 !important;
+
+	&.show {
+		opacity: 1;
+	}
+
+	&::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: -1;
+	}
+}

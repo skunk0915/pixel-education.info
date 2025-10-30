@@ -74,6 +74,17 @@ function enqueue_theme_scripts()
 		);
 	}
 
+	// contactページのみお問い合わせフォーム制御を読み込む
+	if (is_page('contact')) {
+		wp_enqueue_script(
+			'contact-form',
+			get_template_directory_uri() . '/js/contact-form.js',
+			array(),
+			'1.0.0',
+			true // footerで読み込む
+		);
+	}
+
 	// メニュー機能
 	wp_enqueue_script(
 		'menu',
