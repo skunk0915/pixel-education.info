@@ -1388,12 +1388,12 @@ footer .inner nav ul li a {
   display: none;
 }
 
-.wpcf7-response-overlay {
+.wp-block-contact-form-7-contact-form-selector .wpcf7 form .wpcf7-response-overlay {
   position: fixed !important;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.9);
+  background: orange;
   color: #fff;
   padding: 2em 3em;
   border-radius: 20px;
@@ -1407,16 +1407,15 @@ footer .inner nav ul li a {
   border: none !important;
   margin: 0 !important;
 }
-.wpcf7-response-overlay.show {
+.wp-block-contact-form-7-contact-form-selector .wpcf7 form .wpcf7-response-overlay.show {
   opacity: 1;
 }
-.wpcf7-response-overlay::before {
+.wp-block-contact-form-7-contact-form-selector .wpcf7 form .wpcf7-response-overlay::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
   z-index: -1;
 }/*# sourceMappingURL=sp.css.map */

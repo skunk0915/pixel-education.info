@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(function() {
                     responseOutput.classList.remove('wpcf7-response-overlay');
                 }, 300);
-            }, 3000);
+            }, 30000000);
         }
     });
 });
