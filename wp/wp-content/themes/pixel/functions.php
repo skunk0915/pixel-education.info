@@ -1,4 +1,10 @@
 <?php
+function my_login_logo_url()
+{
+	return home_url(); // サイトのトップページURL
+}
+add_filter('login_headerurl', 'my_login_logo_url');
+
 function login_logo()
 {
 	echo '<style type="text/css">
@@ -353,10 +359,10 @@ function get_excerpt_with_linebreaks($post_id = null, $length = 50)
 }
 
 
-add_action( 'after_setup_theme', function () {
+add_action('after_setup_theme', function () {
 	// ① ブロックエディタに独自スタイルを使う宣言
-	add_theme_support( 'editor-styles' );
+	add_theme_support('editor-styles');
 
 	// ② 読み込む CSS を登録
-	add_editor_style( 'css/editor_pixel.css' );
-} );
+	add_editor_style('css/editor_pixel.css');
+});
