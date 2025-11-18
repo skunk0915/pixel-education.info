@@ -82,8 +82,8 @@ header .site_name_top img {
 }
 header .hamburger {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 27px;
+  height: 27px;
   background: none;
   border: none;
   cursor: pointer;
@@ -93,21 +93,21 @@ header .hamburger {
 }
 header .hamburger span {
   display: block;
-  width: 30px;
-  height: 3px;
+  width: 20px;
+  height: 2px;
   background: #374151;
-  margin: 6px auto;
+  margin: 4px auto;
   transition: all 0.3s ease;
-  border-radius: 2px;
+  border-radius: 1px;
 }
 header .hamburger.is-active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+  transform: translateY(6px) rotate(45deg);
 }
 header .hamburger.is-active span:nth-child(2) {
   opacity: 0;
 }
 header .hamburger.is-active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+  transform: translateY(-6px) rotate(-45deg);
 }
 header nav {
   position: fixed;
