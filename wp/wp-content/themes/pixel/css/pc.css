@@ -224,6 +224,9 @@ main .btn01 a {
   margin: 0 auto;
   text-decoration: none;
 }
+main.front-page {
+  padding-top: 0;
+}
 main.front-page h2 {
   font-size: 2.5em;
   margin: 0 0 1.5em;
@@ -518,7 +521,7 @@ body.app .app_list_wrap .app_list_item a .block_a .status .age {
   background: orange;
   text-align: center;
   padding: 0.5em 0;
-  font-size: 1cqw;
+  font-size: 0.8cqw;
 }
 body.app .app_list_wrap .app_list_item a .block_a .status .price:not(:last-child),
 body.app .app_list_wrap .app_list_item a .block_a .status .age:not(:last-child) {
@@ -1020,6 +1023,11 @@ html body.company h2 {
 
 .wp-block-group {
   position: relative;
+}
+
+.wp-block-buttons .wp-block-button__link {
+  background: green;
+  border-radius: 10px;
 }
 
 .bg01 {

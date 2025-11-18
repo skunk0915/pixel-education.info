@@ -347,7 +347,10 @@ $main_width: 1200px;
 			}
 		}
 	}
-
+	.wp-element-button, .wp-block-button__link{
+		background: green;
+		border-radius: 10px;
+	}
 	.btn01 {
 		margin: 2em 0;
 

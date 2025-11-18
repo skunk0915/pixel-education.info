@@ -271,7 +271,7 @@ html body.company {
 			rgba(255, 255, 255, 1) 0%,
 			rgba(255, 255, 255, .9) 90%,
 			rgba(255, 255, 255, 0) 100%);
-	min-height: 100vh;
+	min-height: 50vh;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
@@ -366,6 +366,7 @@ main {
 	}
 
 	&.front-page {
+		padding-top: 0;
 		h2 {
 			font-size: 2em;
 			margin: 0 0 1em;
@@ -781,7 +782,7 @@ body.app {
 							background: orange;
 							text-align: center;
 							padding: 0.5em 0;
-							font-size: 4cqw;
+							font-size: 3cqw;
 
 							&:not(:last-child) {
 								margin-bottom: 1em;
@@ -1474,6 +1475,10 @@ body.press {
 
 .wp-block-group {
 	position: relative;
+}
+.wp-block-buttons .wp-block-button__link{
+	background: green;
+	border-radius: 10px;
 }
 
 .bg01 {

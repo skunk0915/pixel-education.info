@@ -269,6 +269,10 @@
   background: green;
   color: #fff;
 }
+.editor-styles-wrapper .wp-element-button, .editor-styles-wrapper .wp-block-button__link {
+  background: green;
+  border-radius: 10px;
+}
 .editor-styles-wrapper .btn01 {
   margin: 2em 0;
 }

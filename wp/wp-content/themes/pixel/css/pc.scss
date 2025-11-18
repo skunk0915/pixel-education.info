@@ -285,6 +285,7 @@ main {
 	}
 
 	&.front-page {
+		padding-top: 0;
 		h2 {
 			font-size: 2.5em;
 			margin: 0 0 1.5em;
@@ -676,7 +677,7 @@ body.app {
 							background: orange;
 							text-align: center;
 							padding: 0.5em 0;
-							font-size: 1cqw;
+							font-size: .8cqw;
 
 							&:not(:last-child) {
 								margin-bottom: 1em;
@@ -1343,6 +1344,10 @@ html body.company {
 
 .wp-block-group {
 	position: relative;
+}
+.wp-block-buttons .wp-block-button__link{
+	background: green;
+	border-radius: 10px;
 }
 
 .bg01 {
