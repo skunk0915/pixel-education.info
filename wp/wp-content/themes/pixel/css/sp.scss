@@ -86,12 +86,20 @@ header {
 	align-items: center;
 	padding: 1em;
 	margin: 0 auto;
-	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	transition: transform 0.3s ease;
+
+	&.header-hidden {
+		transform: translateY(-100%);
+	}
 
 	.site_name_top {
 		margin: 0;
 		padding: 0;
-		width: 30%;
+		width: 20%;
 
 		a {
 			display: block;

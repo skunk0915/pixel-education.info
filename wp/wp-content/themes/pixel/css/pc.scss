@@ -98,11 +98,20 @@ header {
 	align-items: center;
 	padding: 1em;
 	margin: 0 auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	transition: transform 0.3s ease;
+
+	&.header-hidden {
+		transform: translateY(-100%);
+	}
 
 	.site_name_top {
 		margin: 0;
 		padding: 0;
-		width: 10%;
+		width: 6%;
 
 		a {
 			display: block;
@@ -127,6 +136,7 @@ header {
 		height: auto;
 		background: none;
 		box-shadow: none;
+		font-size: .7em;
 
 		ul {
 			display: flex;

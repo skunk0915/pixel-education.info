@@ -100,6 +100,15 @@ function enqueue_theme_scripts()
 		true // footerで読み込む
 	);
 
+	// ヘッダースクロール機能
+	wp_enqueue_script(
+		'header-scroll',
+		get_template_directory_uri() . '/js/header_scroll.js',
+		array(),
+		'1.0.0',
+		true // footerで読み込む
+	);
+
 	// ol li間にpがある場合のナンバリング維持
 	wp_enqueue_script(
 		'ol-li-p',
