@@ -272,7 +272,6 @@ main .btn01 a {
   text-align: center;
   padding: 1em;
   border-radius: 10px;
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
   text-decoration: none;
@@ -399,7 +398,6 @@ main.front-page .news .column .press .more {
   color: green;
   text-decoration: none;
   font-weight: bold;
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
@@ -448,7 +446,6 @@ main.front-page .news .column .update .more {
   color: green;
   text-decoration: none;
   font-weight: bold;
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
@@ -636,7 +633,6 @@ body.app .app_list_wrap .app_list_item .more {
   text-align: center;
   border-radius: 100px;
   padding: 0.5em 2em;
-  width: -moz-fit-content;
   width: fit-content;
   margin: 1em auto 0;
 }
@@ -906,9 +902,7 @@ body.contact .wrap .form fieldset .wrap label {
   margin: 0;
 }
 body.contact .wrap .form fieldset .wrap label input[type=checkbox] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   width: 1.25rem;
   height: 1.25rem;
   border: 2px solid #28993a;
