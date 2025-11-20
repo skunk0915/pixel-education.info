@@ -49,7 +49,7 @@ html body .mv_app h1 {
   background: none;
 }
 
-header {
+body header {
   background: #F7F4EF;
   display: flex;
   width: 100%;
@@ -63,24 +63,24 @@ header {
   z-index: 1000;
   transition: transform 0.3s ease;
 }
-header.header-hidden {
+body header.header-hidden {
   transform: translateY(-100%);
 }
-header .site_name_top {
+body header .site_name_top {
   margin: 0;
   padding: 0;
   width: 20%;
 }
-header .site_name_top a {
+body header .site_name_top a {
   display: block;
   line-height: 0;
 }
-header .site_name_top img {
+body header .site_name_top img {
   display: block;
   width: 100%;
   height: auto;
 }
-header .hamburger {
+body header .hamburger {
   display: block;
   width: 27px;
   height: 27px;
@@ -91,7 +91,7 @@ header .hamburger {
   z-index: 1001;
   position: relative;
 }
-header .hamburger span {
+body header .hamburger span {
   display: block;
   width: 20px;
   height: 2px;
@@ -100,16 +100,16 @@ header .hamburger span {
   transition: all 0.3s ease;
   border-radius: 1px;
 }
-header .hamburger.is-active span:nth-child(1) {
+body header .hamburger.is-active span:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
 }
-header .hamburger.is-active span:nth-child(2) {
+body header .hamburger.is-active span:nth-child(2) {
   opacity: 0;
 }
-header .hamburger.is-active span:nth-child(3) {
+body header .hamburger.is-active span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
-header nav {
+body header nav.nav-menu {
   position: fixed;
   top: 0;
   right: -100%;
@@ -122,26 +122,27 @@ header nav {
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
   overflow: auto;
 }
-header nav.is-open {
+body header nav.nav-menu.is-open {
   right: 0;
 }
-header nav ul {
+body header nav.nav-menu ul {
   display: flex;
   flex-direction: column;
   list-style: none;
   padding: 1em;
   margin: 0;
 }
-header nav ul li {
+body header nav.nav-menu ul li {
   padding: 0;
+  margin: 0;
 }
-header nav ul li a {
+body header nav.nav-menu ul li a {
   display: block;
   padding: 0.5em;
   text-decoration: none;
   border-bottom: 1px solid #e5e7eb;
 }
-header nav ul li a:hover {
+body header nav.nav-menu ul li a:hover {
   color: #28993a;
   background: rgba(40, 153, 58, 0.05);
 }
@@ -1363,6 +1364,7 @@ footer .inner {
 }
 footer .inner .company_info {
   margin: 0 0 3em;
+  line-height: 2;
 }
 footer .inner .company_info .catch {
   font-size: 0.5em;
@@ -1370,6 +1372,7 @@ footer .inner .company_info .catch {
 footer .inner .company_info .logo {
   display: block;
   width: 50%;
+  margin: 0.5em 0;
 }
 footer .inner .company_info .logo img {
   display: block;

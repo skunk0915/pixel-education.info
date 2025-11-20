@@ -78,7 +78,7 @@ html {
 	}
 }
 
-header {
+body header {
 	background: #F7F4EF;
 	display: flex;
 	width: 100%;
@@ -151,7 +151,7 @@ header {
 	}
 
 	// ナビゲーションメニュー
-	nav {
+	nav.nav-menu {
 		position: fixed;
 		top: 0;
 		right: -100%;
@@ -177,6 +177,7 @@ header {
 
 			li {
 				padding: 0;
+				margin: 0;
 
 
 				a {
@@ -367,6 +368,7 @@ main {
 
 	&.front-page {
 		padding-top: 0;
+
 		h2 {
 			font-size: 2em;
 			margin: 0 0 1em;
@@ -1476,7 +1478,8 @@ body.press {
 .wp-block-group {
 	position: relative;
 }
-.wp-block-buttons .wp-block-button__link{
+
+.wp-block-buttons .wp-block-button__link {
 	background: green;
 	border-radius: 10px;
 }
@@ -1835,6 +1838,7 @@ footer {
 
 		.company_info {
 			margin: 0 0 3em;
+			line-height: 2;
 
 			.catch {
 				font-size: .5em;
@@ -1843,6 +1847,7 @@ footer {
 			.logo {
 				display: block;
 				width: 50%;
+				margin: .5em 0;
 
 				img {
 					display: block;

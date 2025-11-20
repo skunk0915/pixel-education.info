@@ -45,7 +45,7 @@ html body:not(.home) main .body_bg p.intro {
   text-align: center;
 }
 html body:not(.home) .mv {
-  padding: 3em 1em;
+  padding: 1.5em 1em;
   background: #28993a;
   color: #fff;
 }
@@ -1152,7 +1152,7 @@ html body.company h2 {
   margin: 0 auto;
   background: green;
   border-radius: 100px;
-  padding: 1em;
+  padding: 5%;
 }
 .list04 > .wp-block-group > .wp-block-image img {
   display: block;
@@ -1356,6 +1356,7 @@ footer .inner .company_info {
 footer .inner .company_info a.logo {
   display: block;
   width: 50%;
+  margin: 0.5em 0;
 }
 footer .inner .company_info a.logo img {
   display: block;
