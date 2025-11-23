@@ -14,7 +14,7 @@ function login_logo()
 	#login h1 a {
 	  background: url(' . get_template_directory_uri() . '/img/logo.png) no-repeat center;
 	  background-size: contain;
-	  width: 320px;
+	  width: 200px;
 	  height: 120px;
 	}
   </style>';

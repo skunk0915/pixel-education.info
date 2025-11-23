@@ -30,16 +30,18 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Scrolling down - hide header
-        if (currentScrollY > lastScrollY) {
-            header.classList.add('header-hidden');
-        }
-        // Scrolling up - show header
-        else if (currentScrollY < lastScrollY) {
-            header.classList.remove('header-hidden');
-        }
+        const scrollDiff = currentScrollY - lastScrollY;
 
-        lastScrollY = currentScrollY;
+        // Scrolling down - hide header (5px以上)
+        if (scrollDiff > 5) {
+            header.classList.add('header-hidden');
+            lastScrollY = currentScrollY;
+        }
+        // Scrolling up - show header (5px以上)
+        else if (scrollDiff < -5) {
+            header.classList.remove('header-hidden');
+            lastScrollY = currentScrollY;
+        }
     }
 
     window.addEventListener('scroll', function() {
