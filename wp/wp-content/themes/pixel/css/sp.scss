@@ -1033,8 +1033,8 @@ body.single-app {
 	.app_name {
 		font-weight: bold;
 		font-size: 1.5em;
-		margin: 1em auto;
-		line-height: 1em;
+		margin: 0em auto;
+		line-height: 1.5;
 		color: green;
 	}
 
@@ -1057,7 +1057,7 @@ body.single-app {
 		overflow-x: auto;
 		padding: 2em 0;
 		list-style: none;
-		margin: 0;
+		margin: 0 auto 2em;
 		-webkit-overflow-scrolling: touch;
 
 		li {
