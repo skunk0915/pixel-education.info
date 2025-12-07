@@ -39,11 +39,17 @@ html body:not(.home) main .body_bg {
 html body:not(.home) main .body_bg p {
   margin-bottom: 1em;
 }
-html body:not(.home) h1 {
-  padding: 1em 1em;
+html body:not(.home) .mv {
   background: #28993a;
-  font-size: 1.2em;
   color: #fff;
+  padding: 1em 1em;
+}
+html body:not(.home) .mv .date {
+  font-size: 0.8em;
+  opacity: 0.5;
+}
+html body:not(.home) h1 {
+  font-size: 1.2em;
 }
 html body .mv_app h1 {
   background: none;
@@ -455,38 +461,27 @@ main.front-page .news .column .update .more:hover {
   color: #fff;
 }
 
+body.single-format-standard h2 {
+  font-size: 1.5em;
+  margin: 0 0 1em;
+  border-bottom: 2px solid green;
+  padding-bottom: 0.5em;
+}
+body.single-format-standard h2:not(:first-child) {
+  margin: 3em 0 1em;
+}
+body.single-format-standard h3 {
+  font-size: 1em;
+}
+body.single-format-standard h3:not(:first-child) {
+  margin-top: 2em;
+}
+
 body.terms,
 body.privacy,
 body.cancel,
 body.privacy {
   display: block;
-}
-body.terms h2,
-body.privacy h2,
-body.cancel h2,
-body.privacy h2 {
-  font-size: 1.3em;
-  margin: 0 0 1em;
-  border-bottom: 2px solid green;
-  padding-bottom: 0.5em;
-}
-body.terms h2:not(:first-child),
-body.privacy h2:not(:first-child),
-body.cancel h2:not(:first-child),
-body.privacy h2:not(:first-child) {
-  margin: 3em 0 1em;
-}
-body.terms h3,
-body.privacy h3,
-body.cancel h3,
-body.privacy h3 {
-  font-size: 1em;
-}
-body.terms h3:not(:first-child),
-body.privacy h3:not(:first-child),
-body.cancel h3:not(:first-child),
-body.privacy h3:not(:first-child) {
-  margin-top: 2em;
 }
 body.terms ul:not(:first-child),
 body.terms ol:not(:first-child),

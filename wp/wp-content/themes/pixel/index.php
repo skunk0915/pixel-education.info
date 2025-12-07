@@ -4,6 +4,10 @@
 
 	<?php get_template_part('parts/gnav'); ?>
 	<section class="mv">
+
+		<?php if (is_single()) : ?>
+			<p class="date"><?php echo get_the_date('Y.m.d'); ?></p>
+		<?php endif; ?>
 		<h1><?php the_title(); ?></h1>
 	</section><!-- /.mv -->
 	<main>

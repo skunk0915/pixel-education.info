@@ -59,12 +59,21 @@ html {
 				}
 			}
 
+			.mv {
+				background: $color_a;
+				color: #fff;
+				padding: 1em 1em;
+
+				.date {
+					font-size: .8em;
+					opacity: .5;
+				}
+
+			}
+
 			h1 {
 
-				padding: 1em 1em;
-				background: $color_a;
 				font-size: 1.2em;
-				color: #fff;
 
 			}
 		}
@@ -616,15 +625,9 @@ main {
 	}
 }
 
-body.terms,
-body.privacy,
-body.cancel,
-body.privacy {
-
-	display: block;
-
+body.single-format-standard {
 	h2 {
-		font-size: 1.3em;
+		font-size: 1.5em;
 		margin: 0 0 1em;
 		border-bottom: 2px solid green;
 		padding-bottom: .5em;
@@ -641,6 +644,17 @@ body.privacy {
 			margin-top: 2em;
 		}
 	}
+}
+
+body.terms,
+body.privacy,
+body.cancel,
+body.privacy {
+
+	display: block;
+
+
+
 
 	ul,
 	ol {
