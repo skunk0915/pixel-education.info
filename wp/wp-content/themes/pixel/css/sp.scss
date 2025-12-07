@@ -71,6 +71,30 @@ html {
 
 			}
 
+			.page_nav {
+				border-top: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+				margin-top: 5em;
+
+				time {
+					display: block;
+					opacity: .5;
+				}
+
+				a {
+					text-decoration: none;
+				}
+
+				.prev {
+					padding: 2em 0;
+					border-bottom: 1px solid #ccc;
+				}
+
+				.next {
+					padding: 2em 0;
+				}
+			}
+
 			h1 {
 
 				font-size: 1.2em;

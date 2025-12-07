@@ -87,6 +87,34 @@ html {
 
 			}
 
+			.page_nav {
+				display: flex;
+				justify-content: space-between;
+				border-top: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+				margin-top: 5em;
+
+				time {
+					display: block;
+					opacity: .5;
+				}
+
+				a {
+					text-decoration: none;
+				}
+
+				.prev {
+					flex: 1;
+					padding: 2em 2em 2em 0;
+					border-right: 1px solid #ccc;
+				}
+
+				.next {
+					flex: 1;
+					padding: 2em 0 2em 2em;
+				}
+			}
+
 		}
 
 		.mv_app {
