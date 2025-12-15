@@ -25,3 +25,4 @@ wp-config.php
 # OS生成ファイル
 .DS_Store
 Thumbs.db
+素材/*.mp4

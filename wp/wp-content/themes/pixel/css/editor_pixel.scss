@@ -988,4 +988,147 @@ $main_width: 1200px;
 		}
 	}
 
+	.pixel-app-list-block {
+		.app_list_wrap {
+			margin: 0;
+			padding: 0;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 2em;
+			list-style: none;
+
+			.app_list_item {
+				background: #fff;
+				border-radius: 20px;
+				padding: 1em;
+				box-shadow: 0 0px 5px 0 #ddd;
+				display: block;
+
+				a {
+					text-decoration: none;
+
+					.block_a {
+						display: grid;
+						grid-template-columns: 1.3fr 1fr;
+						gap: 1em;
+						margin-bottom: 1em;
+						align-items: flex-end;
+
+						.app_thumbnail {
+							img {
+								display: block;
+								width: 100%;
+								height: auto;
+								border-radius: 20%;
+
+								&.default-icon {
+									filter: grayscale(100%);
+								}
+							}
+						}
+
+						.status {
+
+							.price,
+							.age {
+								flex: 1;
+								border-radius: 10px;
+								color: #fff;
+								background: orange;
+								text-align: center;
+								padding: 0.5em 0;
+								margin: 0;
+								font-size: .8cqw;
+
+								&:not(:last-child) {
+									margin-bottom: 1em;
+								}
+							}
+
+						}
+					}
+
+					.app_txt {
+						padding: 0;
+
+						.app_name {
+							font-size: 1em;
+							font-weight: bold;
+							margin: 0 auto .5em;
+							color: #1f2937;
+						}
+
+						.app_excerpt {
+							flex: 1;
+							margin-bottom: 1em;
+							color: #6b7280;
+							line-height: 1.6;
+							font-size: 0.9em;
+						}
+					}
+				}
+
+				.store {
+					display: flex;
+					gap: 1em;
+					width: 100%;
+					justify-content: flex-start;
+
+					a {
+						flex: 1 1 auto;
+						min-width: 0;
+						max-width: 50%;
+						height: 100%;
+
+						img {
+							width: 100%;
+							height: 100%;
+						}
+
+						&.hidden {
+							visibility: hidden;
+						}
+					}
+
+				}
+
+				.store_btn {
+					display: flex;
+					gap: 1em;
+
+					&:not(:first-child) {
+						margin-top: 1em;
+					}
+
+					p {
+						flex: 1;
+						background: #e5e7eb;
+						text-align: center;
+						border-radius: 10px;
+
+						a {
+							display: block;
+							padding: .5em;
+							text-decoration: none;
+
+						}
+					}
+				}
+
+				.more {
+					display: block;
+					background: green;
+					color: #fff;
+					text-align: center;
+					border-radius: 100px;
+					padding: .5em 2em;
+					width: fit-content;
+					margin: 1em auto 0;
+
+				}
+
+
+			}
+		}
+	}
 }
