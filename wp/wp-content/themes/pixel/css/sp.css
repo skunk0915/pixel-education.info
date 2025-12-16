@@ -483,18 +483,34 @@ main.front-page .news .column .update .more:hover {
   color: #fff;
 }
 
+body.terms h2,
+body.privacy h2,
+body.cancel h2,
+body.privacy h2,
 body.single-format-standard h2 {
   font-size: 1.5em;
   margin: 0 0 1em;
   border-bottom: 2px solid green;
   padding-bottom: 0.5em;
 }
+body.terms h2:not(:first-child),
+body.privacy h2:not(:first-child),
+body.cancel h2:not(:first-child),
+body.privacy h2:not(:first-child),
 body.single-format-standard h2:not(:first-child) {
   margin: 3em 0 1em;
 }
+body.terms h3,
+body.privacy h3,
+body.cancel h3,
+body.privacy h3,
 body.single-format-standard h3 {
   font-size: 1em;
 }
+body.terms h3:not(:first-child),
+body.privacy h3:not(:first-child),
+body.cancel h3:not(:first-child),
+body.privacy h3:not(:first-child),
 body.single-format-standard h3:not(:first-child) {
   margin-top: 2em;
 }

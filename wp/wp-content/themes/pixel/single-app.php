@@ -109,7 +109,7 @@
 				// 関連アプリを取得（現在のアプリを除く）
 				$related_apps = new WP_Query(array(
 					'post_type' => 'app',
-					'posts_per_page' => 10,
+					'posts_per_page' => -1,
 					'post__not_in' => array(get_the_ID()),
 					'orderby' => 'rand'
 				));
