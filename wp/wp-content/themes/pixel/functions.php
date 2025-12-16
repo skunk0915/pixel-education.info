@@ -196,7 +196,7 @@ function create_app_post_type()
 	$args = array(
 		'labels' => $labels,
 		'public' => true,
-		'has_archive' => true,
+		'has_archive' => false,
 		'publicly_queryable' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
@@ -207,13 +207,20 @@ function create_app_post_type()
 		'capability_type' => 'post',
 		'hierarchical' => false,
 		'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
-		'rewrite' => array('slug' => 'apps', 'with_front' => false),
+		'rewrite' => array('slug' => 'app', 'with_front' => false),
 		'show_in_rest' => true
 	);
 
 	register_post_type('app', $args);
 }
 add_action('init', 'create_app_post_type');
+
+// Pageスラッグ 'app' とカスタム投稿タイプ 'app' の競合を解消するためのリライトルール追加
+function add_app_rewrite_rules()
+{
+	add_rewrite_rule('app/([^/]+)/?$', 'index.php?app=$matches[1]', 'top');
+}
+add_action('init', 'add_app_rewrite_rules');
 
 //WordPressナビメニューを有効化
 add_action('after_setup_theme', 'register_menu');
