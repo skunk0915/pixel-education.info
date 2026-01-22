@@ -30,10 +30,12 @@
 			height: 100%;
 			background-color: #ffffff;
 			z-index: 9999;
-			transition: opacity 1s ease-out;
+			transition: opacity 0.8s ease-out, visibility 0.8s;
 		}
+
 		body.loaded::before {
 			opacity: 0;
+			visibility: hidden;
 			pointer-events: none;
 		}
 	</style>
